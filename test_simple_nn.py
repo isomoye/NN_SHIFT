@@ -84,16 +84,16 @@ async def run_test(dut):
         dut.req_i[i].value = 1
     count = 0
     
-    # while(count < 15):
-    #     if(dut.req_o.value != 0):
-    #         for i in range(int(len(dut.actv_i)/32)):
-    #             actv += random.randint(-265,256)
-    #         dut.actv_i.value = actv
-    #         for i in range(len(dut.req_i)):
-    #             dut.req_i[i].value = 1
-    #         count+= 1
-    #     await RisingEdge(dut.clk_i)
-    #     dut.req_i.value = 0
+    while(count < 5):
+        if(dut.req_o.value != 0):
+            for i in range(int(len(dut.actv_i)/32)):
+                actv += random.randint(-265,256)
+            dut.actv_i.value = actv
+            for i in range(len(dut.req_i)):
+                dut.req_i[i].value = 1
+            count+= 1
+        await RisingEdge(dut.clk_i)
+        dut.req_i.value = 0
         
             
     for i in range(100):

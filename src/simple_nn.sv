@@ -64,14 +64,14 @@ module simple_nn #(
 
 
   //input layer signals
-  logic [(NeuronsPerHiddenLayer*NumInputLayer)-1:0] in_layer_reqs_out;
-  logic [(NeuronsPerHiddenLayer*NumInputLayer)-1:0] in_layer_acks_in;
-  logic [(32 *NumInputLayer)-1:0] in_layer_actv;
+  logic [(NumInputLayer)-1:0] [NeuronsPerHiddenLayer-1:0] input_layer_reqs;
+  logic [NeuronsPerHiddenLayer-1:0] [NumInputLayer-1:0] input_layer_acks;
+  logic [(NumInputLayer)-1:0] [31:0] in_layer_actv;
 
   //hidden layer signals
-  logic [NumHiddenLayer-1:0] [NeuronsPerHiddenLayer][NeuronsPerHiddenLayer-1:0] hidden_layer_reqs;
+  logic [NumHiddenLayer-1:0] [NeuronsPerHiddenLayer-1:0][NeuronsPerHiddenLayer-1:0] hidden_layer_reqs;
   logic [NumHiddenLayer-1:0] [NeuronsPerHiddenLayer-1:0][NeuronsPerHiddenLayer-1:0]  hidden_layer_acks;
-  logic [(32 * NumHiddenLayer*NeuronsPerHiddenLayer) -1 : 0] hidden_layer_actv;
+  logic [NumHiddenLayer-1:0] [NeuronsPerHiddenLayer-1:0][31:0] hidden_layer_actv;
 
 
   assign weights[0] = weights_i;
@@ -79,21 +79,10 @@ module simple_nn #(
 
 
   for (genvar i = 0; i < NumInputLayer; i++) begin : gen_input_layer
-    logic [NeuronsPerHiddenLayer-1:0] temp_req;
     logic [NeuronsPerHiddenLayer-1:0] temp_ack;
     logic [31:0] temp_actv[NumInputLayer];
-    logic [31:0] temp_out;
-
-    //pack reqs in from
-    always_comb begin : pack_req
-      for (int k = 0; k < NeuronsPerHiddenLayer; k++) begin
-        //temp_req[k] = in_layer_reqs_out[k][i];
-        //in_layer_acks_in[j][k] = temp_ack[k];
-        temp_ack[k] = in_layer_acks_in[NumInputLayer*k+i];
-      end
-      for (int k = 0; k < 32; k++) begin
-        in_layer_actv[(i*32+k)] = temp_out[k];
-      end
+    for (genvar k = 0; k < NeuronsPerHiddenLayer; k++) begin
+      assign temp_ack[k] = input_layer_acks[k][i];
     end
     neuron #(
         .NUM_INPUTS(1),
@@ -105,11 +94,11 @@ module simple_nn #(
         .shift_i(shift_i),
         .scan_di(weights[i]),
         .scan_do(weights[i+1]),
-        .output_o(temp_out),
+        .output_o(in_layer_actv[i]),
         .actv_i(actv_i[((32*i))+:32]),
         .req_i(req_i[i]),
         .ack_o(ack_o[i]),
-        .req_o(in_layer_reqs_out[(i*NeuronsPerHiddenLayer)+:NeuronsPerHiddenLayer]),
+        .req_o(input_layer_reqs[i]),
         .ack_i(temp_ack),
         .out_i(),
         .back_prop_i('0),
@@ -136,30 +125,34 @@ module simple_nn #(
         for (genvar k = 0; k < NumOutputs; k++) begin
          assign temp_ack_in[k] = hidden_layer_acks[i][j][k];
         end
+        for (genvar k = 0; k < NumInputLayer; k++) begin
+         assign temp_req[k] = input_layer_reqs[k][j];
+         assign temp_actv[(32*k)+:32] = in_layer_actv[k];
+        end
         //unpack reqs in from
         always_comb begin : unpack_req
-          for (int k = 0; k < NumInputLayer; k++) begin
-            temp_req[k] = in_layer_reqs_out[(NumInputLayer*k)+j];
-            in_layer_acks_in[NumInputLayer*j+k] = temp_ack_out[k];
-            //in_layer_acks_in[(i * NumInputLayer + j)] = temp_ack[k];
-            // temp_ack[k] = hidden_layer_acks[i][j][k];
-            temp_actv[(32*k)+:32] = in_layer_actv[k];
-          end
-          for (int k = 0; k < NeuronsPerHiddenLayer; k++) begin
-            // hidden_layer_reqs[(i * NeuronsPerHiddenLayer + j) * NeuronsPerHiddenLayer + k] = 
-            // temp_req_out[k];
-            // temp_ack[k] = hidden_layer_acks[(i*NeuronsPerHiddenLayer+j)*NeuronsPerHiddenLayer+k];
-            // hidden_layer_acks[((i-1)*NeuronsPerHiddenLayer+j)*NeuronsPerHiddenLayer+k] = 
-            // temp_ack_out[k];
-          end
-          for (int k = 0; k < NumOutputs; k++) begin
-            // temp_ack_in[k] = hidden_layer_acks[((i)*NeuronsPerHiddenLayer+k)*NeuronsPerHiddenLayer+j];
-            // hidden_layer_reqs[(i*NeuronsPerHiddenLayer + j) * NeuronsPerHiddenLayer + k] = 
-            // temp_req_out[k];
-          end
-          for (int k = 0; k < 32; k++) begin
-            hidden_layer_actv[(i*NeuronsPerHiddenLayer+j)*32+k] = temp_out[k];
-          end
+          // for (int k = 0; k < NumInputLayer; k++) begin
+          //   //temp_req[k] = input_layer_reqs[(NumInputLayer*k)+j];
+          //   //input_layer_acks[NumInputLayer*j+k] = temp_ack_out[k];
+          //   //input_layer_acks[(i * NumInputLayer + j)] = temp_ack[k];
+          //   // temp_ack[k] = hidden_layer_acks[i][j][k];
+          //   temp_actv[(32*k)+:32] = in_layer_actv[k];
+          // end
+          // for (int k = 0; k < NeuronsPerHiddenLayer; k++) begin
+          //   // hidden_layer_reqs[(i * NeuronsPerHiddenLayer + j) * NeuronsPerHiddenLayer + k] = 
+          //   // temp_req_out[k];
+          //   // temp_ack[k] = hidden_layer_acks[(i*NeuronsPerHiddenLayer+j)*NeuronsPerHiddenLayer+k];
+          //   // hidden_layer_acks[((i-1)*NeuronsPerHiddenLayer+j)*NeuronsPerHiddenLayer+k] = 
+          //   // temp_ack_out[k];
+          // end
+          // for (int k = 0; k < NumOutputs; k++) begin
+          //   // temp_ack_in[k] = hidden_layer_acks[((i)*NeuronsPerHiddenLayer+k)*NeuronsPerHiddenLayer+j];
+          //   // hidden_layer_reqs[(i*NeuronsPerHiddenLayer + j) * NeuronsPerHiddenLayer + k] = 
+          //   // temp_req_out[k];
+          // end
+          // for (int k = 0; k < 32; k++) begin
+          //  // hidden_layer_actv[(i*NeuronsPerHiddenLayer+j)*32+k] = temp_out[k];
+          // end
         end
         neuron #(
             .NUM_INPUTS(NumInputLayer),
@@ -171,10 +164,10 @@ module simple_nn #(
             .shift_i(shift_i),
             .scan_di(weights[count]),
             .scan_do(weights[count+1]),
-            .output_o(temp_out),
+            .output_o(hidden_layer_actv[i][j]),
             .actv_i(temp_actv),  //actv[(32*NumInputLayer)-1:0]),
             .req_i(temp_req),
-            .ack_o(temp_ack_out),
+            .ack_o(input_layer_acks[j]),
             .req_o(hidden_layer_reqs[i][j]),
             .ack_i(temp_ack_in),
             .out_i(),
@@ -193,33 +186,12 @@ module simple_nn #(
         logic [NumOutputs-1:0] temp_req_out;
         logic [(32*NeuronsPerHiddenLayer)-1:0] temp_actv;
         logic [31:0] temp_out;
-        localparam count = NumInputLayer + (i * NeuronsPerHiddenLayer + j);  //width * row + col
-        for(genvar k =0; k < NeuronsPerHiddenLayer; k++) begin
-          //assign temp_ack_in[k] = hidden_layer_acks[i][j][k];
-        end
+        localparam count = NumInputLayer + (i * NeuronsPerHiddenLayer + j);
         //unpack reqs in from
-        always_comb begin : unpack_req
-          for (int k = 0; k < NeuronsPerHiddenLayer; k++) begin
-            int temp_value = (i*NumHiddenLayer*NeuronsPerHiddenLayer) + (k*NumOutputLayer) + j;
-            temp_req_in[k] = hidden_layer_reqs[i-1][j][k];
-            //hidden_layer_acks[k][j][i] = temp_ack[k];
-            //hidden_layer_acks[i][j][k] = temp_ack_out[k];
-            // hidden_layer_acks[((i-1)*NeuronsPerHiddenLayer+j)*NeuronsPerHiddenLayer+k] = temp_ack_out[k];
-            //temp_actv[k] = hidden_layer_actv[(i*NumHiddenLayer+j)*NeuronsPerHiddenLayer+k];
-            for (int l = 0; l < 32; l++) begin
-              temp_actv[(k * 32 + l)]  = hidden_layer_actv[((i-1) 
-              * NeuronsPerHiddenLayer + k) * NeuronsPerHiddenLayer + l];
-            end
-            // temp_ack_in[k] = hidden_layer_acks[9+j];
-            temp_ack_in[k] = hidden_layer_acks[i][j][k];
-          end
-          for (int n = 0; n < NeuronsPerHiddenLayer; n++) begin
-            // hidden_layer_reqs[(i*NeuronsPerHiddenLayer + j) * NeuronsPerHiddenLayer + n] = 
-            // temp_req_out[n];
-          end
-          for (int k = 0; k < 32; k++) begin
-            hidden_layer_actv[(i*NeuronsPerHiddenLayer+j)*32+k] = temp_out[k];
-          end
+        for(genvar k =0; k < NeuronsPerHiddenLayer; k++) begin
+          assign temp_ack_in[k] = hidden_layer_acks[i][k][j];
+          assign temp_req_in[k] = hidden_layer_reqs[i-1][k][j];
+          assign temp_actv[(k * 32) +: 32]  = hidden_layer_actv[(i-i)][k];
         end
         neuron #(
             .NUM_INPUTS(NeuronsPerHiddenLayer),
@@ -231,7 +203,7 @@ module simple_nn #(
             .shift_i(shift_i),
             .scan_di(weights[count]),
             .scan_do(weights[count+1]),
-            .output_o(temp_out),
+            .output_o(hidden_layer_actv[i][j]),
             .actv_i(temp_actv),
             .req_i(temp_req_in),
             .ack_o(hidden_layer_acks[i-1][j]),
@@ -255,17 +227,8 @@ module simple_nn #(
     //unpack reqs in from
     for (genvar k = 0; k < NeuronsPerHiddenLayer; k++) begin
       assign temp_req_in[k] = hidden_layer_reqs[(NumHiddenLayer-1)][k][i];
+      assign temp_actv[(k * 32) +: 32]  = hidden_layer_actv[(NumHiddenLayer-1)][k];
     end
-    always_comb begin : unpack_req
-      //hidden_layer_acks[NumHiddenLayer-1][i] = temp_ack;
-      for (int k = 0; k < NeuronsPerHiddenLayer; k++) begin
-        for (int l = 0; l < 32; l++) begin
-          temp_actv[(k * 32 + l)]  = hidden_layer_actv[((NumHiddenLayer-1) 
-          * NeuronsPerHiddenLayer + k) * NeuronsPerHiddenLayer + l];
-        end
-      end
-    end
-
     neuron #(
         .NUM_INPUTS(NeuronsPerHiddenLayer),
         .NUM_OUTPUTS(1),

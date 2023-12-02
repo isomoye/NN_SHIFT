@@ -580,3 +580,27 @@ Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/NN_SHIFT/NN_SHIFT.srcs/utils_1/imports/synth_1/neuron.dcp with file /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/NN_SHIFT/NN_SHIFT.runs/synth_1/simple_nn.dcp
+launch_runs synth_1 -jobs 4
+[Sat Dec  2 12:32:11 2023] Launched synth_1...
+Run output will be captured here: /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/NN_SHIFT/NN_SHIFT.runs/synth_1/runme.log
+close_design
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Sat Dec  2 12:35:26 2023] Launched synth_1...
+Run output will be captured here: /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/NN_SHIFT/NN_SHIFT.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z010clg400-1
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 21674.535 ; gain = 0.000 ; free physical = 1883 ; free virtual = 7074
+INFO: [Netlist 29-17] Analyzing 173 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2021.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 21677.477 ; gain = 0.000 ; free physical = 1844 ; free virtual = 7033
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+report_utilization -name utilization_1

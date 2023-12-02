@@ -2,16 +2,16 @@
 # Vivado v2021.2 (64-bit)
 # SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
 # IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Thu Nov 30 02:08:02 2023
-# Process ID: 261280
+# Start of session at: Sat Dec  2 12:35:30 2023
+# Process ID: 742991
 # Current directory: /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/NN_SHIFT/NN_SHIFT.runs/synth_1
 # Command line: vivado -log simple_nn.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source simple_nn.tcl
 # Log file: /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/NN_SHIFT/NN_SHIFT.runs/synth_1/simple_nn.vds
 # Journal file: /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/NN_SHIFT/NN_SHIFT.runs/synth_1/vivado.jou
-# Running On: idris-HP-EliteBook-840-G3, OS: Linux, CPU Frequency: 2500.000 MHz, CPU Physical cores: 2, Host memory: 16640 MB
+# Running On: idris-HP-EliteBook-840-G3, OS: Linux, CPU Frequency: 2842.355 MHz, CPU Physical cores: 2, Host memory: 16640 MB
 #-----------------------------------------------------------
 source simple_nn.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2753.543 ; gain = 0.023 ; free physical = 1484 ; free virtual = 9160
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2752.508 ; gain = 0.023 ; free physical = 1368 ; free virtual = 6611
 Command: read_checkpoint -auto_incremental -incremental /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/NN_SHIFT/NN_SHIFT.srcs/utils_1/imports/synth_1/neuron.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/NN_SHIFT/NN_SHIFT.srcs/utils_1/imports/synth_1/neuron.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -23,69 +23,63 @@ WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis b
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 261352
+INFO: [Synth 8-7075] Helper process launched with PID 743081
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2753.676 ; gain = 0.000 ; free physical = 246 ; free virtual = 7934
+Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2752.641 ; gain = 0.000 ; free physical = 171 ; free virtual = 5303
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'simple_nn' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:1]
 INFO: [Synth 8-6157] synthesizing module 'neuron' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:1]
 	Parameter NUM_INPUTS bound to: 32'sb00000000000000000000000000000001 
 	Parameter NUM_OUTPUTS bound to: 32'sb00000000000000000000000000000011 
-	Parameter LAYER bound to: 32'sb00000000000000000000000000000001 
+	Parameter LAYER bound to: 32'sb00000000000000000000000000000000 
 INFO: [Synth 8-6157] synthesizing module 'multiplier' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/multiplier.sv:1]
 	Parameter NUM_INPUTS bound to: 32'sb00000000000000000000000000000001 
-	Parameter LAYER bound to: 32'sb00000000000000000000000000000001 
-INFO: [Synth 8-6155] done synthesizing module 'multiplier' (1#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/multiplier.sv:1]
+	Parameter LAYER bound to: 32'sb00000000000000000000000000000000 
+INFO: [Synth 8-6157] synthesizing module 'sigmoid' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/sigmoid.sv:22]
+INFO: [Synth 8-6155] done synthesizing module 'sigmoid' (1#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/sigmoid.sv:22]
+WARNING: [Synth 8-689] width (16) of port connection 'x' does not match port width (8) of module 'sigmoid' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/multiplier.sv:106]
+WARNING: [Synth 8-689] width (32) of port connection 'out' does not match port width (16) of module 'sigmoid' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/multiplier.sv:107]
+INFO: [Synth 8-6155] done synthesizing module 'multiplier' (2#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/multiplier.sv:1]
 WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:94]
 WARNING: [Synth 8-3848] Net out_i in module/entity neuron does not have driver. [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:27]
 WARNING: [Synth 8-3848] Net result_o in module/entity neuron does not have driver. [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:41]
-INFO: [Synth 8-6155] done synthesizing module 'neuron' (2#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:1]
-WARNING: [Synth 8-324] index 1 out of range [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:133]
+INFO: [Synth 8-6155] done synthesizing module 'neuron' (3#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:1]
 INFO: [Synth 8-6157] synthesizing module 'neuron__parameterized0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:1]
 	Parameter NUM_INPUTS bound to: 32'sb00000000000000000000000000000010 
 	Parameter NUM_OUTPUTS bound to: 32'sb00000000000000000000000000000010 
-	Parameter LAYER bound to: 32'sb00000000000000000000000000000001 
+	Parameter LAYER bound to: 32'sb00000000000000000000000000000000 
 INFO: [Synth 8-6157] synthesizing module 'multiplier__parameterized0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/multiplier.sv:1]
 	Parameter NUM_INPUTS bound to: 32'sb00000000000000000000000000000010 
-	Parameter LAYER bound to: 32'sb00000000000000000000000000000001 
-INFO: [Synth 8-6155] done synthesizing module 'multiplier__parameterized0' (2#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/multiplier.sv:1]
+	Parameter LAYER bound to: 32'sb00000000000000000000000000000000 
+WARNING: [Synth 8-689] width (16) of port connection 'x' does not match port width (8) of module 'sigmoid' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/multiplier.sv:106]
+WARNING: [Synth 8-689] width (32) of port connection 'out' does not match port width (16) of module 'sigmoid' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/multiplier.sv:107]
+INFO: [Synth 8-6155] done synthesizing module 'multiplier__parameterized0' (3#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/multiplier.sv:1]
 WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:94]
 WARNING: [Synth 8-3848] Net out_i in module/entity neuron__parameterized0 does not have driver. [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:27]
 WARNING: [Synth 8-3848] Net result_o in module/entity neuron__parameterized0 does not have driver. [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:41]
-INFO: [Synth 8-6155] done synthesizing module 'neuron__parameterized0' (2#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:1]
-WARNING: [Synth 8-689] width (1) of port connection 'ack_o' does not match port width (2) of module 'neuron__parameterized0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:150]
-WARNING: [Synth 8-689] width (3) of port connection 'req_o' does not match port width (2) of module 'neuron__parameterized0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:151]
-WARNING: [Synth 8-324] index 1 out of range [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:133]
-WARNING: [Synth 8-689] width (1) of port connection 'ack_o' does not match port width (2) of module 'neuron__parameterized0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:150]
-WARNING: [Synth 8-689] width (3) of port connection 'req_o' does not match port width (2) of module 'neuron__parameterized0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:151]
-WARNING: [Synth 8-324] index 2 out of range [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:131]
-WARNING: [Synth 8-324] index 2 out of range [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:131]
-WARNING: [Synth 8-324] index 1 out of range [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:131]
-WARNING: [Synth 8-324] index 1 out of range [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:133]
-WARNING: [Synth 8-689] width (1) of port connection 'ack_o' does not match port width (2) of module 'neuron__parameterized0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:150]
-WARNING: [Synth 8-324] index 2 out of range [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:150]
-WARNING: [Synth 8-689] width (3) of port connection 'req_o' does not match port width (2) of module 'neuron__parameterized0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:151]
+INFO: [Synth 8-6155] done synthesizing module 'neuron__parameterized0' (3#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:1]
+WARNING: [Synth 8-689] width (3) of port connection 'req_o' does not match port width (2) of module 'neuron__parameterized0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:180]
+WARNING: [Synth 8-689] width (3) of port connection 'ack_i' does not match port width (2) of module 'neuron__parameterized0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:181]
+WARNING: [Synth 8-689] width (3) of port connection 'req_o' does not match port width (2) of module 'neuron__parameterized0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:180]
+WARNING: [Synth 8-689] width (3) of port connection 'ack_i' does not match port width (2) of module 'neuron__parameterized0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:181]
+WARNING: [Synth 8-689] width (3) of port connection 'req_o' does not match port width (2) of module 'neuron__parameterized0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:180]
+WARNING: [Synth 8-689] width (3) of port connection 'ack_i' does not match port width (2) of module 'neuron__parameterized0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:181]
 INFO: [Synth 8-6157] synthesizing module 'neuron__parameterized1' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:1]
 	Parameter NUM_INPUTS bound to: 32'sb00000000000000000000000000000011 
-	Parameter NUM_OUTPUTS bound to: 32'sb00000000000000000000000000000010 
+	Parameter NUM_OUTPUTS bound to: 32'sb00000000000000000000000000000001 
 	Parameter LAYER bound to: 32'sb00000000000000000000000000000000 
 INFO: [Synth 8-6157] synthesizing module 'multiplier__parameterized1' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/multiplier.sv:1]
 	Parameter NUM_INPUTS bound to: 32'sb00000000000000000000000000000011 
 	Parameter LAYER bound to: 32'sb00000000000000000000000000000000 
-INFO: [Synth 8-6157] synthesizing module 'sigmoid' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/sigmoid.sv:22]
-INFO: [Synth 8-6155] done synthesizing module 'sigmoid' (3#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/sigmoid.sv:22]
-WARNING: [Synth 8-689] width (16) of port connection 'x' does not match port width (8) of module 'sigmoid' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/multiplier.sv:105]
-WARNING: [Synth 8-689] width (32) of port connection 'out' does not match port width (16) of module 'sigmoid' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/multiplier.sv:106]
+WARNING: [Synth 8-689] width (16) of port connection 'x' does not match port width (8) of module 'sigmoid' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/multiplier.sv:106]
+WARNING: [Synth 8-689] width (32) of port connection 'out' does not match port width (16) of module 'sigmoid' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/multiplier.sv:107]
 INFO: [Synth 8-6155] done synthesizing module 'multiplier__parameterized1' (3#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/multiplier.sv:1]
 WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:94]
 WARNING: [Synth 8-3848] Net out_i in module/entity neuron__parameterized1 does not have driver. [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:27]
 WARNING: [Synth 8-3848] Net result_o in module/entity neuron__parameterized1 does not have driver. [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:41]
 INFO: [Synth 8-6155] done synthesizing module 'neuron__parameterized1' (3#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:1]
-WARNING: [Synth 8-6104] Input port 'actv_o' has an internal driver [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:237]
-WARNING: [Synth 8-689] width (1) of port connection 'req_o' does not match port width (2) of module 'neuron__parameterized1' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:241]
-WARNING: [Synth 8-6104] Input port 'actv_o' has an internal driver [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:237]
-WARNING: [Synth 8-689] width (1) of port connection 'req_o' does not match port width (2) of module 'neuron__parameterized1' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:241]
-WARNING: [Synth 8-3848] Net hidden_layer_acks_in[2][0] in module/entity simple_nn does not have driver. [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:73]
+WARNING: [Synth 8-3848] Net output_o in module/entity simple_nn does not have driver. [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:23]
+WARNING: [Synth 8-3848] Net hidden_layer_acks[0][2] in module/entity simple_nn does not have driver. [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:73]
 INFO: [Synth 8-6155] done synthesizing module 'simple_nn' (4#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:1]
 WARNING: [Synth 8-7129] Port out_i[31] in module neuron__parameterized1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port out_i[30] in module neuron__parameterized1 is either unconnected or has no load
@@ -189,17 +183,17 @@ WARNING: [Synth 8-7129] Port out_i[31] in module neuron__parameterized0 is eithe
 WARNING: [Synth 8-7129] Port out_i[30] in module neuron__parameterized0 is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2753.676 ; gain = 0.000 ; free physical = 1324 ; free virtual = 8919
+Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2752.641 ; gain = 0.000 ; free physical = 1193 ; free virtual = 6250
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2753.676 ; gain = 0.000 ; free physical = 1330 ; free virtual = 8924
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2752.641 ; gain = 0.000 ; free physical = 1193 ; free virtual = 6251
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2761.547 ; gain = 7.871 ; free physical = 1330 ; free virtual = 8924
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2760.512 ; gain = 7.871 ; free physical = 1193 ; free virtual = 6251
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'multiplier'
@@ -266,7 +260,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_reg' using encoding 'sequential' in module 'neuron__parameterized1'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2761.547 ; gain = 7.871 ; free physical = 1264 ; free virtual = 8859
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2760.512 ; gain = 7.871 ; free physical = 1115 ; free virtual = 6199
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
@@ -274,17 +268,17 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   32 Bit       Adders := 21    
-	   2 Input   16 Bit       Adders := 9     
-	   2 Input    8 Bit       Adders := 4     
+	   2 Input   32 Bit       Adders := 12    
+	   2 Input   16 Bit       Adders := 7     
+	   2 Input    8 Bit       Adders := 14    
 +---Registers : 
 	               96 Bit    Registers := 4     
 	               64 Bit    Registers := 6     
 	               32 Bit    Registers := 32    
 	               16 Bit    Registers := 7     
 	                3 Bit    Registers := 8     
-	                2 Bit    Registers := 16    
-	                1 Bit    Registers := 32    
+	                2 Bit    Registers := 12    
+	                1 Bit    Registers := 36    
 +---Multipliers : 
 	              32x32  Multipliers := 7     
 +---Muxes : 
@@ -292,18 +286,18 @@ Detailed RTL Component Info :
 	   2 Input   96 Bit        Muxes := 2     
 	   4 Input   64 Bit        Muxes := 3     
 	   2 Input   64 Bit        Muxes := 3     
-	   2 Input   32 Bit        Muxes := 7     
-	   5 Input   32 Bit        Muxes := 14    
-	   2 Input   16 Bit        Muxes := 21    
-	   2 Input    8 Bit        Muxes := 2     
+	   5 Input   32 Bit        Muxes := 12    
+	   2 Input   32 Bit        Muxes := 5     
+	   2 Input   16 Bit        Muxes := 7     
+	   2 Input    8 Bit        Muxes := 7     
 	   5 Input    3 Bit        Muxes := 7     
 	   2 Input    3 Bit        Muxes := 10    
 	   4 Input    3 Bit        Muxes := 10    
-	   4 Input    2 Bit        Muxes := 28    
-	   2 Input    2 Bit        Muxes := 19    
+	   4 Input    2 Bit        Muxes := 22    
+	   2 Input    2 Bit        Muxes := 15    
 	   5 Input    1 Bit        Muxes := 56    
-	   2 Input    1 Bit        Muxes := 18    
-	   4 Input    1 Bit        Muxes := 48    
+	   2 Input    1 Bit        Muxes := 20    
+	   4 Input    1 Bit        Muxes := 52    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -321,6 +315,7 @@ No constraint files found.
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3936] Found unconnected internal register 'multiplier_inst/sumAddress_reg' and it is trimmed from '16' to '8' bits. [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/multiplier.sv:83]
 DSP Report: Generating DSP multiplier_inst/sum1, operation Mode is: A*B.
 DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
 DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
@@ -342,6 +337,38 @@ DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/s
 DSP Report: Generating DSP multiplier_inst/sum1, operation Mode is: (PCIN>>17)+A*B.
 DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
 DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
+WARNING: [Synth 8-3936] Found unconnected internal register 'multiplier_inst/sumAddress_reg' and it is trimmed from '16' to '8' bits. [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/multiplier.sv:83]
+DSP Report: Generating DSP multiplier_inst/sum1, operation Mode is: A*B.
+DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
+DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
+DSP Report: Generating DSP multiplier_inst/sum1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
+DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
+DSP Report: Generating DSP multiplier_inst/sum1, operation Mode is: A*B.
+DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
+DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
+DSP Report: Generating DSP multiplier_inst/sum1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
+DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
+DSP Report: Generating DSP multiplier_inst/sum1, operation Mode is: A*B.
+DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
+DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
+DSP Report: Generating DSP multiplier_inst/sum1, operation Mode is: A*B.
+DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
+DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
+DSP Report: Generating DSP multiplier_inst/sum1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
+DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
+DSP Report: Generating DSP multiplier_inst/sum1, operation Mode is: A*B.
+DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
+DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
+DSP Report: Generating DSP multiplier_inst/sum1, operation Mode is: A*B.
+DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
+DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
+DSP Report: Generating DSP multiplier_inst/sum1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
+DSP Report: operator multiplier_inst/sum1 is absorbed into DSP multiplier_inst/sum1.
+WARNING: [Synth 8-3936] Found unconnected internal register 'sumAddress_reg' and it is trimmed from '16' to '8' bits. [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/multiplier.sv:83]
 DSP Report: Generating DSP sum1, operation Mode is: A*B.
 DSP Report: operator sum1 is absorbed into DSP sum1.
 DSP Report: operator sum1 is absorbed into DSP sum1.
@@ -363,53 +390,8 @@ DSP Report: operator sum1 is absorbed into DSP sum1.
 DSP Report: Generating DSP sum1, operation Mode is: (PCIN>>17)+A*B.
 DSP Report: operator sum1 is absorbed into DSP sum1.
 DSP Report: operator sum1 is absorbed into DSP sum1.
-DSP Report: Generating DSP sum1, operation Mode is: A*B.
-DSP Report: operator sum1 is absorbed into DSP sum1.
-DSP Report: operator sum1 is absorbed into DSP sum1.
-DSP Report: Generating DSP sum1, operation Mode is: A*B.
-DSP Report: operator sum1 is absorbed into DSP sum1.
-DSP Report: operator sum1 is absorbed into DSP sum1.
-DSP Report: Generating DSP sum1, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator sum1 is absorbed into DSP sum1.
-DSP Report: operator sum1 is absorbed into DSP sum1.
-DSP Report: Generating DSP sum1, operation Mode is: A*B.
-DSP Report: operator sum1 is absorbed into DSP sum1.
-DSP Report: operator sum1 is absorbed into DSP sum1.
-DSP Report: Generating DSP sum1, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator sum1 is absorbed into DSP sum1.
-DSP Report: operator sum1 is absorbed into DSP sum1.
-DSP Report: Generating DSP sum1, operation Mode is: A*B.
-DSP Report: operator sum1 is absorbed into DSP sum1.
-DSP Report: operator sum1 is absorbed into DSP sum1.
-DSP Report: Generating DSP sum1, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator sum1 is absorbed into DSP sum1.
-DSP Report: operator sum1 is absorbed into DSP sum1.
-DSP Report: Generating DSP sum1, operation Mode is: A*B.
-DSP Report: operator sum1 is absorbed into DSP sum1.
-DSP Report: operator sum1 is absorbed into DSP sum1.
-DSP Report: Generating DSP sum1, operation Mode is: A*B.
-DSP Report: operator sum1 is absorbed into DSP sum1.
-DSP Report: operator sum1 is absorbed into DSP sum1.
-DSP Report: Generating DSP sum1, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator sum1 is absorbed into DSP sum1.
-DSP Report: operator sum1 is absorbed into DSP sum1.
-WARNING: [Synth 8-3332] Sequential element (multiplier_inst/FSM_sequential_state_reg[2]) is unused and will be removed from module neuron__parameterized0.
-WARNING: [Synth 8-3332] Sequential element (multiplier_inst/FSM_sequential_state_reg[1]) is unused and will be removed from module neuron__parameterized0.
-WARNING: [Synth 8-3332] Sequential element (multiplier_inst/FSM_sequential_state_reg[0]) is unused and will be removed from module neuron__parameterized0.
-WARNING: [Synth 8-3332] Sequential element (FSM_sequential_curr_state_reg[1]) is unused and will be removed from module neuron__parameterized0.
-WARNING: [Synth 8-3332] Sequential element (FSM_sequential_curr_state_reg[0]) is unused and will be removed from module neuron__parameterized0.
-WARNING: [Synth 8-3332] Sequential element (FSM_sequential_state_reg[2]) is unused and will be removed from module multiplier__parameterized1__1.
-WARNING: [Synth 8-3332] Sequential element (FSM_sequential_state_reg[1]) is unused and will be removed from module multiplier__parameterized1__1.
-WARNING: [Synth 8-3332] Sequential element (FSM_sequential_state_reg[0]) is unused and will be removed from module multiplier__parameterized1__1.
-WARNING: [Synth 8-3332] Sequential element (FSM_sequential_curr_state_reg[1]) is unused and will be removed from module neuron__parameterized1__1.
-WARNING: [Synth 8-3332] Sequential element (FSM_sequential_curr_state_reg[0]) is unused and will be removed from module neuron__parameterized1__1.
-WARNING: [Synth 8-3332] Sequential element (FSM_sequential_state_reg[2]) is unused and will be removed from module multiplier__parameterized1.
-WARNING: [Synth 8-3332] Sequential element (FSM_sequential_state_reg[1]) is unused and will be removed from module multiplier__parameterized1.
-WARNING: [Synth 8-3332] Sequential element (FSM_sequential_state_reg[0]) is unused and will be removed from module multiplier__parameterized1.
-WARNING: [Synth 8-3332] Sequential element (FSM_sequential_curr_state_reg[1]) is unused and will be removed from module neuron__parameterized1.
-WARNING: [Synth 8-3332] Sequential element (FSM_sequential_curr_state_reg[0]) is unused and will be removed from module neuron__parameterized1.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2761.547 ; gain = 7.871 ; free physical = 1019 ; free virtual = 8620
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2760.512 ; gain = 7.871 ; free physical = 808 ; free virtual = 5931
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -426,16 +408,16 @@ DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding R
 |neuron      | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |neuron      | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |neuron      | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|multiplier  | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|multiplier  | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|multiplier  | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|multiplier  | (PCIN>>17)+A*B | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|multiplier  | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|multiplier  | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|multiplier  | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|multiplier  | A*B            | 15     | 15     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|multiplier  | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|multiplier  | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|neuron      | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|neuron      | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|neuron      | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|neuron      | (PCIN>>17)+A*B | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|neuron      | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|neuron      | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|neuron      | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|neuron      | A*B            | 15     | 15     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|neuron      | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|neuron      | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |multiplier  | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |multiplier  | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |multiplier  | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
@@ -454,13 +436,13 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2761.547 ; gain = 7.871 ; free physical = 1019 ; free virtual = 8619
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2760.512 ; gain = 7.871 ; free physical = 808 ; free virtual = 5934
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2761.547 ; gain = 7.871 ; free physical = 1023 ; free virtual = 8622
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 2760.512 ; gain = 7.871 ; free physical = 807 ; free virtual = 5932
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -478,37 +460,55 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2761.547 ; gain = 7.871 ; free physical = 1092 ; free virtual = 8697
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2760.512 ; gain = 7.871 ; free physical = 805 ; free virtual = 5927
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2761.547 ; gain = 7.871 ; free physical = 1092 ; free virtual = 8697
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2760.512 ; gain = 7.871 ; free physical = 805 ; free virtual = 5927
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2761.547 ; gain = 7.871 ; free physical = 1092 ; free virtual = 8697
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2760.512 ; gain = 7.871 ; free physical = 805 ; free virtual = 5927
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2761.547 ; gain = 7.871 ; free physical = 1092 ; free virtual = 8697
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2760.512 ; gain = 7.871 ; free physical = 805 ; free virtual = 5927
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2761.547 ; gain = 7.871 ; free physical = 1092 ; free virtual = 8697
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2760.512 ; gain = 7.871 ; free physical = 805 ; free virtual = 5927
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2761.547 ; gain = 7.871 ; free physical = 1092 ; free virtual = 8697
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2760.512 ; gain = 7.871 ; free physical = 805 ; free virtual = 5927
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+----------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                                                                     | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+----------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|simple_nn   | gen_input_layer[0].neuron_inst/scan_do_reg[16]                                               | 3      | 9     | NO           | NO                 | YES               | 9      | 0       | 
+|simple_nn   | gen_hidden_layer[0].gen_first_hidden_layer.gen_hidden_neurons[0].neuron_inst/weights_reg[16] | 4      | 9     | NO           | NO                 | YES               | 9      | 0       | 
+|simple_nn   | gen_hidden_layer[0].gen_first_hidden_layer.gen_hidden_neurons[1].neuron_inst/weights_reg[16] | 3      | 18    | NO           | NO                 | YES               | 18     | 0       | 
+|simple_nn   | gen_output_layer[0].neuron_inst/weights_reg[16]                                              | 3      | 18    | NO           | NO                 | YES               | 18     | 0       | 
+|simple_nn   | gen_output_layer[1].neuron_inst/scan_do_reg[31]                                              | 28     | 15    | NO           | YES                | YES               | 0      | 15      | 
++------------+----------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -525,57 +525,70 @@ Report Cell Usage:
 |      |Cell    |Count |
 +------+--------+------+
 |1     |BUFG    |     1|
-|2     |CARRY4  |    92|
-|3     |DSP48E1 |     9|
-|4     |LUT1    |     3|
-|5     |LUT2    |   394|
-|6     |LUT3    |     7|
-|7     |LUT4    |    56|
-|8     |LUT5    |   128|
-|9     |LUT6    |    60|
-|10    |FDRE    |   292|
-|11    |FDSE    |    32|
-|12    |IBUF    |    21|
-|13    |OBUF    |   100|
+|2     |CARRY4  |   166|
+|3     |DSP48E1 |     7|
+|4     |LUT1    |    91|
+|5     |LUT2    |   128|
+|6     |LUT3    |   310|
+|7     |LUT4    |   217|
+|8     |LUT5    |   419|
+|9     |LUT6    |   352|
+|10    |SRL16E  |    54|
+|11    |SRLC32E |    15|
+|12    |FDRE    |   952|
+|13    |IBUF    |    73|
+|14    |OBUF    |   100|
+|15    |OBUFT   |    64|
 +------+--------+------+
 
 Report Instance Areas: 
-+------+-------------------------------------------------------------------------------+-----------------------------+------+
-|      |Instance                                                                       |Module                       |Cells |
-+------+-------------------------------------------------------------------------------+-----------------------------+------+
-|1     |top                                                                            |                             |  1195|
-|2     |  \GenHiddenLayer[0].gen_first_hidden_layer.gen_hidden_neurons[0].neuron_inst  |neuron__parameterized0       |   320|
-|3     |    multiplier_inst                                                            |multiplier__parameterized0_4 |   306|
-|4     |  \GenHiddenLayer[0].gen_first_hidden_layer.gen_hidden_neurons[1].neuron_inst  |neuron__parameterized0_0     |   319|
-|5     |    multiplier_inst                                                            |multiplier__parameterized0   |   306|
-|6     |  \GenOuputLayer[0].neuron_inst                                                |neuron__parameterized1       |     1|
-|7     |  \GenOuputLayer[1].neuron_inst                                                |neuron__parameterized1_1     |     1|
-|8     |  \gen_input_layer[0].neuron_inst                                              |neuron                       |   114|
-|9     |    multiplier_inst                                                            |multiplier_3                 |   105|
-|10    |  \gen_input_layer[1].neuron_inst                                              |neuron_2                     |   318|
-|11    |    multiplier_inst                                                            |multiplier                   |   310|
-+------+-------------------------------------------------------------------------------+-----------------------------+------+
++------+---------------------------------------------------------------------------------+------------------------------+------+
+|      |Instance                                                                         |Module                        |Cells |
++------+---------------------------------------------------------------------------------+------------------------------+------+
+|1     |top                                                                              |                              |  2949|
+|2     |  \gen_hidden_layer[0].gen_first_hidden_layer.gen_hidden_neurons[0].neuron_inst  |neuron__parameterized0        |   423|
+|3     |    multiplier_inst                                                              |multiplier__parameterized0_12 |   310|
+|4     |      \gen_sigmoid.sigmoid_inst                                                  |sigmoid_13                    |   137|
+|5     |  \gen_hidden_layer[0].gen_first_hidden_layer.gen_hidden_neurons[1].neuron_inst  |neuron__parameterized0_0      |   422|
+|6     |    multiplier_inst                                                              |multiplier__parameterized0_10 |   310|
+|7     |      \gen_sigmoid.sigmoid_inst                                                  |sigmoid_11                    |   137|
+|8     |  \gen_hidden_layer[0].gen_first_hidden_layer.gen_hidden_neurons[2].neuron_inst  |neuron__parameterized0_1      |   416|
+|9     |    multiplier_inst                                                              |multiplier__parameterized0    |   310|
+|10    |      \gen_sigmoid.sigmoid_inst                                                  |sigmoid_9                     |   137|
+|11    |  \gen_input_layer[0].neuron_inst                                                |neuron                        |   265|
+|12    |    multiplier_inst                                                              |multiplier_7                  |   192|
+|13    |      \gen_sigmoid.sigmoid_inst                                                  |sigmoid_8                     |   137|
+|14    |  \gen_input_layer[1].neuron_inst                                                |neuron_2                      |   241|
+|15    |    multiplier_inst                                                              |multiplier                    |   192|
+|16    |      \gen_sigmoid.sigmoid_inst                                                  |sigmoid_6                     |   137|
+|17    |  \gen_output_layer[0].neuron_inst                                               |neuron__parameterized1        |   452|
+|18    |    multiplier_inst                                                              |multiplier__parameterized1_4  |   312|
+|19    |      \gen_sigmoid.sigmoid_inst                                                  |sigmoid_5                     |   137|
+|20    |  \gen_output_layer[1].neuron_inst                                               |neuron__parameterized1_3      |   492|
+|21    |    multiplier_inst                                                              |multiplier__parameterized1    |   312|
+|22    |      \gen_sigmoid.sigmoid_inst                                                  |sigmoid                       |   137|
++------+---------------------------------------------------------------------------------+------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2761.547 ; gain = 7.871 ; free physical = 1092 ; free virtual = 8697
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2760.512 ; gain = 7.871 ; free physical = 805 ; free virtual = 5927
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 697 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2761.547 ; gain = 7.871 ; free physical = 1092 ; free virtual = 8697
-Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2761.555 ; gain = 7.871 ; free physical = 1092 ; free virtual = 8697
+Synthesis finished with 0 errors, 0 critical warnings and 807 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2760.512 ; gain = 7.871 ; free physical = 812 ; free virtual = 5935
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2760.520 ; gain = 7.871 ; free physical = 812 ; free virtual = 5935
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2761.555 ; gain = 0.000 ; free physical = 1192 ; free virtual = 8796
-INFO: [Netlist 29-17] Analyzing 101 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2760.520 ; gain = 0.000 ; free physical = 908 ; free virtual = 6031
+INFO: [Netlist 29-17] Analyzing 173 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2785.559 ; gain = 0.000 ; free physical = 1085 ; free virtual = 8688
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2784.523 ; gain = 0.000 ; free physical = 828 ; free virtual = 5960
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: 2b85842f
+Synth Design complete, checksum: 600c754d
 INFO: [Common 17-83] Releasing license: Synthesis
-44 Infos, 146 Warnings, 0 Critical Warnings and 0 Errors encountered.
+44 Infos, 128 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:27 . Memory (MB): peak = 2785.559 ; gain = 32.016 ; free physical = 1275 ; free virtual = 8878
+synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:35 . Memory (MB): peak = 2784.523 ; gain = 32.016 ; free physical = 1010 ; free virtual = 6142
 INFO: [Common 17-1381] The checkpoint '/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/NN_SHIFT/NN_SHIFT.runs/synth_1/simple_nn.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file simple_nn_utilization_synth.rpt -pb simple_nn_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Nov 30 02:08:49 2023...
+INFO: [Common 17-206] Exiting Vivado at Sat Dec  2 12:36:30 2023...

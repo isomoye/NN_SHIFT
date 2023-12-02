@@ -4474,3 +4474,264 @@ selectButton(PAResourceCommand.PACommandNames_ZOOM_FIT, "Schematic_zoom_fit"); /
 // TclEventType: DG_GRAPH_STALE
 // TclEventType: FILE_SET_CHANGE
 // HMemoryUtils.trashcanNow. Engine heap size: 15,257 MB. GUI used memory: 168 MB. Current time: 12/2/23, 11:26:37 AM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 15,289 MB. GUI used memory: 168 MB. Current time: 12/2/23, 11:38:47 AM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 15,321 MB (+7092kb) [109:40:43]
+// HMemoryUtils.trashcanNow. Engine heap size: 15,321 MB. GUI used memory: 168 MB. Current time: 12/2/23, 11:40:02 AM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 15,353 MB. GUI used memory: 168 MB. Current time: 12/2/23, 11:41:42 AM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 15,385 MB. GUI used memory: 168 MB. Current time: 12/2/23, 11:42:48 AM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 15,417 MB. GUI used memory: 168 MB. Current time: 12/2/23, 12:01:03 PM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// HMemoryUtils.trashcanNow. Engine heap size: 15,449 MB. GUI used memory: 168 MB. Current time: 12/2/23, 12:03:38 PM EST
+// WARNING: HEventQueue.dispatchEvent() is taking  1282 ms.
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  1263 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 15,481 MB. GUI used memory: 168 MB. Current time: 12/2/23, 12:04:58 PM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 15,513 MB. GUI used memory: 168 MB. Current time: 12/2/23, 12:07:33 PM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 15,545 MB. GUI used memory: 168 MB. Current time: 12/2/23, 12:07:58 PM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 15,577 MB. GUI used memory: 168 MB. Current time: 12/2/23, 12:15:33 PM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 15,609 MB. GUI used memory: 168 MB. Current time: 12/2/23, 12:16:13 PM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 15,641 MB. GUI used memory: 168 MB. Current time: 12/2/23, 12:19:47 PM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 15,673 MB. GUI used memory: 168 MB. Current time: 12/2/23, 12:20:27 PM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 15,737 MB. GUI used memory: 168 MB. Current time: 12/2/23, 12:21:12 PM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 15,769 MB. GUI used memory: 168 MB. Current time: 12/2/23, 12:23:18 PM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 15,801 MB. GUI used memory: 169 MB. Current time: 12/2/23, 12:23:43 PM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 15,833 MB. GUI used memory: 168 MB. Current time: 12/2/23, 12:24:33 PM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 15,865 MB. GUI used memory: 168 MB. Current time: 12/2/23, 12:30:23 PM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 210160 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "simple_nn.sv", 3); // m
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // g
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // g
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // n
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/NN_SHIFT/NN_SHIFT.srcs/utils_1/imports/synth_1/neuron.dcp with file /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/NN_SHIFT/NN_SHIFT.runs/synth_1/simple_nn.dcp 
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 4 
+// Tcl Message: [Sat Dec  2 12:32:11 2023] Launched synth_1... Run output will be captured here: /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/NN_SHIFT/NN_SHIFT.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bA
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 48 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // ag
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-6775] single value range is not allowed in packed dimension [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:67]. ]", 1, true); // ah - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv;-;;-;16;-;line;-;67;-;;-;16;-;"); // ah
+// Elapsed time: 20 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-6775] single value range is not allowed in packed dimension [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:67]. ]", 1, true); // ah - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv;-;;-;16;-;line;-;67;-;;-;16;-;"); // ah
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 15,897 MB. GUI used memory: 170 MB. Current time: 12/2/23, 12:33:48 PM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 15,929 MB. GUI used memory: 194 MB. Current time: 12/2/23, 12:34:17 PM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// HMemoryUtils.trashcanNow. Engine heap size: 15,961 MB. GUI used memory: 170 MB. Current time: 12/2/23, 12:34:58 PM EST
+// Elapsed time: 95 seconds
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // g
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // g
+selectButton(PAResourceOtoP.ProjectTab_CLOSE_DESIGN, "Close Design"); // g
+selectButton(PAResourceOtoP.ProjectTab_CLOSE_DESIGN, "Close Design"); // g
+// TclEventType: DESIGN_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 15,961 MB. GUI used memory: 157 MB. Current time: 12/2/23, 12:35:00 PM EST
+// Engine heap size: 15,961 MB. GUI used memory: 158 MB. Current time: 12/2/23, 12:35:01 PM EST
+// WARNING: HEventQueue.dispatchEvent() is taking  1202 ms.
+// TclEventType: CURR_DESIGN_SET
+// TclEventType: DESIGN_CLOSE
+// Tcl Message: close_design 
+// TclEventType: DESIGN_CLOSE
+dismissDialog("Closing"); // bA
+selectCodeEditor("simple_nn.sv", 202, 76); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "neuron.sv", 1); // m
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // g
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // g
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "simple_nn.sv", 2); // m
+// Elapsed time: 19 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // n
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 4 
+// Tcl Message: [Sat Dec  2 12:35:26 2023] Launched synth_1... Run output will be captured here: /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/NN_SHIFT/NN_SHIFT.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bA
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 72 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN, "Open Synthesized Design"); // a
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Run Command: PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN
+// Tcl Message: open_run synth_1 -name synth_1 
+// Tcl Message: Design is defaulting to impl run constrset: constrs_1 Design is defaulting to synth run part: xc7z010clg400-1 
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 15,964 MB. GUI used memory: 142 MB. Current time: 12/2/23, 12:36:42 PM EST
+// TclEventType: DESIGN_NEW
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// DeviceView Instantiated
+// WARNING: HEventQueue.dispatchEvent() is taking  1003 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 21674.535 ; gain = 0.000 ; free physical = 1883 ; free virtual = 7074 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 173 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2021.2 INFO: [Project 1-570] Preparing netlist for logic optimization INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 21677.477 ; gain = 0.000 ; free physical = 1844 ; free virtual = 7033 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary: No Unisim elements were transformed.  
+// Device view-level: 0.0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// 'el' command handler elapsed time: 4 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Open Synthesized Design"); // bA
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design, Schematic]", 27, false); // n
+// Run Command: PAResourceCommand.PACommandNames_SCHEMATIC
+// Elapsed time: 16 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design, Report Utilization]", 25, false); // n
+// Run Command: PAResourceCommand.PACommandNames_RESOURCE_UTILIZATION
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Report Utilization"); // a
+// TclEventType: UTILIZATION_RESULT_GENERATED
+// Tcl Message: report_utilization -name utilization_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 16,004 MB. GUI used memory: 181 MB. Current time: 12/2/23, 12:37:07 PM EST
+// WARNING: HEventQueue.dispatchEvent() is taking  1042 ms.
+dismissDialog("Report Utilization"); // bA
+// [GUI Memory]: 239 MB (+6087kb) [110:37:52]
+// Elapsed time: 10 seconds
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice LUTs]", 3, true); // l - Node
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice LUTs]", 3, true, false, false, false, false, true); // l - Double Click - Node
+// Elapsed time: 17 seconds
+expandTreeTable((HResource) null, "gen_output_layer[1].neuron_inst (neuron__parameterized1_3) ; 229", 1); // K
+expandTreeTable((HResource) null, "multiplier_inst (multiplier__parameterized1) ; 204", 2); // K
+// PAPropertyPanels.initPanels (gen_sigmoid.sigmoid_inst (sigmoid)) elapsed time: 0.5s
+selectTreeTable("PAResourceTtoZ.UtilizationInstTreeTablePanel_UTILIZATION_INST_TREE_TABLE(Slice LUTs)", "gen_sigmoid.sigmoid_inst (sigmoid) ; 100", 4, "gen_sigmoid.sigmoid_inst (sigmoid)", 0, false); // K
+// [Engine Memory]: 16,088 MB (+599kb) [110:38:23]
+// HMemoryUtils.trashcanNow. Engine heap size: 16,088 MB. GUI used memory: 182 MB. Current time: 12/2/23, 12:37:43 PM EST
+collapseTreeTable((HResource) null, "multiplier_inst (multiplier__parameterized1) ; 204", 2); // K
+expandTreeTable((HResource) null, "multiplier_inst (multiplier__parameterized1) ; 204", 2); // K
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, DSP, DSPs]", 8, true); // l - Node
+expandTreeTable((HResource) null, "gen_hidden_layer[0].gen_first_hidden_layer.gen_hidden_neurons[0].neuron_inst (neuron__parameterized0) ; 1", 1); // K
+selectTreeTable("PAResourceTtoZ.UtilizationInstTreeTablePanel_UTILIZATION_INST_TREE_TABLE(DSPs)", "multiplier_inst (multiplier__parameterized0_12) ; 1", 2, "multiplier_inst (multiplier__parameterized0_12)", 0, false); // K
+expandTreeTable((HResource) null, "multiplier_inst (multiplier__parameterized0_12) ; 1", 2); // K
+selectTreeTable("PAResourceTtoZ.UtilizationInstTreeTablePanel_UTILIZATION_INST_TREE_TABLE(DSPs)", "multiplier_inst (multiplier__parameterized0_12) ; 1", 2, "multiplier_inst (multiplier__parameterized0_12)", 0, false, false, false, false, false, true); // K - Double Click
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, DSP, DSPs, DSP48E1 only]", 9, false); // l
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 16,112 MB. GUI used memory: 182 MB. Current time: 12/2/23, 12:44:08 PM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 16,144 MB. GUI used memory: 182 MB. Current time: 12/2/23, 12:47:58 PM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 16,176 MB. GUI used memory: 182 MB. Current time: 12/2/23, 12:48:48 PM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 16,208 MB. GUI used memory: 182 MB. Current time: 12/2/23, 12:52:13 PM EST
