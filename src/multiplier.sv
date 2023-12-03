@@ -1,6 +1,7 @@
 module multiplier #(
-    parameter int NUM_INPUTS = 4,
-    parameter int LAYER = 0
+    parameter int DataWidth = 8,
+    parameter int WeigthsWidth = DataWidth,
+    parameter int Layer = 0
 ) (
     input logic clk_i,
     input logic reset_i,
@@ -8,8 +9,8 @@ module multiplier #(
     //shared multiplier handshake
     input logic start_i,
     output logic ack_o,
-    input logic [(32*NUM_INPUTS)-1:0] actv_i,
-    input logic [(32*NUM_INPUTS)-1:0] weights_i,
+    input logic [(DataWidth)-1:0] actv_i,
+    input logic [(WeigthsWidth)-1:0] weights_i,
     input logic [31:0] bias_i,
     output logic [31:0] actv_o,
     output logic done_o,
@@ -47,7 +48,7 @@ module multiplier #(
           //retry mutex block
           if (start_i) begin
             ack_o <= '1;
-            sum <= bias_i;
+            sum <= '0;
             state <= ST_GIVE_KEY;
             counter <= '0;
           end
@@ -57,17 +58,18 @@ module multiplier #(
 
           counter <= counter + 1;
           // sum of input with factors and bias
-          sum <=  sum + (signed'(weights_i[((32*counter))+:32]) *
-          signed'(actv_i[((32*counter))+:32]));
-          if(counter >= NUM_INPUTS-1) begin
+          sum <=  sum + (signed'(weights_i[((counter))+:32]) *
+          signed'(actv_i[((counter))+:32]));
+          if(counter >= DataWidth) begin
+            sum <= sum + bias_i;
             state <= ST_MULTIPLY;
             counter <= '0;
           end
-        //   for (int i = 0; i < NUM_INPUTS; i++) begin
+        //   for (int i = 0; i < DataWidth; i++) begin
         //     if (i == 0) begin
         //       sum <= (weights_i[31:0] * actv_i[31:0]);
         //     end else begin
-        //       sum <= sum + (signed'(weights_i[((32*i)-1)+:32]) * signed'(actv_i[((32*i)-1)+:32]));
+        //       sum <= sum + (signed'(weights_i[((i)-1)+:32]) * signed'(actv_i[((i)-1)+:32]));
         //     end
         //   end
         //  state <= ST_MULTIPLY;
@@ -99,7 +101,7 @@ module multiplier #(
     end
   end
 
-  if (LAYER == 1) begin : gen_relu
+  if (Layer == 1) begin : gen_relu
     assign afterActivation = (signed'(sumAddress) > 0) ? sumAddress : '0;
   end else begin : gen_sigmoid
     sigmoid sigmoid_inst (

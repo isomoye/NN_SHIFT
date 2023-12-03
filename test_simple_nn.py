@@ -9,6 +9,10 @@ import cocotb_test.simulator
 import pytest
 import zlib, binascii, struct
 from crc import Calculator, Configuration,Crc32
+from cocotb.types import Bit,Logic, LogicArray
+from cocotb.types.range import Range
+from bitarray import bitarray
+from cocotb.binary import BinaryRepresentation, BinaryValue
 
 import cocotb
 from cocotb.clock import Clock
@@ -52,7 +56,7 @@ async def run_test(dut):
     for i in range(len(dut.req_i)):
         dut.req_i[i].value = 0
         
-    for i in range(len(dut.req_i)):
+    for i in range(len(dut.ack_i)):
         dut.ack_i[i].value = 1
 
     await tb.reset()
@@ -64,36 +68,71 @@ async def run_test(dut):
 
 
     dut.shift_i.value = 1
-    dut.actv_i.value = 0
+
     
-    for i in range(100):
+    for i in range(2500):
         dut.weights_i.value = random.randint(-265,256)
         await RisingEdge(dut.clk_i)
         
     await RisingEdge(dut.clk_i)
     dut.shift_i.value  = 0
-    actv = 0
+    dut.actv_i.value = 0 
+
     await RisingEdge(dut.clk_i)
-    for i in range(int(len(dut.actv_i)/32)):
-        actv += random.randint(-265,256)
-    dut.actv_i.value = actv
-        # dut._id("actv_i[]", extended=False).value= random.randint(-265,256)
-        
+    for i in range(int(len(dut.actv_i)/8)-1):
+        dut.actv_i.value[8*i : (8*i)+8] = random.randint(0,255)
+    # dut.actv_i.value = 0xFFCADDAAEADFAD
+    dut.actv_i.value = BinaryValue(value=bytes([random.randrange(0, 256) for _ in range(0, int(len(dut.actv_i)/8))]), n_bits=int(len(dut.actv_i)), bigEndian=False)
+    # for i in range(int(len(dut.actv_i)/32)):
+    #     dut.actv_i.value.bit_slice(i*32,(i*32) + 32) = random.randint(-265,256)
+    #     # dut._id("actv_i[]", extended=False).value= random.randint(-265,256)
+ 
     # dut.actv_i.value = random.randint(-265,256)+random.randint(-265,256)+random.randint(-265,256)
     for i in range(len(dut.req_i)):
         dut.req_i[i].value = 1
+
     count = 0
+    while(1):
+        flag = 1
+        for i in range (int(len(dut.ack_o))):
+            if dut.ack_o.value[i] == 0:
+                flag = 0
+        if flag == 1:
+            dut.req_i = 0
+            break
+        await RisingEdge(dut.clk_i)
+    await RisingEdge(dut.clk_i)
+    await RisingEdge(dut.clk_i)
+    dut.actv_i.value = BinaryValue(value=bytes([random.randrange(0, 256) for _ in range(0, int(len(dut.actv_i)/8))]), n_bits=int(len(dut.actv_i)), bigEndian=False)
+    for i in range(len(dut.req_i)):
+        dut.req_i[i].value = 1
     
-    while(count < 5):
+    flag = 0
+    while(1):
+        flag = 1
+        for i in range (int(len(dut.ack_o))):
+            if dut.ack_o.value[i] == 0:
+                flag = 0
+        if flag == 1:
+            dut.req_i = 0
+            break
+        await RisingEdge(dut.clk_i)
+    
+    while(count < 0):
         if(dut.req_o.value != 0):
-            for i in range(int(len(dut.actv_i)/32)):
-                actv += random.randint(-265,256)
-            dut.actv_i.value = actv
+            dut.actv_i.value = BinaryValue(value=bytes([random.randrange(0, 256) for _ in range(0, int(len(dut.actv_i)/8))]), n_bits=int(len(dut.actv_i)), bigEndian=False)
             for i in range(len(dut.req_i)):
                 dut.req_i[i].value = 1
             count+= 1
         await RisingEdge(dut.clk_i)
-        dut.req_i.value = 0
+        while(1):
+            flag = 1
+            for i in range (int(len(dut.ack_o))):
+                if dut.ack_o.value[i] == 0:
+                    flag = 0
+            if flag == 1:
+                dut.req_i = 0
+                break
         
             
     for i in range(100):

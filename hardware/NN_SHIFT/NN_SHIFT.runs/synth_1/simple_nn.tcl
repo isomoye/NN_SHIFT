@@ -86,7 +86,6 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
-  /home/idris/projects/FPGA_VISION/NN_SHIFT/src/multiplier.sv
   /home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv
   /home/idris/projects/FPGA_VISION/NN_SHIFT/src/sigmoid.sv
   /home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv
