@@ -9,16 +9,415 @@
     ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 
 source simple_nn.tcl -notrace
-create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2756.508 ; gain = 2.992 ; free physical = 1867 ; free virtual = 5703
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2753.539 ; gain = 0.023 ; free physical = 977 ; free virtual = 4640
 Command: read_checkpoint -auto_incremental -incremental /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/NN_SHIFT/NN_SHIFT.srcs/utils_1/imports/synth_1/neuron.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/NN_SHIFT/NN_SHIFT.srcs/utils_1/imports/synth_1/neuron.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
-Command: synth_design -top simple_nn -part xc7z010clg400-1
+Command: synth_design -top simple_nn -part xc7z020clg400-1 -retiming
 Starting synth_design
-Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
-INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+WARNING: [Vivado_Tcl 4-1101] Global synthesis options have changed for the design, incremental synthesis will not be run
 WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 1158895
+INFO: [Synth 8-7075] Helper process launched with PID 1167243
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2753.672 ; gain = 0.000 ; free physical = 293 ; free virtual = 3274
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'simple_nn' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'neuron' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:1]
+	Parameter NumInputs bound to: 32'sb00000000000000000000000000110001 
+	Parameter DataWidth bound to: 32'sb00000000000000000000000000001000 
+	Parameter WeigthsWidth bound to: 32'sb00000000000000000000000000001000 
+	Parameter NumOutputs bound to: 32'sb00000000000000000000000000000100 
+	Parameter Layer bound to: 32'sb00000000000000000000000000000001 
+WARNING: [Synth 8-6014] Unused sequential element req_reg was removed.  [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:94]
+WARNING: [Synth 8-6014] Unused sequential element mult_ack_out_reg was removed.  [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:95]
+WARNING: [Synth 8-6014] Unused sequential element mult_start_reg was removed.  [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:96]
+WARNING: [Synth 8-6014] Unused sequential element acks_reg was removed.  [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:98]
+WARNING: [Synth 8-6014] Unused sequential element actv_reg was removed.  [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:86]
+WARNING: [Synth 8-3848] Net out_i in module/entity neuron does not have driver. [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:29]
+WARNING: [Synth 8-3848] Net result_o in module/entity neuron does not have driver. [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:43]
+INFO: [Synth 8-6155] done synthesizing module 'neuron' (1#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'neuron__parameterized0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:1]
+	Parameter NumInputs bound to: 32'sb00000000000000000000000000100101 
+	Parameter DataWidth bound to: 32'sb00000000000000000000000000001000 
+	Parameter WeigthsWidth bound to: 32'sb00000000000000000000000000001000 
+	Parameter NumOutputs bound to: 32'sb00000000000000000000000000000100 
+	Parameter Layer bound to: 32'sb00000000000000000000000000000001 
+WARNING: [Synth 8-6014] Unused sequential element req_reg was removed.  [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:94]
+WARNING: [Synth 8-6014] Unused sequential element mult_ack_out_reg was removed.  [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:95]
+WARNING: [Synth 8-6014] Unused sequential element mult_start_reg was removed.  [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:96]
+WARNING: [Synth 8-6014] Unused sequential element acks_reg was removed.  [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:98]
+WARNING: [Synth 8-6014] Unused sequential element actv_reg was removed.  [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:86]
+WARNING: [Synth 8-3848] Net out_i in module/entity neuron__parameterized0 does not have driver. [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:29]
+WARNING: [Synth 8-3848] Net result_o in module/entity neuron__parameterized0 does not have driver. [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:43]
+INFO: [Synth 8-6155] done synthesizing module 'neuron__parameterized0' (1#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv:1]
+WARNING: [Synth 8-3848] Net weights[45] in module/entity simple_nn does not have driver. [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:37]
+WARNING: [Synth 8-3848] Net output_o in module/entity simple_nn does not have driver. [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:27]
+INFO: [Synth 8-6155] done synthesizing module 'simple_nn' (2#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv:1]
+WARNING: [Synth 8-7129] Port out_i[7] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_i[6] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_i[5] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_i[4] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_i[3] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_i[2] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_i[1] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_i[0] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_o[7] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_o[6] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_o[5] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_o[4] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_o[3] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_o[2] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_o[1] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_o[0] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port back_prop_i in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port en_i in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_i[7] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_i[6] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_i[5] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_i[4] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_i[3] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_i[2] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_i[1] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_i[0] in module neuron__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_i[7] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_i[6] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_i[5] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_i[4] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_i[3] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_i[2] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_i[1] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port out_i[0] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_o[7] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_o[6] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_o[5] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_o[4] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_o[3] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_o[2] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_o[1] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_o[0] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port back_prop_i in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port en_i in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_i[7] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_i[6] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_i[5] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_i[4] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_i[3] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_i[2] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_i[1] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port result_i[0] in module neuron is either unconnected or has no load
+WARNING: [Synth 8-7129] Port weights_o[7] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port weights_o[6] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port weights_o[5] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port weights_o[4] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port weights_o[3] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port weights_o[2] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port weights_o[1] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port weights_o[0] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[31] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[30] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[29] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[28] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[27] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[26] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[25] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[24] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[23] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[22] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[21] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[20] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[19] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[18] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[17] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[16] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[15] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[14] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[13] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[12] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[11] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[10] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[9] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[8] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[7] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[6] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[5] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[4] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[3] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[2] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[1] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port output_o[0] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[7] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[6] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[5] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[4] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[3] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[2] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[1] in module simple_nn is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[0] in module simple_nn is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2753.672 ; gain = 0.000 ; free physical = 1200 ; free virtual = 4180
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2753.672 ; gain = 0.000 ; free physical = 1230 ; free virtual = 4209
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2761.543 ; gain = 7.871 ; free physical = 1228 ; free virtual = 4207
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'neuron'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'neuron__parameterized0'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2761.543 ; gain = 7.871 ; free physical = 1175 ; free virtual = 4156
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    8 Bit       Adders := 82    
++---Registers : 
+	              392 Bit    Registers := 37    
+	              296 Bit    Registers := 4     
+	               49 Bit    Registers := 37    
+	               37 Bit    Registers := 4     
+	                8 Bit    Registers := 205   
+	                1 Bit    Registers := 41    
++---Muxes : 
+	   6 Input   49 Bit        Muxes := 37    
+	   2 Input   49 Bit        Muxes := 37    
+	   7 Input   49 Bit        Muxes := 37    
+	   6 Input   37 Bit        Muxes := 4     
+	   2 Input   37 Bit        Muxes := 4     
+	   7 Input   37 Bit        Muxes := 4     
+	   2 Input    8 Bit        Muxes := 164   
+	   6 Input    8 Bit        Muxes := 82    
+	   6 Input    3 Bit        Muxes := 41    
+	   2 Input    2 Bit        Muxes := 41    
+	   2 Input    1 Bit        Muxes := 123   
+	   6 Input    1 Bit        Muxes := 164   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2761.543 ; gain = 7.871 ; free physical = 921 ; free virtual = 3913
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2761.543 ; gain = 7.871 ; free physical = 929 ; free virtual = 3921
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5816] Retiming module `neuron`
+	Numbers of forward move = 0, and backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `neuron' done
+
+
+INFO: [Synth 8-5816] Retiming module `neuron__parameterized0`
+	Numbers of forward move = 0, and backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `neuron__parameterized0' done
+
+
+INFO: [Synth 8-5816] Retiming module `neuron__parameterized0__1`
+	Numbers of forward move = 0, and backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `neuron__parameterized0__1' done
+
+
+INFO: [Synth 8-5816] Retiming module `simple_nn`
+	Numbers of forward move = 0, and backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `simple_nn' done
+
+
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 2761.543 ; gain = 7.871 ; free physical = 886 ; free virtual = 3875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 2761.543 ; gain = 7.871 ; free physical = 873 ; free virtual = 3861
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 2761.543 ; gain = 7.871 ; free physical = 873 ; free virtual = 3861
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 2761.543 ; gain = 7.871 ; free physical = 872 ; free virtual = 3862
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 2761.543 ; gain = 7.871 ; free physical = 872 ; free virtual = 3862
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2761.543 ; gain = 7.871 ; free physical = 780 ; free virtual = 3788
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2761.543 ; gain = 7.871 ; free physical = 782 ; free virtual = 3791
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |   328|
+|3     |LUT2   |  1343|
+|4     |LUT3   |   940|
+|5     |LUT4   |  2166|
+|6     |LUT5   |  2674|
+|7     |LUT6   | 15282|
+|8     |MUXF7  |  1553|
+|9     |MUXF8  |   489|
+|10    |FDRE   | 19117|
+|11    |IBUF   |  2216|
+|12    |OBUF   |  1849|
+|13    |OBUFT  |    40|
++------+-------+------+
+
+Report Instance Areas: 
++------+--------------------------------------------------------------+-------------------------+------+
+|      |Instance                                                      |Module                   |Cells |
++------+--------------------------------------------------------------+-------------------------+------+
+|1     |top                                                           |                         | 47998|
+|2     |  \gen_bypass_hidden_ouput.gen_hidden_neurons[0].neuron_inst  |neuron__parameterized0   |   776|
+|3     |  \gen_bypass_hidden_ouput.gen_hidden_neurons[1].neuron_inst  |neuron__parameterized0_0 |   776|
+|4     |  \gen_bypass_hidden_ouput.gen_hidden_neurons[2].neuron_inst  |neuron__parameterized0_1 |   813|
+|5     |  \gen_bypass_hidden_ouput.gen_hidden_neurons[3].neuron_inst  |neuron__parameterized0_2 |   768|
+|6     |  \gen_input_layer[0].neuron_inst                             |neuron                   |  1097|
+|7     |  \gen_input_layer[10].neuron_inst                            |neuron_3                 |  1097|
+|8     |  \gen_input_layer[11].neuron_inst                            |neuron_4                 |  1097|
+|9     |  \gen_input_layer[12].neuron_inst                            |neuron_5                 |  1097|
+|10    |  \gen_input_layer[13].neuron_inst                            |neuron_6                 |  1097|
+|11    |  \gen_input_layer[14].neuron_inst                            |neuron_7                 |  1097|
+|12    |  \gen_input_layer[15].neuron_inst                            |neuron_8                 |  1098|
+|13    |  \gen_input_layer[16].neuron_inst                            |neuron_9                 |  1098|
+|14    |  \gen_input_layer[17].neuron_inst                            |neuron_10                |  1097|
+|15    |  \gen_input_layer[18].neuron_inst                            |neuron_11                |  1098|
+|16    |  \gen_input_layer[19].neuron_inst                            |neuron_12                |  1097|
+|17    |  \gen_input_layer[1].neuron_inst                             |neuron_13                |  1097|
+|18    |  \gen_input_layer[20].neuron_inst                            |neuron_14                |  1097|
+|19    |  \gen_input_layer[21].neuron_inst                            |neuron_15                |  1097|
+|20    |  \gen_input_layer[22].neuron_inst                            |neuron_16                |  1098|
+|21    |  \gen_input_layer[23].neuron_inst                            |neuron_17                |  1097|
+|22    |  \gen_input_layer[24].neuron_inst                            |neuron_18                |  1098|
+|23    |  \gen_input_layer[25].neuron_inst                            |neuron_19                |  1097|
+|24    |  \gen_input_layer[26].neuron_inst                            |neuron_20                |  1097|
+|25    |  \gen_input_layer[27].neuron_inst                            |neuron_21                |  1097|
+|26    |  \gen_input_layer[28].neuron_inst                            |neuron_22                |  1100|
+|27    |  \gen_input_layer[29].neuron_inst                            |neuron_23                |  1097|
+|28    |  \gen_input_layer[2].neuron_inst                             |neuron_24                |  1097|
+|29    |  \gen_input_layer[30].neuron_inst                            |neuron_25                |  1097|
+|30    |  \gen_input_layer[31].neuron_inst                            |neuron_26                |  1098|
+|31    |  \gen_input_layer[32].neuron_inst                            |neuron_27                |  1092|
+|32    |  \gen_input_layer[33].neuron_inst                            |neuron_28                |  1097|
+|33    |  \gen_input_layer[34].neuron_inst                            |neuron_29                |  1092|
+|34    |  \gen_input_layer[35].neuron_inst                            |neuron_30                |  1097|
+|35    |  \gen_input_layer[36].neuron_inst                            |neuron_31                |  1099|
+|36    |  \gen_input_layer[3].neuron_inst                             |neuron_32                |  1097|
+|37    |  \gen_input_layer[4].neuron_inst                             |neuron_33                |  1098|
+|38    |  \gen_input_layer[5].neuron_inst                             |neuron_34                |  1097|
+|39    |  \gen_input_layer[6].neuron_inst                             |neuron_35                |  1097|
+|40    |  \gen_input_layer[7].neuron_inst                             |neuron_36                |  1097|
+|41    |  \gen_input_layer[8].neuron_inst                             |neuron_37                |  1097|
+|42    |  \gen_input_layer[9].neuron_inst                             |neuron_38                |  1097|
++------+--------------------------------------------------------------+-------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2761.543 ; gain = 7.871 ; free physical = 782 ; free virtual = 3791
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 165 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2761.543 ; gain = 7.871 ; free physical = 783 ; free virtual = 3791
+Synthesis Optimization Complete : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2761.551 ; gain = 7.871 ; free physical = 783 ; free virtual = 3791
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.35 ; elapsed = 00:00:00.35 . Memory (MB): peak = 2761.551 ; gain = 0.000 ; free physical = 861 ; free virtual = 3871
+INFO: [Netlist 29-17] Analyzing 2370 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2785.555 ; gain = 0.000 ; free physical = 781 ; free virtual = 3793
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 5e30600f
+INFO: [Common 17-83] Releasing license: Synthesis
+32 Infos, 119 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:02 ; elapsed = 00:00:56 . Memory (MB): peak = 2785.555 ; gain = 32.016 ; free physical = 1005 ; free virtual = 4019
+INFO: [Common 17-1381] The checkpoint '/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/NN_SHIFT/NN_SHIFT.runs/synth_1/simple_nn.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2817.570 ; gain = 32.016 ; free physical = 987 ; free virtual = 4004
+INFO: [runtcl-4] Executing : report_utilization -file simple_nn_utilization_synth.rpt -pb simple_nn_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Dec  3 16:02:29 2023...

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1701635891" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/neuron.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1701637260" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/neuron.dcp">
   <File Type="VDS-TIMING-PB" Name="simple_nn_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="simple_nn_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="simple_nn.dcp"/>
@@ -58,6 +58,8 @@
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="UsedInSteps" Val="synth_1_copy_1"/>
+        <Attr Name="UsedInSteps" Val="synth_1_copy_2"/>
         <Attr Name="AutoDcp" Val="1"/>
       </FileInfo>
     </File>
@@ -69,6 +71,8 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
       <Desc>Vivado Synthesis Defaults</Desc>
     </StratHandle>
-    <Step Id="synth_design"/>
+    <Step Id="synth_design">
+      <Option Id="ReTiming">1</Option>
+    </Step>
   </Strategy>
 </GenRun>

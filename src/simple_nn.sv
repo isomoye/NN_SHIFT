@@ -134,7 +134,7 @@ module simple_nn #(
               .DataWidth(DataWidth),
               .WeigthsWidth(WeigthsWidth),
               .NumOutputs(NumOutputs),
-              .Layer(0)
+              .Layer(1)
           ) neuron_inst (
               .clk_i(clk_i),
               .reset_i(reset_i),

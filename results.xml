@@ -1,6 +1,6 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1701635775" />
-    <testcase name="run_test" classname="test_simple_nn" file="/home/idris/projects/FPGA_VISION/NN_SHIFT/test_simple_nn.py" lineno="51" time="7.153209686279297" sim_time_ns="5506.001" ratio_time="769.7245350658687" />
+    <property name="random_seed" value="1701637716" />
+    <testcase name="run_test" classname="test_simple_nn" file="/home/idris/projects/FPGA_VISION/NN_SHIFT/test_simple_nn.py" lineno="51" time="7.290455102920532" sim_time_ns="5506.001" ratio_time="755.234196256735" />
   </testsuite>
 </testsuites>

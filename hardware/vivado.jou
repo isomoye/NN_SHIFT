@@ -215,3 +215,30 @@ report_utilization -name utilization_1
 reset_run synth_1
 launch_runs synth_1 -jobs 4
 wait_on_run synth_1
+close_design
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_design
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+copy_run -name synth_1_copy_1 [get_runs synth_1] 
+set_property STEPS.SYNTH_DESIGN.ARGS.RETIMING true [get_runs synth_1]
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_design
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+copy_run -name synth_1_copy_2 [get_runs synth_1] 
+set_property board_part digilentinc.com:zybo-z7-20:part0:1.1 [current_project]
+close_design
+open_run synth_1 -name synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_design
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
