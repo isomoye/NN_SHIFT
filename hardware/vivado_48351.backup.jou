@@ -1,0 +1,67 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Fri Dec  8 14:19:29 2023
+# Process ID: 48351
+# Current directory: /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware
+# Command line: vivado
+# Log file: /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/vivado.log
+# Journal file: /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/vivado.jou
+# Running On: idris-HP-EliteBook-840-G3, OS: Linux, CPU Frequency: 2500.000 MHz, CPU Physical cores: 2, Host memory: 16640 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/NN_SHIFT/NN_SHIFT.xpr
+update_compile_order -fileset sources_1
+set_property source_mgmt_mode DisplayOnly [current_project]
+add_files -norecurse -scan_for_includes {/home/idris/projects/FPGA_VISION/NN_SHIFT/src/neurons/neuron_comb.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/multiplier.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/neurons/neuron.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/ram_mux_input.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/sigmoid.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/neurons/neuron_layer.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/neurons/neuron_ram.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/ram_nn.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/ram_mux.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/mult_mux.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/qmult.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/comb_nn.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/simple_nn.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/arbiter.sv}
+export_ip_user_files -of_objects  [get_files /home/idris/projects/FPGA_VISION/NN_SHIFT/src/multiplier.sv] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/idris/projects/FPGA_VISION/NN_SHIFT/src/sigmoid.sv] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv] -no_script -reset -force -quiet
+remove_files  {/home/idris/projects/FPGA_VISION/NN_SHIFT/src/multiplier.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/neuron.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/sigmoid.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/simple_nn.sv}
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top comb_nn [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+export_ip_user_files -of_objects  [get_files /home/idris/projects/FPGA_VISION/NN_SHIFT/src/neurons/neuron.sv] -no_script -reset -force -quiet
+remove_files  /home/idris/projects/FPGA_VISION/NN_SHIFT/src/neurons/neuron.sv
+export_ip_user_files -of_objects  [get_files /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/simple_nn.sv] -no_script -reset -force -quiet
+remove_files  /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/simple_nn.sv
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+export_ip_user_files -of_objects  [get_files /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/ram_nn.sv] -no_script -reset -force -quiet
+remove_files  /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/ram_nn.sv
+export_ip_user_files -of_objects  [get_files /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/multiplier.sv] -no_script -reset -force -quiet
+remove_files  /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/multiplier.sv
+export_ip_user_files -of_objects  [get_files /home/idris/projects/FPGA_VISION/NN_SHIFT/src/neurons/neuron_ram.sv] -no_script -reset -force -quiet
+remove_files  /home/idris/projects/FPGA_VISION/NN_SHIFT/src/neurons/neuron_ram.sv
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+get_board_parts *zub1cg*
+set_param board.repoPaths [list "/home/idris/opt/Xilinx/Vivado/2021.2/data/boards/board_files"]
+xhub::refresh_catalog [xhub::get_xstores xilinx_board_store]
+set_param board.repoPaths {/home/idris/.Xilinx/Vivado/2021.2/xhub/board_store/xilinx_board_store /home/idris/opt/Xilinx/Vivado/2021.2/data/boards/board_files}
+xhub::install [xhub::get_xitems avnet.com:xilinx_board_store:ZUBoard_1CG:1.0]
+close_project
+open_project /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/NN_SHIFT/NN_SHIFT.xpr
+close_project
+xhub::install [xhub::get_xitems tul.com.tw:xilinx_board_store:pynqzu:1.1]
+xhub::refresh_catalog [xhub::get_xstores xilinx_board_store]
+set_param board.repoPaths {/home/idris/opt/Xilinx/Vivado/2021.2/data/boards/board_files}
+xhub::refresh_catalog [xhub::get_xstores xilinx_board_store]
+xhub::refresh_catalog [xhub::get_xstores xilinx_board_store]

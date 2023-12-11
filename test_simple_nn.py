@@ -68,10 +68,12 @@ async def run_test(dut):
 
 
     dut.shift_i.value = 1
+    weights_out = dut.weights_o
 
-    
-    for i in range(2500):
-        dut.weights_i.value = random.randint(-265,256)
+    while str(weights_out.value) == 'z':
+        await RisingEdge(dut.clk_i)
+    for i in range(5500):
+        dut.weights_i.value = random.randint(-128,128)
         await RisingEdge(dut.clk_i)
         
     await RisingEdge(dut.clk_i)
@@ -91,8 +93,9 @@ async def run_test(dut):
     for i in range(len(dut.req_i)):
         dut.req_i[i].value = 1
 
-    count = 0
+    # count = 0
     while(1):
+        await RisingEdge(dut.clk_i)
         flag = 1
         for i in range (int(len(dut.ack_o))):
             if dut.ack_o.value[i] == 0:
@@ -100,42 +103,46 @@ async def run_test(dut):
         if flag == 1:
             dut.req_i = 0
             break
-        await RisingEdge(dut.clk_i)
+    # await RisingEdge(dut.clk_i)
+    # await RisingEdge(dut.clk_i)
+    # dut.actv_i.value = BinaryValue(value=bytes([random.randrange(0, 256) for _ in range(0, int(len(dut.actv_i)/8))]), n_bits=int(len(dut.actv_i)), bigEndian=False)
+    # for i in range(len(dut.req_i)):
+    #     dut.req_i[i].value = 1
     await RisingEdge(dut.clk_i)
-    await RisingEdge(dut.clk_i)
-    dut.actv_i.value = BinaryValue(value=bytes([random.randrange(0, 256) for _ in range(0, int(len(dut.actv_i)/8))]), n_bits=int(len(dut.actv_i)), bigEndian=False)
-    for i in range(len(dut.req_i)):
-        dut.req_i[i].value = 1
+    # sdut.req_i.value = 0
+    # flag = 0
+    # while(1):
+    #     flag = 1
+    #     for i in range (int(len(dut.ack_o))):
+    #         if dut.ack_o.value[i] == 0:
+    #             flag = 0
+    #     if flag == 1:
+    #         dut.req_i = 0
+    #         break
+    #     await RisingEdge(dut.clk_i)
     
-    flag = 0
-    while(1):
-        flag = 1
-        for i in range (int(len(dut.ack_o))):
-            if dut.ack_o.value[i] == 0:
-                flag = 0
-        if flag == 1:
-            dut.req_i = 0
-            break
-        await RisingEdge(dut.clk_i)
-    
-    while(count < 0):
-        if(dut.req_o.value != 0):
-            dut.actv_i.value = BinaryValue(value=bytes([random.randrange(0, 256) for _ in range(0, int(len(dut.actv_i)/8))]), n_bits=int(len(dut.actv_i)), bigEndian=False)
-            for i in range(len(dut.req_i)):
-                dut.req_i[i].value = 1
-            count+= 1
-        await RisingEdge(dut.clk_i)
-        while(1):
-            flag = 1
-            for i in range (int(len(dut.ack_o))):
-                if dut.ack_o.value[i] == 0:
-                    flag = 0
-            if flag == 1:
-                dut.req_i = 0
-                break
+    # while(count < 0):
+    #     if(dut.req_o.value != 0):
+    #         dut.actv_i.value = BinaryValue(value=bytes([random.randrange(0, 256) for _ in range(0, int(len(dut.actv_i)/8))]), n_bits=int(len(dut.actv_i)), bigEndian=False)
+    #         for i in range(len(dut.req_i)):
+    #             dut.req_i[i].value = 1
+    #         count+= 1
+    #     await RisingEdge(dut.clk_i)
+    #     while(1):
+    #         flag = 1
+    #         for i in range (int(len(dut.ack_o))):
+    #             if dut.ack_o.value[i] == 0:
+    #                 flag = 0
+    #         if flag == 1:
+    #             dut.req_i = 0
+    #             break
         
-            
-    for i in range(100):
+    for i in range(10):
+        await RisingEdge(dut.clk_i)
+    
+    
+           
+    for i in range(10000):
         await RisingEdge(dut.clk_i)
         
     

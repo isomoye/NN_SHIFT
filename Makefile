@@ -9,19 +9,31 @@ COCOTB_HDL_TIMEUNIT = 1ns
 COCOTB_HDL_TIMEPRECISION = 1ps
 
 VERILOG_SOURCES = \
-	src/sigmoid.sv \
-	src/multiplier.sv \
-	src/neuron.sv \
-	src/simple_nn.sv \
+	src/common/*.sv \
+	src/maths/mul.sv \
+	src/neurons/neuron.sv \
+	src/neurons/neuron_comb.sv \
+	src/neurons/neuron_ram.sv \
+	src/bram/*.sv \
+	examples/*.v \
 	tb/simple_nn_tb.v
 
 # use VHDL_SOURCES for VHDL files
 
 # TOPLEVEL is the name of the toplevel module in your Verilog or VHDL file
-TOPLEVEL ?= simple_nn_tb
-
+#TOPLEVEL ?= simple_nn_tb
 # MODULE is the basename of the Python test file
 MODULE ?= test_simple_nn
+
+ifeq ($(MODULE), test_neuron)
+	TOPLEVEL = neuron_comb
+else ifeq ($(MODULE), test_comb_nn)
+    TOPLEVEL = comb_nn
+else ifeq ($(MODULE), test_ram_nn)
+    TOPLEVEL = ram_nn
+else
+	TOPLEVEL = simple_nn_tb
+endif
 
 #EXTRA_ARGS += -g2012
 
@@ -50,8 +62,8 @@ include $(shell cocotb-config --makefiles)/Makefile.sim
 iverilog_dump.v:
 	echo 'module iverilog_dump();' > $@
 	echo 'initial begin' >> $@
-	echo '    $$dumpfile("$(TOPLEVEL).fst");' >> $@
-	echo '    $$dumpvars(0, $(TOPLEVEL));' >> $@
+	#echo '    $$dumpfile("$(TOPLEVEL).fst");' >> $@
+	#echo '    $$dumpvars(0, $(TOPLEVEL));' >> $@
 	echo 'end' >> $@
 	echo 'endmodule' >> $@
 
