@@ -95,10 +95,10 @@ module mul #(
     end
 
     // generate waveform file with cocotb
-    `ifdef COCOTB_SIM
-    initial begin
-        $dumpfile($sformatf("%m.vcd"));
-        $dumpvars;
-    end
-    `endif
+    // `ifdef COCOTB_SIM
+    // initial begin
+    //     $dumpfile($sformatf("%m.vcd"));
+    //     $dumpvars;
+    // end
+    // `endif
 endmodule

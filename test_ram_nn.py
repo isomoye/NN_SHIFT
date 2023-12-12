@@ -3,13 +3,12 @@ import cocotb
 import logging
 from cocotb.clock import Clock
 from cocotb.triggers import FallingEdge, RisingEdge, Timer
-from cocotb.regression import TestFactory
 import random
 
 import cocotb_test.simulator
 import pytest
 
-from cocotb.result import TestFailure, ReturnValue
+# from cocotb.result import TestFailure, ReturnValue
 
 
 class TB:
@@ -123,22 +122,25 @@ async def run_test(dut):
   wgt_in_ram_din = dut.wgt_in_ram_din.value
   ram_din_i = dut.ram_din_i.value
   
-  for i in range(10):
+  for i in range(dut.InputWidth.value):
     await write_ram(dut, i, int(random.getrandbits(8)))
-    await RisingEdge(dut.clk_i)
     
   
-  for i in range(10):
+  for i in range(dut.InputWgtWidth.value):
     await write_ram_wgt(dut, i, int(random.getrandbits(8)))
-    await RisingEdge(dut.clk_i)
     
   dut.ram_index_i.value = 1
-  for i in range(10):
+  for i in range(dut.InputWgtWidth.value):
     await write_ram_wgt(dut, i, int(random.getrandbits(8)))
     await RisingEdge(dut.clk_i)
     
-  for i in range(10000):
+  for i in range(10):
     await RisingEdge(dut.clk_i)    
+    
+  dut.req_i.value = 1
+  
+  for i in range(9000):
+    await RisingEdge(dut.clk_i)     
 
 
 # Register the test.

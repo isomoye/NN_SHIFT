@@ -15,7 +15,7 @@ module neuron_ram #(
     input logic clk_i,
     input logic reset_i,
     //downstream ram signals
-    output logic [$clog2(DataWidth)-1:0] in_actv_addr_o,
+    output logic [$clog2(NumInputs)-1:0] in_actv_addr_o,
     output logic in_actv_we_o,
     input logic [DataWidth-1 : 0] in_actv_din_i,
     output logic [DataWidth-1 : 0] in_actv_dout_o,
@@ -25,7 +25,7 @@ module neuron_ram #(
     input logic [DataWidth-1 : 0] wgt_din_i,
     output logic [DataWidth-1 : 0] wgt_dout_o,
     //uptream ram signals
-    output logic [$clog2(DataWidth)-1:0] out_actv_addr_o,
+    output logic [$clog2(NeuronsPerLayer)-1:0] out_actv_addr_o,
     output logic out_actv_we_o,
     input logic [DataWidth-1 : 0] out_actv_din_i,
     output logic [DataWidth-1 : 0] out_actv_dout_o,
@@ -41,8 +41,11 @@ module neuron_ram #(
     //forward propagation
     // input logic [(DataWidth*NumInputs)-1:0] actv_i,
     // output logic [DataWidth-1 : 0] actv_o,
-    input logic start_i,
-    output logic done_o,
+    input logic req_i,
+    output logic ack_o,
+
+    output  logic req_o,
+    input logic ack_i,
 
     input  logic mult_done_i,
     input  logic mult_busy_i,
@@ -50,8 +53,8 @@ module neuron_ram #(
     input  logic mult_grant_i,
     output logic mult_req_o,
 
-    output logic [(DataWidth)-1:0] mult_a_o,
-    output logic [(DataWidth)-1:0] mult_b_o,
+    output logic [  (DataWidth)-1:0] mult_a_o,
+    output logic [  (DataWidth)-1:0] mult_b_o,
     input  logic [(DataWidth*2)-1:0] mult_result_i
 
     //shift in
@@ -94,9 +97,9 @@ module neuron_ram #(
     ST_IDLE,
     ST_GET_KEY,
     ST_GET_INPUTS,
-    ST_GET_BIAS,
     ST_GET_MULT,
     ST_WAIT_MULT,
+    ST_GET_BIAS,
     ST_GET_ACTV,
     ST_GET_SIGMOID,
     ST_OUTPUT
@@ -127,60 +130,53 @@ module neuron_ram #(
       in_actv_req_o <= '0;
       out_actv_req_o <= '0;
       wgt_req_o <= '0;
-      done_o <= '0;
+      ack_o <= '0;
+      sum <= '0;
       //ram signals
     end else begin
       case (state)
         //idle state
         ST_IDLE: begin
-          if (start_i) begin
+          if (req_i) begin
             in_actv_req_o <= '1;
+            ack_o <= '1;
             wgt_req_o <= '1;
             counter <= '0;
             state <= ST_GET_KEY;
           end
         end
         ST_GET_KEY: begin
+          ack_o <= '0;
           if (in_actv_grant_i && wgt_grant_i) begin
-            if (counter == '0) begin
-              state <= ST_GET_BIAS;
-              counter <= counter + 1;
-            end
-            else begin
-              state <= ST_GET_INPUTS;
-            end
+            state <= ST_GET_INPUTS;
           end
         end
-        ST_GET_BIAS: begin
-          //store bias
-          sum <= wgt_din_i;
-          state <= ST_GET_INPUTS;
-        end
         ST_GET_INPUTS: begin
-            mult_a_o <= wgt_din_i;
-            mult_b_o <= in_actv_din_i;
-            in_actv_req_o <= '0;
-            wgt_req_o <= '0;
-            mult_req_o <= '1;
-            mult_start_o <= '1;
-            state <= ST_GET_MULT;
+          mult_a_o <= wgt_din_i;
+          mult_b_o <= in_actv_din_i;
+          in_actv_req_o <= '0;
+          wgt_req_o <= '0;
+          mult_req_o <= '1;
+          mult_start_o <= '1;
+          state <= ST_GET_MULT;
         end
         //get multiplier mutex key
         ST_GET_MULT: begin
-          if(mult_grant_i) begin
-            mult_start_o <= '0;
+          if (mult_grant_i) begin
+            mult_start_o <= '1;
             state <= ST_WAIT_MULT;
           end
         end
         ST_WAIT_MULT: begin
-          if(mult_done_i) begin
+          mult_start_o <= '1;
+          if (mult_done_i) begin
             sum <= sum + mult_result_i;
             mult_req_o <= '0;
             if (counter >= NumInputs - 1) begin
-              state <= ST_GET_ACTV;
+              state <= ST_GET_BIAS;
               out_actv_req_o <= '1;
-            end
-            else begin
+              counter <= counter + 1;
+            end else begin
               in_actv_req_o <= '1;
               wgt_req_o <= '1;
               counter <= counter + 1;
@@ -188,11 +184,20 @@ module neuron_ram #(
             end
           end
         end
+        ST_GET_BIAS: begin
+          //store bias
+          counter <= '0;
+          sum <= sum + wgt_din_i;
+          out_actv_req_o <= '1;
+          state <= ST_GET_ACTV;
+        end
         //wait for multipler done
         ST_GET_ACTV: begin
           out_actv_dout_o <= afterActivation;
           if (out_actv_grant_i) begin
             out_actv_we_o <= '1;
+            //ack_o <= '1;
+            req_o <= '1;
             state <= ST_OUTPUT;
           end
         end
@@ -201,7 +206,11 @@ module neuron_ram #(
           in_actv_we_o <= '0;
           out_actv_we_o <= '0;
           out_actv_req_o <= '0;
-          state <= ST_IDLE;
+          ack_o <= '0;
+          if (ack_i) begin
+            state <= ST_IDLE;
+            req_o <= '0;
+          end
         end
         default: begin
         end
@@ -220,10 +229,10 @@ module neuron_ram #(
   else begin: gen_relu
     assign afterActivation = (signed'(sum) > 0) ? sum : '0;
   end
-  assign out_o = afterActivation;
+  // assign out_o = afterActivation;
 
-  assign in_actv_addr_o = StartAddress + counter;
-  assign wgt_addr_o = counter -1;
+  assign in_actv_addr_o = counter;
+  assign wgt_addr_o = StartAddress + counter;
   assign out_actv_addr_o = NeuronInstance;
 
 endmodule
