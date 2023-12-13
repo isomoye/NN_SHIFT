@@ -89,9 +89,9 @@ async def run_test(dut):
   dut.wgt_in_ram_we = 0
   dut.wgt_in_ram_dout = 0
   dut.ram_index_i = 0
-  dut.ram_addr_o = 0
-  dut.ram_we_o = 0
-  dut.ram_dout_o = 0    
+  # dut.ram_addr_o = 0
+  # dut.ram_we_o = 0
+  # dut.ram_dout_o = 0    
 
   await tb.reset()
 
@@ -100,7 +100,7 @@ async def run_test(dut):
   ack_o = dut.ack_o.value
   actv_in_ram_din = dut.actv_in_ram_din.value
   wgt_in_ram_din = dut.wgt_in_ram_din.value
-  ram_din_i = dut.ram_din_i.value
+  # ram_din_i = dut.ram_din_i.value
 
 
   # dut.clk_i = 0
@@ -120,7 +120,7 @@ async def run_test(dut):
   ack_o = dut.ack_o.value
   actv_in_ram_din = dut.actv_in_ram_din.value
   wgt_in_ram_din = dut.wgt_in_ram_din.value
-  ram_din_i = dut.ram_din_i.value
+  # ram_din_i = dut.ram_din_i.value
   
   for i in range(dut.InputWidth.value):
     await write_ram(dut, i, int(random.getrandbits(8)))
