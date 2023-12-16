@@ -6,4 +6,4 @@
 # Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 #
 
-vivado -log comb_nn.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source comb_nn.tcl
+vivado -log ram_nn.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ram_nn.tcl

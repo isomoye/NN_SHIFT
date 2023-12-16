@@ -7,16 +7,20 @@ module ram_nn #(
     parameter int NumHiddenLayer = 1,
     parameter int NeuronsPerHiddenLayer = 4,
     parameter int NumOutputLayer = 4,
-    parameter int EnableHiddenLayer = 0,
+    parameter int EnableHiddenLayer = 1,
     parameter int AddrWidth = $clog2(InputWidth),
-    localparam int InputWgtWidth = (InputWidth + 1) * NumInputLayer,
-    localparam int InputWgtAddrWidth = $clog2(InputWgtWidth)
+    parameter int InputWgtWidth = (InputWidth + 1) * NumInputLayer,
+    parameter int InputWgtAddrWidth = $clog2(InputWgtWidth)
 ) (
     input logic clk_i,
     input logic reset_i,
 
     input  logic                           req_i,
     output logic                           ack_o,
+    output logic                           req_o,
+    input  logic                           ack_i,
+    input  logic                           ready_i,
+    output logic                           ready_o,
     //actv inputs
     input  logic                           actv_in_ram_we,
     input  logic [        (AddrWidth)-1:0] actv_in_ram_addr,
@@ -62,9 +66,16 @@ module ram_nn #(
 
   logic [  NumLayers:0]                    request;
   logic [  NumLayers:0]                    ack;
+  logic [  NumLayers:0]                    ready_in;
+  logic [  NumLayers:0]                    ready_out;
 
   assign request[0]                     = req_i;
-  assign ack_o                          = ack[NumLayers];
+  assign ack_o                          = ack[0];
+  assign ack[NumLayers]                         = ack_i;
+  assign ready_in[NumLayers]                    = ready_i;
+  assign ready_o                        = ready_in[0];
+  assign req_o                          = request[NumLayers];
+
   assign top_actv_in_ram_addr[0]        = actv_in_ram_addr;
   assign top_actv_in_ram_we[0]          = actv_in_ram_we;
   assign actv_in_ram_dout               = top_actv_in_ram_din[0];
@@ -113,6 +124,8 @@ module ram_nn #(
           .ack_o            (ack[i]),
           .req_o            (request[i+1]),
           .ack_i            (ack[i+1]),
+          .ready_i          (ready_in[i+1]),
+          .ready_o          (ready_in[i]),
           .actv_in_ram_we   (top_actv_in_ram_we[i]),
           .actv_in_ram_addr (top_actv_in_ram_addr[i]),
           .actv_in_ram_din  (top_actv_in_ram_dout[i]),
@@ -132,8 +145,8 @@ module ram_nn #(
          NumOutputLayer : NeuronsPerHiddenLayer;
       localparam int NumInputs = (i == (NumHiddenLayer - 1)) ?
         NumInputLayer : NeuronsPerHiddenLayer;
-      parameter int HiddenNumInputLayer = EnableHiddenLayer ? NumInputs : NumInputLayer;
-      parameter int HiddenNeuronsInLayer = EnableHiddenLayer ? NumOutputs : NumOutputLayer;
+      localparam int HiddenNumInputLayer = EnableHiddenLayer ? NumInputs : NumInputLayer;
+      localparam int HiddenNeuronsInLayer = EnableHiddenLayer ? NumOutputs : NumOutputLayer;
 
       ram_nn_layer #(
           .NumInputLayer  (HiddenNumInputLayer),
@@ -149,6 +162,8 @@ module ram_nn #(
           .ack_o            (ack[i]),
           .req_o            (request[i+1]),
           .ack_i            (ack[i+1]),
+          .ready_i          (ready_in[i+1]),
+          .ready_o          (ready_in[i]),
           .actv_in_ram_we   (top_actv_in_ram_we[i]),
           .actv_in_ram_addr (top_actv_in_ram_addr[i]),
           .actv_in_ram_din  (top_actv_in_ram_dout[i]),

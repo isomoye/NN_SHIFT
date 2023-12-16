@@ -1,8 +1,10 @@
+
+
 module mult_mux #(
     parameter  int NUM_PORTS = 6,
-    parameter int SEL_WIDTH = ((NUM_PORTS > 1) ? $clog2(NUM_PORTS) : 1),
+    parameter  int SEL_WIDTH = ((NUM_PORTS > 1) ? $clog2(NUM_PORTS) : 1),
     parameter  int DataWidth = 8,
-    parameter int AddrWidth = $clog2(DataWidth)
+    parameter  int AddrWidth = $clog2(DataWidth)
 
 ) (
     //grant in
@@ -13,7 +15,7 @@ module mult_mux #(
     input logic [(DataWidth*NUM_PORTS)-1:0] mult_a_i,
     input logic [(DataWidth*NUM_PORTS)-1:0] mult_b_i,
     output logic [(DataWidth*2)-1:0] result_o,
-
+    //mult output
     output logic [DataWidth-1:0] mult_a_o,
     output logic [DataWidth-1:0] mult_b_o,
     input logic [DataWidth-1:0] value_i,

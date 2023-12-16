@@ -24,3 +24,13 @@ model.fit(x_train, y_train, epochs=10)
 
 # Evaluate the model
 model.evaluate(x_test, y_test)
+
+
+# Save the model's weights to CSV
+model.save_weights('my_model_weights.csv')
+
+model.save('model_03Mar.h5')
+
+# Save the model's architecture to CSV
+with open('my_model_architecture.json', 'w') as f:
+  f.write(model.to_json())

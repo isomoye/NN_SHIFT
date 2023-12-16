@@ -15,6 +15,7 @@ VERILOG_SOURCES = \
 	src/neurons/neuron_comb.sv \
 	src/neurons/neuron_ram.sv \
 	src/bram/*.sv \
+	src/convolution/*.sv \
 	examples/*.v \
 	tb/simple_nn_tb.v
 
@@ -31,6 +32,8 @@ else ifeq ($(MODULE), test_comb_nn)
     TOPLEVEL = comb_nn
 else ifeq ($(MODULE), test_ram_nn)
     TOPLEVEL = ram_nn
+else ifeq ($(MODULE), test_2d_conv)
+    TOPLEVEL = convo_2d
 else
 	TOPLEVEL = simple_nn_tb
 endif

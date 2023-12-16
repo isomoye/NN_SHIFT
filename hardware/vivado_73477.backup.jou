@@ -1,0 +1,59 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Fri Dec  8 16:09:18 2023
+# Process ID: 73477
+# Current directory: /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware
+# Command line: vivado
+# Log file: /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/vivado.log
+# Journal file: /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/vivado.jou
+# Running On: idris-HP-EliteBook-840-G3, OS: Linux, CPU Frequency: 2500.000 MHz, CPU Physical cores: 2, Host memory: 16640 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/idris/projects/codesign_project_test/Vivado/KMeans_Zybo_Verilog/KMeans.xpr
+update_compile_order -fileset sources_1
+add_files -norecurse -scan_for_includes {/home/idris/projects/codesign_project_test/Verilog/kmeans/qdiv.sv /home/idris/projects/codesign_project_test/Verilog/kmeans/qmult.sv}
+update_compile_order -fileset sources_1
+update_module_reference design_1_Top_0_0
+update_module_reference design_1_Top_0_0
+launch_simulation
+open_wave_config /home/idris/projects/codesign_project_test/Vivado/KMeans_Zybo_Verilog/Kmeans_tb_behav.wcfg
+source Kmeans_tb.tcl
+run all
+current_wave_config {Kmeans_tb_behav.wcfg}
+add_wave {{/Kmeans_tb/Kmeans_inst/clk_i}} {{/Kmeans_tb/Kmeans_inst/reset_i}} {{/Kmeans_tb/Kmeans_inst/start_i}} {{/Kmeans_tb/Kmeans_inst/ready_o}} {{/Kmeans_tb/Kmeans_inst/Kmeans_Err_o}} {{/Kmeans_tb/Kmeans_inst/IO_BRAM_addr_o}} {{/Kmeans_tb/Kmeans_inst/IO_BRAM_dout_o}} {{/Kmeans_tb/Kmeans_inst/IO_BRAM_din_i}} {{/Kmeans_tb/Kmeans_inst/IO_BRAM_we_o}} {{/Kmeans_tb/Kmeans_inst/DC_BRAM_addr_o}} {{/Kmeans_tb/Kmeans_inst/DC_BRAM_dout_o}} {{/Kmeans_tb/Kmeans_inst/DC_BRAM_din_i}} {{/Kmeans_tb/Kmeans_inst/DC_BRAM_we_o}} {{/Kmeans_tb/Kmeans_inst/Num_Vals_i}} {{/Kmeans_tb/Kmeans_inst/Num_Clusters_i}} {{/Kmeans_tb/Kmeans_inst/Num_Dims_i}} {{/Kmeans_tb/Kmeans_inst/curr_state}} {{/Kmeans_tb/Kmeans_inst/next_state}} {{/Kmeans_tb/Kmeans_inst/ready_c}} {{/Kmeans_tb/Kmeans_inst/ready_r}} {{/Kmeans_tb/Kmeans_inst/start_c}} {{/Kmeans_tb/Kmeans_inst/start_r}} {{/Kmeans_tb/Kmeans_inst/cluster_cnt_c}} {{/Kmeans_tb/Kmeans_inst/cluster_cnt_r}} {{/Kmeans_tb/Kmeans_inst/point_count_c}} {{/Kmeans_tb/Kmeans_inst/point_count_r}} {{/Kmeans_tb/Kmeans_inst/byte_count_c}} {{/Kmeans_tb/Kmeans_inst/byte_count_r}} {{/Kmeans_tb/Kmeans_inst/iter_c}} {{/Kmeans_tb/Kmeans_inst/iter_r}} {{/Kmeans_tb/Kmeans_inst/points_c}} {{/Kmeans_tb/Kmeans_inst/points_r}} {{/Kmeans_tb/Kmeans_inst/cluster_centers_c}} {{/Kmeans_tb/Kmeans_inst/cluster_centers_r}} {{/Kmeans_tb/Kmeans_inst/new_centers_c}} {{/Kmeans_tb/Kmeans_inst/new_centers_r}} {{/Kmeans_tb/Kmeans_inst/sums_c}} {{/Kmeans_tb/Kmeans_inst/sums_r}} {{/Kmeans_tb/Kmeans_inst/active_cluster_c}} {{/Kmeans_tb/Kmeans_inst/active_cluster_r}} {{/Kmeans_tb/Kmeans_inst/cluster_mem_cnt_c}} {{/Kmeans_tb/Kmeans_inst/cluster_mem_cnt_r}} {{/Kmeans_tb/Kmeans_inst/closest_dist_c}} {{/Kmeans_tb/Kmeans_inst/closest_dist_r}} {{/Kmeans_tb/Kmeans_inst/best_index_c}} {{/Kmeans_tb/Kmeans_inst/best_index_r}} {{/Kmeans_tb/Kmeans_inst/dist_count_r}} {{/Kmeans_tb/Kmeans_inst/dist_count_c}} {{/Kmeans_tb/Kmeans_inst/fraction_a}} {{/Kmeans_tb/Kmeans_inst/fraction_b}} {{/Kmeans_tb/Kmeans_inst/converged_c}} {{/Kmeans_tb/Kmeans_inst/converged_r}} {{/Kmeans_tb/Kmeans_inst/data_a}} {{/Kmeans_tb/Kmeans_inst/data_b}} {{/Kmeans_tb/Kmeans_inst/result_a}} {{/Kmeans_tb/Kmeans_inst/result_b}} {{/Kmeans_tb/Kmeans_inst/ovfl_a}} {{/Kmeans_tb/Kmeans_inst/ovfl_b}} {{/Kmeans_tb/Kmeans_inst/div_a}} {{/Kmeans_tb/Kmeans_inst/div_b}} {{/Kmeans_tb/Kmeans_inst/start_div}} {{/Kmeans_tb/Kmeans_inst/done_div_a}} {{/Kmeans_tb/Kmeans_inst/done_div_b}} {{/Kmeans_tb/Kmeans_inst/mult_res_a}} {{/Kmeans_tb/Kmeans_inst/mult_res_b}} {{/Kmeans_tb/Kmeans_inst/diff}} {{/Kmeans_tb/Kmeans_inst/K}} {{/Kmeans_tb/Kmeans_inst/MAX_ITER}} 
+restart
+run 10 us
+run 10 us
+restart
+run 10 us
+current_wave_config {Kmeans_tb_behav.wcfg}
+add_wave {{/Kmeans_tb/Kmeans_inst/qmult_inst_a/i_multiplicand}} {{/Kmeans_tb/Kmeans_inst/qmult_inst_a/i_multiplier}} {{/Kmeans_tb/Kmeans_inst/qmult_inst_a/o_result}} {{/Kmeans_tb/Kmeans_inst/qmult_inst_a/ovr}} {{/Kmeans_tb/Kmeans_inst/qmult_inst_a/r_result}} {{/Kmeans_tb/Kmeans_inst/qmult_inst_a/r_RetVal}} {{/Kmeans_tb/Kmeans_inst/qmult_inst_a/Q}} {{/Kmeans_tb/Kmeans_inst/qmult_inst_a/N}} 
+restart
+run 10 us
+update_compile_order -fileset sources_1
+restart
+run 10 us
+relaunch_sim
+relaunch_sim
+restart
+run 10 us
+current_wave_config {Kmeans_tb_behav.wcfg}
+add_wave {{/Kmeans_tb/Kmeans_inst/data_b}} 
+relaunch_sim
+current_wave_config {Kmeans_tb_behav.wcfg}
+add_wave {{/Kmeans_tb/Kmeans_inst/curr_state}} {{/Kmeans_tb/Kmeans_inst/next_state}} 
+run all
+reset_run synth_1
+update_module_reference design_1_Top_0_0
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+report_utilization -name utilization_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+close_design
+open_run impl_1

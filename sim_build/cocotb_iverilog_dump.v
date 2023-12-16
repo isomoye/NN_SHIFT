@@ -1,6 +1,6 @@
 module cocotb_iverilog_dump();
 initial begin
-    $dumpfile("sim_build/ram_nn.fst");
-    $dumpvars(0, ram_nn);
+    $dumpfile("sim_build/convo_2d.fst");
+    $dumpvars(0, convo_2d);
 end
 endmodule

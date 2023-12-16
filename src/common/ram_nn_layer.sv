@@ -14,9 +14,11 @@ module ram_nn_layer #(
     //upstream handshake
     input  logic                           req_i,
     output logic                           ack_o,
+    output logic                           ready_o,
     //downstream handshake
     output logic                           req_o,
     input  logic                           ack_i,
+    input  logic                           ready_i,
     //actv inputs
     input  logic                           actv_in_ram_we,
     input  logic [        (AddrWidth)-1:0] actv_in_ram_addr,
@@ -73,7 +75,9 @@ module ram_nn_layer #(
 
   logic [$clog2(NumNeuronsLayer)-1:0] wgt_select;
   logic wgt_active;
-  logic [NumNeuronsLayer-1:0] layer_done;
+  logic [NumNeuronsLayer-1:0] layer_ready_out;
+  logic [NumNeuronsLayer-1:0] layer_ready_in;
+  logic [NumNeuronsLayer-1:0] layer_ack;
   logic [NumNeuronsLayer-1:0] layer_req;
 
 
@@ -91,7 +95,6 @@ module ram_nn_layer #(
   logic [NumNeuronsLayer-1:0][(DataWidth)-1 : 0] mult_b_array ;
   logic [(DataWidth)-1 : 0] mult_a;
   logic [(DataWidth)-1 : 0] mult_b;
-  //   logic [        (DataWidth)-1 : 0]                    mult_out;
   logic [(DataWidth)-1 : 0] mult_result;
   logic mult_ovfl;
   logic mult_start;
@@ -105,7 +108,9 @@ module ram_nn_layer #(
 
 
   assign req_o = &layer_req;
-  assign ack_o = &layer_done;
+  assign ack_o = &layer_ack;
+  assign ready_o = &layer_ready_out;
+  //assign ready_i = &layer_ready_in;
 
   arbiter #(
       .NUM_PORTS(NumNeuronsLayer),
@@ -233,24 +238,6 @@ module ram_nn_layer #(
       .ram_dout_o(actv_out_ram_dout)
   );
 
-//   bram_dp #(
-//       .RAM_DATA_WIDTH(DataWidth),
-//       .RAM_ADDR_WIDTH(AddrWidth)
-//   ) actv_o_bram_dp_inst (
-//       .rst       (reset_i),
-//       .a_clk     (clk_i),
-//       .a_wr      (layer_actv_out_ram_we),
-//       .a_addr    (layer_actv_out_ram_addr),
-//       .a_data_in (layer_actv_out_ram_dout),
-//       .a_data_out(layer_actv_out_ram_din),
-//       .b_clk     (clk_i),
-//       .b_wr      (actv_out_ram_addr),
-//       .b_addr    (actv_out_ram_we),
-//       .b_data_in (actv_out_ram_dout),
-//       .b_data_out(actv_out_ram_din)
-//   );
-
-
 
   arbiter #(
       .NUM_PORTS(NumNeuronsLayer),
@@ -332,7 +319,9 @@ module ram_nn_layer #(
         .out_actv_req_o  (layer_array_actv_out_req[j]),
         .out_actv_grant_i(layer_array_actv_out_grant[j]),
         .req_i           (req_i),
-        .ack_o           (layer_done[j]),
+        .ack_o           (layer_ack[j]),
+        .ready_o          (layer_ready_out[j]),
+        .ready_i          (ready_i),
         .req_o           (layer_req[j]),
         .ack_i           (ack_i),
         .mult_done_i     (mult_done),

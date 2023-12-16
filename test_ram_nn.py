@@ -89,6 +89,8 @@ async def run_test(dut):
   dut.wgt_in_ram_we = 0
   dut.wgt_in_ram_dout = 0
   dut.ram_index_i = 0
+  dut.ready_i = 1
+  dut.ack_i.value = 0
   # dut.ram_addr_o = 0
   # dut.ram_we_o = 0
   # dut.ram_dout_o = 0    
@@ -134,12 +136,31 @@ async def run_test(dut):
     await write_ram_wgt(dut, i, int(random.getrandbits(8)))
     await RisingEdge(dut.clk_i)
     
+    
+  dut.ram_index_i.value = 2
+  for i in range(dut.InputWgtWidth.value):
+    await write_ram_wgt(dut, i, int(random.getrandbits(8)))
+    await RisingEdge(dut.clk_i)
+    
+    
   for i in range(10):
     await RisingEdge(dut.clk_i)    
-    
-  dut.req_i.value = 1
+
+  # while(dut.ready_o.value == 0):
+  #   await RisingEdge(dut.clk_i)
   
-  for i in range(9000):
+  dut.req_i.value = 1
+  await RisingEdge(dut.clk_i)
+  
+  # while(dut.ack_o.value == 0):
+  #   await RisingEdge(dut.clk_i)
+  dut.req_i.value = 0
+  
+  
+  
+  while(dut.req_o.value == 0):
+    await RisingEdge(dut.clk_i)
+  for i in range(1500):
     await RisingEdge(dut.clk_i)     
 
 
