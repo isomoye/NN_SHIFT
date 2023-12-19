@@ -1,8 +1,0 @@
-#
-# An unexpected error has occurred (11)
-#
-Stack:
-/home/idris/opt/Xilinx/Vivado/2023.2/tps/lnx64/jre17.0.7_7/lib//server/libjvm.so(+0xd8797f) [0x7f59e2e8f97f]
-/home/idris/opt/Xilinx/Vivado/2023.2/tps/lnx64/jre17.0.7_7/lib//server/libjvm.so(JVM_handle_linux_signal+0x24e) [0x7f59e2e9046e]
-/lib/x86_64-linux-gnu/libc.so.6(+0x43090) [0x7f5a1e170090]
-[0x41233880]
