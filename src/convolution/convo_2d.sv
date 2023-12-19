@@ -1,13 +1,14 @@
 module convo_2d #(
-    parameter int ConvoWidth = 4,
-    parameter int ConvoHeight = 4,
-    parameter int DataSizeW = 16,
-    parameter int DataSizeH = 16,
-    parameter int NumInputs = 4,
-    parameter int DataWidth = 8,
+    parameter int ConvoWidth        = 4,
+    parameter int ConvoHeight       = 4,
+    parameter int DataSizeW         = 16,
+    parameter int DataSizeH         = 16,
+    parameter int NumInputs         = 4,
+    parameter int DataWidth         = 8,
+    parameter int Instance          = 0,
     parameter int AddrWidth         = $clog2(DataSizeW * DataSizeH),
     parameter int InputWgtAddrWidth = $clog2(ConvoWidth * ConvoHeight),
-    parameter int WeigthsWidth = DataWidth
+    parameter int WeigthsWidth      = DataWidth
 ) (
     input  logic clk_i,
     input  logic reset_i,
@@ -22,14 +23,14 @@ module convo_2d #(
     output logic ready_o,
 
     //actv inputs
-    output  logic                     actv_in_ram_we,
-    output  logic [  (AddrWidth)-1:0] actv_in_ram_addr,
+    output logic                     actv_in_ram_we,
+    output logic [  (AddrWidth)-1:0] actv_in_ram_addr,
     input  logic [(DataWidth)-1 : 0] actv_in_ram_din,
     output logic [(DataWidth)-1 : 0] actv_in_ram_dout,
 
     //ram inputs
-    output  logic [(InputWgtAddrWidth)-1:0] wgt_in_ram_addr,
-    output  logic                           wgt_in_ram_we,
+    output logic [(InputWgtAddrWidth)-1:0] wgt_in_ram_addr,
+    output logic                           wgt_in_ram_we,
     input  logic [      (DataWidth)-1 : 0] wgt_in_ram_din,
     output logic [      (DataWidth)-1 : 0] wgt_in_ram_dout,
 
@@ -64,6 +65,8 @@ module convo_2d #(
 
   localparam int KCenterX = ConvoWidth / 2;
   localparam int KCenterY = ConvoHeight / 2;
+
+  localparam int StartWeightAddr = InputWgtAddrWidth * Instance;
   // int kCenterX = MASK_WIDTH2 / 2;
   // int kCenterY = MASK_WIDTH1 / 2;
 
@@ -95,6 +98,8 @@ module convo_2d #(
   logic [31:0] start_x;
   logic [31:0] start_y;
 
+  logic [31:0] cnt_x_center;
+  logic [31:0] cnt_y_center;
   always_ff @(posedge clk_i) begin
     if (reset_i) begin
       state <= ST_IDLE;
@@ -132,7 +137,7 @@ module convo_2d #(
             ready_o <= '0;
             //addresses
             actv_in_ram_addr <= '0;
-            wgt_in_ram_addr <= '0;
+            wgt_in_ram_addr <= StartWeightAddr;
             actv_out_ram_addr <= '0;
 
             state <= ST_WAIT_REQ;
@@ -142,6 +147,8 @@ module convo_2d #(
           if (!req_i) begin
             ack_o <= '0;
             if (in_actv_grant_i && wgt_grant_i) begin
+              cnt_x_center <= cnt_x + KCenterX;
+              cnt_y_center <= cnt_y + KCenterY;
               state <= ST_GET_VALUES;
             end else begin
               state <= ST_GET_KEY;
@@ -151,12 +158,16 @@ module convo_2d #(
         ST_GET_KEY: begin
           ack_o <= '0;
           if (in_actv_grant_i && wgt_grant_i) begin
+            cnt_x_center <= start_x + KCenterX;
+            cnt_y_center <= start_y + KCenterY;
             state <= ST_GET_VALUES;
           end
         end
         ST_GET_VALUES: begin
-          if((cnt_x < KCenterX) || ((cnt_x+ KCenterX)>DataSizeW)
-          || (cnt_y < KCenterY) || ((cnt_y + KCenterY)>DataSizeH)) begin
+          if(((start_x < KCenterX) && (cnt_x < KCenterX)) ||
+          ((cnt_x_center >= DataSizeW-1) && (cnt_x > KCenterX)) ||
+          ((start_y < KCenterY) && (cnt_y < KCenterY)) ||
+          ( (cnt_y_center >= DataSizeH-1) && (cnt_y > KCenterY))) begin
             //skip
             state <= ST_CHECK_INDEX;
           end else begin
@@ -178,7 +189,13 @@ module convo_2d #(
         ST_GET_MULT: begin
           if (mult_grant_i) begin
             mult_start_o <= '0;
-            state <= ST_WAIT_MULT;
+            if (mult_done_i) begin
+              sum <= sum + mult_result_i;
+              mult_req_o <= '0;
+              state <= ST_CHECK_INDEX;
+            end else begin
+              state <= ST_WAIT_MULT;
+            end
           end
         end
         ST_WAIT_MULT: begin
@@ -199,49 +216,52 @@ module convo_2d #(
           end else if (cnt_x == (ConvoWidth - 1)) begin
             cnt_x <= '0;
             cnt_y <= cnt_y + 1;
+            in_actv_req_o <= '1;
             state <= ST_ADDRESS;
           end else begin
             cnt_x <= cnt_x + 1;
+            in_actv_req_o <= '1;
             state <= ST_ADDRESS;
           end
         end
         ST_ADDRESS: begin
           //x * SIZE_Y + y
-          actv_in_ram_we <= '0;
-          wgt_in_ram_addr <= (cnt_y * ConvoWidth) + cnt_x;
-          actv_in_ram_addr <= (((cnt_y + start_y) * DataSizeW)) + (cnt_x + start_x);
+          actv_out_ram_we <= '0;
+          wgt_in_ram_addr <= StartWeightAddr + ((cnt_y * ConvoWidth) + cnt_x);
+          actv_in_ram_addr <= (((cnt_y + (start_y-KCenterY)) * DataSizeW)) + 
+          (cnt_x + (start_x-KCenterX));
           in_actv_req_o <= '1;
           wgt_req_o <= '1;
           state <= ST_GET_KEY;
         end
         ST_CHECK_IMG_INDEX: begin
-          if ((start_x == DataSizeW - 1) && (start_y == DataSizeH - 1)) begin
+          if ((start_x >= DataSizeW - 1) && (start_y >= DataSizeH - 1)) begin
             ready_o <= '1;
             state   <= ST_OUTPUT;
             req_o   <= '1;
           end else if (start_x == DataSizeW - 1) begin
             start_x <= '0;
             start_y <= start_y + 1;
-            state <= ST_WAIT_READY;
+            state   <= ST_WAIT_READY;
           end else begin
             start_x <= start_x + 1;
-            state <= ST_WAIT_READY;
+            state   <= ST_WAIT_READY;
           end
         end
         ST_WAIT_READY: begin
           if (ready_i && out_actv_grant_i) begin
             state <= ST_ADDRESS;
             actv_out_ram_addr <= (start_y * DataSizeW) + start_x;
-            actv_in_ram_we <= '1;
-            actv_in_ram_dout <= sum;
+            actv_out_ram_we <= '1;
+            actv_out_ram_dout <= sum;
             sum <= '0;
             out_actv_req_o <= '0;
           end
         end
         //req to upstream.. wait till acked
         ST_OUTPUT: begin
-          actv_in_ram_we   <= '0;
-          actv_out_ram_we  <= '0;
+          actv_in_ram_we <= '0;
+          actv_out_ram_we <= '0;
           out_actv_req_o <= '0;
           cnt_x <= '0;
           cnt_y <= '0;

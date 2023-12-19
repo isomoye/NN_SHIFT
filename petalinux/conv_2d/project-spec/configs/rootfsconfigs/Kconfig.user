@@ -1,0 +1,18 @@
+menu "user packages " 
+config gpio-demo  
+	 bool "gpio-demo"
+	 help
+	
+config peekpoke  
+	 bool "peekpoke"
+	 help
+	
+config xvc-driver  
+	 bool "xvc-driver"
+	 help
+	
+config xvcServer  
+	 bool "xvcServer"
+	 help
+	
+endmenu

@@ -1,0 +1,624 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Sat Dec 16 16:39:22 2023
+# Process ID: 229961
+# Current directory: /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware
+# Command line: vivado
+# Log file: /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/vivado.log
+# Journal file: /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/vivado.jou
+# Running On: idris-HP-EliteBook-840-G3, OS: Linux, CPU Frequency: 2500.000 MHz, CPU Physical cores: 2, Host memory: 16640 MB
+#-----------------------------------------------------------
+start_gui
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.1/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.1/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.1/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.1/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+set_param board.repoPaths {/home/idris/opt/Xilinx/Vivado/2023.2/data/boards/board_files}
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.1/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.1/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.1/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+create_project convo_2d /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d -part xc7z010clg400-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/idris/opt/Xilinx/Vivado/2023.2/data/ip'.
+create_project: Time (s): cpu = 00:00:22 ; elapsed = 00:00:12 . Memory (MB): peak = 7838.031 ; gain = 235.660 ; free physical = 822 ; free virtual = 7907
+set_property board_part digilentinc.com:zybo-z7-10:part0:1.0 [current_project]
+add_files {/home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/multiplier.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/ram_mux.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/mult_mux.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/ram_mux_input.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/sigmoid.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/qmult.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/simple_nn.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/arbiter.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/examples/ram_nn.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/examples/comb_nn.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/examples/ram_nn_layer.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/examples/mnist_nn.v /home/idris/projects/FPGA_VISION/NN_SHIFT/src/neurons/neuron_comb.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/neurons/neuron.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/neurons/neuron_ram.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/neurons/neuron_layer.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/utils/ram_switch.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/bram/bram_sp.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/bram/bram_dp.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/convolution/convo_2d_wrapper.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/convolution/convo_2d.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/maths/sqrt.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/maths/lfsr.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/maths/sqrt_int.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/maths/sine_table.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/maths/xc7/sqrt_int_tb.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/maths/xc7/sine_table_tb.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/maths/div.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/maths/mul.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/maths/xc7/lfsr_tb.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/maths/divu.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/maths/divu_int.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/maths/xc7/sqrt_tb.sv /home/idris/projects/FPGA_VISION/NN_SHIFT/src/maths/xc7/clog2_tb.sv}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property top convo_2d_wrapper [current_fileset]
+update_compile_order -fileset sources_1
+create_bd_design "system_wrapper"
+Wrote  : </home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/system_wrapper.bd> 
+create_bd_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 8001.879 ; gain = 49.750 ; free physical = 411 ; free virtual = 7595
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:debug_bridge:3.0 debug_bridge_0
+INFO: [xilinx.com:ip:debug_bridge:3.0-0] system_wrapper_debug_bridge_0_0:  Update boundary has completed 
+INFO: [xilinx.com:ip:debug_bridge:3.0-0] system_wrapper_debug_bridge_0_0:  Update boundary has started running 
+INFO: [xilinx.com:ip:debug_bridge:3.0-0] system_wrapper_debug_bridge_0_0:  Update content has started running 
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+create_bd_cell: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 8445.141 ; gain = 324.992 ; free physical = 215 ; free virtual = 7283
+create_bd_cell: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 8445.141 ; gain = 336.867 ; free physical = 214 ; free virtual = 7282
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 -config {make_external "FIXED_IO, DDR" apply_board_preset "1" Master "Enable" Slave "Enable" }  [get_bd_cells processing_system7_0]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/processing_system7_0/FCLK_CLK0 (50 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins debug_bridge_0/clk]
+apply_bd_automation -rule xilinx.com:bd_rule:trigger -config {ila_conn "Auto" }  [get_bd_intf_pins processing_system7_0/TRIGGER_IN_0]
+apply_bd_automation -rule xilinx.com:bd_rule:trigger -config {ila_conn "Auto" }  [get_bd_intf_pins processing_system7_0/TRIGGER_OUT_0]
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.1 axi_bram_ctrl_0
+INFO: [xilinx.com:ip:axi_bram_ctrl:4.1-2] system_wrapper_axi_bram_ctrl_0_0: In IP Integrator, please note that memory depth value gets calculated based on the Data Width of the IP and Address range selected in the Address Editor.Incase a validation error occured on the range of this parameter, please check if the selected Data width and the Address Range are valid. For valid Data width and memory depth values, please refer to the AXI BRAM Controller Product Guide.
+INFO: [xilinx.com:ip:axi_bram_ctrl:4.1-1] system_wrapper_axi_bram_ctrl_0_0: In IP Integrator, The Maximum address range supported is 2G. Selecting the address range more than 2G in the address editor may resets the value of Memory depth to default value (1024). please refer to the AXI BRAM Controller Product Guide.
+endgroup
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA]
+endgroup
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTB]
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
+endgroup
+set_property name gpio_ins [get_bd_cells axi_gpio_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
+endgroup
+set_property name gpio_outs [get_bd_cells axi_gpio_0]
+set_property CONFIG.C_ALL_INPUTS {1} [get_bd_cells gpio_ins]
+set_property CONFIG.C_ALL_OUTPUTS {1} [get_bd_cells gpio_outs]
+startgroup
+make_bd_pins_external  [get_bd_cells gpio_ins]
+make_bd_intf_pins_external  [get_bd_cells gpio_ins]
+endgroup
+undo
+INFO: [Common 17-17] undo 'endgroup'
+INFO: [Common 17-17] undo 'make_bd_intf_pins_external  [get_bd_cells gpio_ins]'
+INFO: [Common 17-17] undo 'make_bd_pins_external  [get_bd_cells gpio_ins]'
+INFO: [Common 17-17] undo 'startgroup'
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins gpio_ins/GPIO]
+endgroup
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins gpio_outs/GPIO]
+endgroup
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_bram_ctrl_0/S_AXI} ddr_seg {Auto} intc_ip {New AXI SmartConnect} master_apm {0}}  [get_bd_intf_pins axi_bram_ctrl_0/S_AXI]
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+Slave segment '/axi_bram_ctrl_0/S_AXI/Mem0' is being assigned into address space '/processing_system7_0/Data' at <0x4000_0000 [ 8K ]>.
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/gpio_ins/S_AXI} ddr_seg {Auto} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins gpio_ins/S_AXI]
+Slave segment '/gpio_ins/S_AXI/Reg' is being assigned into address space '/processing_system7_0/Data' at <0x4120_0000 [ 64K ]>.
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/gpio_outs/S_AXI} ddr_seg {Auto} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins gpio_outs/S_AXI]
+Slave segment '/gpio_outs/S_AXI/Reg' is being assigned into address space '/processing_system7_0/Data' at <0x4121_0000 [ 64K ]>.
+endgroup
+regenerate_bd_layout
+startgroup
+set_property -dict [list CONFIG.SUPPORTS_NARROW_BURST.VALUE_SRC PROPAGATED] [get_bd_cells axi_bram_ctrl_0]
+endgroup
+set_property name gpio_ins [get_bd_intf_ports GPIO_0]
+set_property name gpio_outs [get_bd_intf_ports GPIO_1]
+set_property name actv_in_ram [get_bd_intf_ports BRAM_PORTA_0]
+set_property name actv_out_ram [get_bd_intf_ports BRAM_PORTB_0]
+validate_bd_design
+ERROR: [BD 41-758] The following clock pins are not connected to a valid clock source: 
+/system_ila/clk
+
+ERROR: [Common 17-39] 'validate_bd_design' failed due to earlier errors.
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0
+endgroup
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {sys_clock ( System Clock ) } Manual_Source {Auto}}  [get_bd_pins clk_wiz_0/clk_in1]
+INFO: [board_rule 100-100] set_property CONFIG.USE_BOARD_FLOW true [get_bd_cells /clk_wiz_0]
+INFO: [board_rule 100-100] set_property CONFIG.CLK_IN1_BOARD_INTERFACE sys_clock [get_bd_cells /clk_wiz_0]
+WARNING: [BD 5-670] It is required to provide a frequency value for a user created input clock port. Please use the <-freq_hz $freq_val> argument of the create_bd_port command. ie create_bd_port -dir I -type clk -freq_hz 100000000 clkin
+INFO: [BoardRule 102-10] create_bd_port -dir I sys_clock -type clk
+INFO: [BoardRule 102-5] set_property CONFIG.FREQ_HZ 100000000 /sys_clock
+INFO: [BoardRule 102-6] set_property CONFIG.PHASE 0.0 /sys_clock
+INFO: [BoardRule 102-15] connect_bd_net /sys_clock /clk_wiz_0/clk_in1
+INFO: [BoardRule 102-17] set_property CONFIG.FREQ_HZ 125000000 /sys_clock
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {New External Port (ACTIVE_HIGH)}}  [get_bd_pins clk_wiz_0/reset]
+INFO: [BoardRule 102-10] create_bd_port -dir I reset_rtl -type rst
+INFO: [BoardRule 102-7] set_property CONFIG.POLARITY ACTIVE_HIGH /reset_rtl
+INFO: [BoardRule 102-15] connect_bd_net /reset_rtl /clk_wiz_0/reset
+INFO: [BoardRule 102-19] set_property CONFIG.POLARITY ACTIVE_HIGH /reset_rtl
+WARNING: [BoardRule 102-1] Board automation did not generate location constraint for /clk_wiz_0/reset. Users may need to specify the location constraint manually.
+endgroup
+delete_bd_objs [get_bd_nets sys_clock_1] [get_bd_ports sys_clock]
+connect_bd_net [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0]
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.050 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.044 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.035 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.100 . PS DDR interfaces might fail when entering negative DQS skew values. 
+WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.050 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.044 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.035 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.100 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.050 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.044 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.035 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.100 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.050 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.044 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.035 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.100 . PS DDR interfaces might fail when entering negative DQS skew values. 
+startgroup
+set_property -dict [list \
+  CONFIG.PCW_EN_CLK1_PORT {1} \
+  CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {200} \
+  CONFIG.PCW_QSPI_GRP_SINGLE_SS_ENABLE {1} \
+] [get_bd_cells processing_system7_0]
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.050 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.044 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.035 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.100 . PS DDR interfaces might fail when entering negative DQS skew values. 
+endgroup
+delete_bd_objs [get_bd_nets processing_system7_0_FCLK_CLK0]
+connect_bd_net [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins clk_wiz_0/clk_in1]
+delete_bd_objs [get_bd_nets processing_system7_0_FCLK_CLK0]
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_nets processing_system7_0_FCLK_CLK0]'
+delete_bd_objs [get_bd_nets reset_rtl_1] [get_bd_ports reset_rtl]
+connect_bd_net [get_bd_pins clk_wiz_0/reset] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
+startgroup
+set_property -dict [list \
+  CONFIG.CLKOUT1_JITTER {109.241} \
+  CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {200.000} \
+  CONFIG.MMCM_CLKOUT0_DIVIDE_F {5.000} \
+  CONFIG.RESET_PORT {resetn} \
+  CONFIG.RESET_TYPE {ACTIVE_LOW} \
+] [get_bd_cells clk_wiz_0]
+WARNING: [BD 41-1684] Pin /clk_wiz_0/reset is now disabled. All connections to this pin have been removed. 
+endgroup
+delete_bd_objs [get_bd_nets processing_system7_0_FCLK_CLK0]
+connect_bd_net [get_bd_pins processing_system7_0/FCLK_CLK1] [get_bd_pins clk_wiz_0/clk_in1]
+connect_bd_net [get_bd_pins clk_wiz_0/resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/processing_system7_0/FCLK_CLK0 (50 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins axi_bram_ctrl_0/s_axi_aclk]
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/processing_system7_0/FCLK_CLK0 (50 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins debug_bridge_0/clk]
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/processing_system7_0/FCLK_CLK0 (50 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins gpio_ins/s_axi_aclk]
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/processing_system7_0/FCLK_CLK0 (50 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins gpio_outs/s_axi_aclk]
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/processing_system7_0/FCLK_CLK0 (50 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK]
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/processing_system7_0/FCLK_CLK0 (50 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins rst_ps7_0_50M/slowest_sync_clk]
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_0
+INFO: [xilinx.com:ip:ila:6.2-6] /ila_0: AMD recommends using the System ILA IP in IP Integrator. The System ILA IP is functionally equivalent to an ILA and offers additional benefits in debugging interfaces both within IP Integrator and the Hardware Manager. Consult the Programming and Debug User Guide UG908 for further details.
+create_bd_cell: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 8737.445 ; gain = 0.555 ; free physical = 155 ; free virtual = 6612
+endgroup
+delete_bd_objs [get_bd_cells ila_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_0
+endgroup
+INFO: [xilinx.com:ip:debug_bridge:3.0-0] system_wrapper_debug_bridge_0_0:  Update boundary has completed 
+INFO: [xilinx.com:ip:debug_bridge:3.0-0] system_wrapper_debug_bridge_0_0:  Update boundary has started running 
+INFO: [xilinx.com:ip:debug_bridge:3.0-0] system_wrapper_debug_bridge_0_0:  Update boundary has completed 
+INFO: [xilinx.com:ip:debug_bridge:3.0-0] system_wrapper_debug_bridge_0_0:  Update boundary has started running 
+startgroup
+set_property CONFIG.C_DEBUG_MODE {2} [get_bd_cells debug_bridge_0]
+INFO: [xilinx.com:ip:debug_bridge:3.0-0] system_wrapper_debug_bridge_0_0:  Update boundary has completed 
+INFO: [xilinx.com:ip:debug_bridge:3.0-0] system_wrapper_debug_bridge_0_0:  Update boundary has started running 
+INFO: [xilinx.com:ip:debug_bridge:3.0-0] system_wrapper_debug_bridge_0_0:  Update content has started running 
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (50 MHz)} Clk_slave {Auto} Clk_xbar {/processing_system7_0/FCLK_CLK0 (50 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/debug_bridge_0/S_AXI} ddr_seg {Auto} intc_ip {/axi_smc} master_apm {0}}  [get_bd_intf_pins debug_bridge_0/S_AXI]
+Slave segment '/debug_bridge_0/S_AXI/Reg0' is being assigned into address space '/processing_system7_0/Data' at <0x43C0_0000 [ 64K ]>.
+regenerate_bd_layout
+delete_bd_objs [get_bd_cells system_ila_0]
+delete_bd_objs [get_bd_intf_nets processing_system7_0_TRIGGER_OUT_0] [get_bd_intf_nets system_ila_TRIG_OUT] [get_bd_cells system_ila]
+regenerate_bd_layout
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:trigger -config {ila_conn "Auto" }  [get_bd_intf_pins processing_system7_0/TRIGGER_IN_0]
+apply_bd_automation -rule xilinx.com:bd_rule:trigger -config {ila_conn "Auto" }  [get_bd_intf_pins processing_system7_0/TRIGGER_OUT_0]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins system_ila/SLOT_0_AXI] [get_bd_intf_pins gpio_ins/S_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/processing_system7_0/FCLK_CLK0 (50 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins system_ila/clk]
+regenerate_bd_layout
+regenerate_bd_layout -routing
+validate_bd_design
+WARNING: [BD 41-2121] Port s_axi_aclk associated reset port s_axi_lite_resetn does not exist
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'PRIM_IN_FREQ' from '125.000' to '200.000' has been ignored for IP 'clk_wiz_0'
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.050 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.044 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.035 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.100 . PS DDR interfaces might fail when entering negative DQS skew values. 
+ERROR: [axi_bram_cntlr-1] Port-A interface property <CONFIG.READ_WRITE_MODE> is not defined.
+ERROR: [Common 17-39] 'send_msg_id' failed due to earlier errors.
+ERROR: [BD 41-1273] Error running post_propagate TCL procedure: ERROR: [Common 17-39] 'send_msg_id' failed due to earlier errors.
+    ::xilinx.com_ip_axi_bram_ctrl_4.1::post_propagate Line 28
+validate_bd_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 8916.000 ; gain = 5.000 ; free physical = 2563 ; free virtual = 8268
+ERROR: [Common 17-39] 'validate_bd_design' failed due to earlier errors.
+delete_bd_objs [get_bd_intf_nets processing_system7_0_DDR] [get_bd_intf_ports DDR]
+regenerate_bd_layout -routing
+validate_bd_design
+WARNING: [BD 41-2121] Port s_axi_aclk associated reset port s_axi_lite_resetn does not exist
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'PRIM_IN_FREQ' from '125.000' to '200.000' has been ignored for IP 'clk_wiz_0'
+ERROR: [axi_bram_cntlr-1] Port-A interface property <CONFIG.READ_WRITE_MODE> is not defined.
+ERROR: [Common 17-39] 'send_msg_id' failed due to earlier errors.
+ERROR: [BD 41-1273] Error running post_propagate TCL procedure: ERROR: [Common 17-39] 'send_msg_id' failed due to earlier errors.
+    ::xilinx.com_ip_axi_bram_ctrl_4.1::post_propagate Line 28
+ERROR: [Common 17-39] 'validate_bd_design' failed due to earlier errors.
+validate_bd_design
+WARNING: [BD 41-2121] Port s_axi_aclk associated reset port s_axi_lite_resetn does not exist
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'PRIM_IN_FREQ' from '125.000' to '200.000' has been ignored for IP 'clk_wiz_0'
+ERROR: [axi_bram_cntlr-1] Port-A interface property <CONFIG.READ_WRITE_MODE> is not defined.
+ERROR: [Common 17-39] 'send_msg_id' failed due to earlier errors.
+ERROR: [BD 41-1273] Error running post_propagate TCL procedure: ERROR: [Common 17-39] 'send_msg_id' failed due to earlier errors.
+    ::xilinx.com_ip_axi_bram_ctrl_4.1::post_propagate Line 28
+ERROR: [Common 17-39] 'validate_bd_design' failed due to earlier errors.
+startgroup
+endgroup
+validate_bd_design
+WARNING: [BD 41-2121] Port s_axi_aclk associated reset port s_axi_lite_resetn does not exist
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'PRIM_IN_FREQ' from '125.000' to '200.000' has been ignored for IP 'clk_wiz_0'
+ERROR: [axi_bram_cntlr-1] Port-A interface property <CONFIG.READ_WRITE_MODE> is not defined.
+ERROR: [Common 17-39] 'send_msg_id' failed due to earlier errors.
+ERROR: [BD 41-1273] Error running post_propagate TCL procedure: ERROR: [Common 17-39] 'send_msg_id' failed due to earlier errors.
+    ::xilinx.com_ip_axi_bram_ctrl_4.1::post_propagate Line 28
+ERROR: [Common 17-39] 'validate_bd_design' failed due to earlier errors.
+startgroup
+set_property CONFIG.SINGLE_PORT_BRAM {1} [get_bd_cells axi_bram_ctrl_0]
+delete_bd_objs [get_bd_intf_nets axi_bram_ctrl_0_BRAM_PORTB]
+endgroup
+delete_bd_objs [get_bd_intf_ports actv_out_ram]
+startgroup
+make_bd_pins_external  [get_bd_pins axi_bram_ctrl_0/bram_clk_a]
+WARNING: [BD 41-1306] The connection to interface pin </axi_bram_ctrl_0/bram_clk_a> is being overridden by the user with net <axi_bram_ctrl_0_bram_clk_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+endgroup
+delete_bd_objs [get_bd_nets axi_bram_ctrl_0_bram_clk_a] [get_bd_ports bram_clk_a_0]
+validate_bd_design
+WARNING: [BD 41-2121] Port s_axi_aclk associated reset port s_axi_lite_resetn does not exist
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'PRIM_IN_FREQ' from '125.000' to '200.000' has been ignored for IP 'clk_wiz_0'
+ERROR: [axi_bram_cntlr-1] Port-A interface property <CONFIG.READ_WRITE_MODE> is not defined.
+ERROR: [Common 17-39] 'send_msg_id' failed due to earlier errors.
+ERROR: [BD 41-1273] Error running post_propagate TCL procedure: ERROR: [Common 17-39] 'send_msg_id' failed due to earlier errors.
+    ::xilinx.com_ip_axi_bram_ctrl_4.1::post_propagate Line 81
+ERROR: [Common 17-39] 'validate_bd_design' failed due to earlier errors.
+delete_bd_objs [get_bd_intf_nets axi_bram_ctrl_0_BRAM_PORTA]
+delete_bd_objs [get_bd_intf_ports actv_in_ram]
+delete_bd_objs [get_bd_intf_nets axi_smc_M00_AXI] [get_bd_cells axi_bram_ctrl_0]
+regenerate_bd_layout -routing
+validate_bd_design
+WARNING: [BD 41-2670] Found an incomplete address path from address space '/processing_system7_0/Data' to master interface '/axi_smc/M00_AXI'. Please either complete or remove this path to resolve.
+WARNING: [BD 41-2121] Port s_axi_aclk associated reset port s_axi_lite_resetn does not exist
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'PRIM_IN_FREQ' from '125.000' to '200.000' has been ignored for IP 'clk_wiz_0'
+INFO: [BD 5-943] Reserving offset range <0x4120_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M01_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x4121_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M02_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x43C0_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M03_AXI'. This will be used by smartconnect on path for routing.
+INFO: [xilinx.com:ip:smartconnect:1.0-1] system_wrapper_axi_smc_0: SmartConnect system_wrapper_axi_smc_0 is in Low-Area Mode.
+WARNING: [xilinx.com:ip:smartconnect:1.0-1] system_wrapper_axi_smc_0: IP system_wrapper_axi_smc_0 is configured in Low-area mode as all propagated traffic is low-bandwidth (AXI4LITE). SI S00_AXI has property HAS_BURST == 1. WRAP bursts are not supported in Low-area mode and will result in DECERR if received.
+WARNING: [xilinx.com:ip:smartconnect:1.0-1] system_wrapper_axi_smc_0: If WRAP transactions are required then turn off Low-area mode using ADVANCED_PROPERTIES. Execute following: set_property CONFIG.ADVANCED_PROPERTIES {__experimental_features__ {disable_low_area_mode 1}} [get_bd_cells /system_wrapper_axi_smc_0]
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+xit::source_ipfile: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 9003.418 ; gain = 49.500 ; free physical = 2255 ; free virtual = 7964
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/debug_bridge_0/s_axi_aresetn
+
+validate_bd_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:21 . Memory (MB): peak = 9070.855 ; gain = 126.844 ; free physical = 2158 ; free virtual = 7873
+connect_bd_net [get_bd_pins debug_bridge_0/s_axi_aresetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
+validate_bd_design
+WARNING: [BD 41-2670] Found an incomplete address path from address space '/processing_system7_0/Data' to master interface '/axi_smc/M00_AXI'. Please either complete or remove this path to resolve.
+WARNING: [BD 41-2121] Port s_axi_aclk associated reset port s_axi_lite_resetn does not exist
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'PRIM_IN_FREQ' from '125.000' to '200.000' has been ignored for IP 'clk_wiz_0'
+INFO: [BD 5-943] Reserving offset range <0x4120_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M01_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x4121_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M02_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x43C0_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M03_AXI'. This will be used by smartconnect on path for routing.
+INFO: [xilinx.com:ip:smartconnect:1.0-1] system_wrapper_axi_smc_0: SmartConnect system_wrapper_axi_smc_0 is in Low-Area Mode.
+WARNING: [xilinx.com:ip:smartconnect:1.0-1] system_wrapper_axi_smc_0: IP system_wrapper_axi_smc_0 is configured in Low-area mode as all propagated traffic is low-bandwidth (AXI4LITE). SI S00_AXI has property HAS_BURST == 1. WRAP bursts are not supported in Low-area mode and will result in DECERR if received.
+WARNING: [xilinx.com:ip:smartconnect:1.0-1] system_wrapper_axi_smc_0: If WRAP transactions are required then turn off Low-area mode using ADVANCED_PROPERTIES. Execute following: set_property CONFIG.ADVANCED_PROPERTIES {__experimental_features__ {disable_low_area_mode 1}} [get_bd_cells /system_wrapper_axi_smc_0]
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+xit::source_ipfile: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 9091.637 ; gain = 0.000 ; free physical = 2252 ; free virtual = 7967
+CRITICAL WARNING: [BD 41-1347] Reset pin /debug_bridge_0/s_axi_aresetn (associated clock /debug_bridge_0/s_axi_aclk) is connected to asynchronous reset source /processing_system7_0/FCLK_RESET0_N.
+This may prevent design from meeting timing. Instead it should be connected to reset source /rst_ps7_0_50M/peripheral_aresetn.
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+validate_bd_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:18 . Memory (MB): peak = 9094.605 ; gain = 23.750 ; free physical = 2159 ; free virtual = 7865
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.050 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.044 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.035 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.100 . PS DDR interfaces might fail when entering negative DQS skew values. 
+WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+delete_bd_objs [get_bd_nets rst_ps7_0_50M_peripheral_aresetn]
+connect_bd_net [get_bd_pins rst_ps7_0_50M/mb_reset] [get_bd_pins system_ila/resetn]
+validate_bd_design
+WARNING: [BD 41-2670] Found an incomplete address path from address space '/processing_system7_0/Data' to master interface '/axi_smc/M00_AXI'. Please either complete or remove this path to resolve.
+WARNING: [BD 41-2121] Port s_axi_aclk associated reset port s_axi_lite_resetn does not exist
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'PRIM_IN_FREQ' from '125.000' to '200.000' has been ignored for IP 'clk_wiz_0'
+INFO: [BD 5-943] Reserving offset range <0x4120_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M01_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x4121_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M02_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x43C0_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M03_AXI'. This will be used by smartconnect on path for routing.
+INFO: [xilinx.com:ip:smartconnect:1.0-1] system_wrapper_axi_smc_0: SmartConnect system_wrapper_axi_smc_0 is in Low-Area Mode.
+WARNING: [xilinx.com:ip:smartconnect:1.0-1] system_wrapper_axi_smc_0: IP system_wrapper_axi_smc_0 is configured in Low-area mode as all propagated traffic is low-bandwidth (AXI4LITE). SI S00_AXI has property HAS_BURST == 1. WRAP bursts are not supported in Low-area mode and will result in DECERR if received.
+WARNING: [xilinx.com:ip:smartconnect:1.0-1] system_wrapper_axi_smc_0: If WRAP transactions are required then turn off Low-area mode using ADVANCED_PROPERTIES. Execute following: set_property CONFIG.ADVANCED_PROPERTIES {__experimental_features__ {disable_low_area_mode 1}} [get_bd_cells /system_wrapper_axi_smc_0]
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+xit::source_ipfile: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 9132.547 ; gain = 0.000 ; free physical = 2064 ; free virtual = 7771
+CRITICAL WARNING: [BD 41-1347] Reset pin /debug_bridge_0/s_axi_aresetn (associated clock /debug_bridge_0/s_axi_aclk) is connected to asynchronous reset source /processing_system7_0/FCLK_RESET0_N.
+This may prevent design from meeting timing. Instead it should be connected to reset source /rst_ps7_0_50M/peripheral_aresetn.
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+ERROR: [BD 41-238] Port/Pin property POLARITY does not match between /system_ila/resetn(ACTIVE_LOW) and /rst_ps7_0_50M/mb_reset(ACTIVE_HIGH)
+validate_bd_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:17 . Memory (MB): peak = 9132.547 ; gain = 0.000 ; free physical = 2057 ; free virtual = 7766
+ERROR: [Common 17-39] 'validate_bd_design' failed due to earlier errors.
+startgroup
+endgroup
+delete_bd_objs [get_bd_intf_nets system_ila_TRIG_OUT] [get_bd_nets rst_ps7_0_50M_mb_reset] [get_bd_intf_nets processing_system7_0_TRIGGER_OUT_0] [get_bd_cells system_ila]
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.050 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.044 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.035 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.100 . PS DDR interfaces might fail when entering negative DQS skew values. 
+WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.050 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.044 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.035 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.100 . PS DDR interfaces might fail when entering negative DQS skew values. 
+startgroup
+set_property CONFIG.PCW_USE_CROSS_TRIGGER {0} [get_bd_cells processing_system7_0]
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.050 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.044 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.035 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.100 . PS DDR interfaces might fail when entering negative DQS skew values. 
+endgroup
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.050 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.044 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.035 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.100 . PS DDR interfaces might fail when entering negative DQS skew values. 
+WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+startgroup
+set_property CONFIG.PCW_UIPARAM_DDR_ENABLE {0} [get_bd_cells processing_system7_0]
+endgroup
+regenerate_bd_layout
+validate_bd_design
+WARNING: [BD 41-2670] Found an incomplete address path from address space '/processing_system7_0/Data' to master interface '/axi_smc/M00_AXI'. Please either complete or remove this path to resolve.
+WARNING: [BD 41-2121] Port s_axi_aclk associated reset port s_axi_lite_resetn does not exist
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'PRIM_IN_FREQ' from '125.000' to '200.000' has been ignored for IP 'clk_wiz_0'
+INFO: [BD 5-943] Reserving offset range <0x4120_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M01_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x4121_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M02_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x43C0_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M03_AXI'. This will be used by smartconnect on path for routing.
+INFO: [xilinx.com:ip:smartconnect:1.0-1] system_wrapper_axi_smc_0: SmartConnect system_wrapper_axi_smc_0 is in Low-Area Mode.
+WARNING: [xilinx.com:ip:smartconnect:1.0-1] system_wrapper_axi_smc_0: IP system_wrapper_axi_smc_0 is configured in Low-area mode as all propagated traffic is low-bandwidth (AXI4LITE). SI S00_AXI has property HAS_BURST == 1. WRAP bursts are not supported in Low-area mode and will result in DECERR if received.
+WARNING: [xilinx.com:ip:smartconnect:1.0-1] system_wrapper_axi_smc_0: If WRAP transactions are required then turn off Low-area mode using ADVANCED_PROPERTIES. Execute following: set_property CONFIG.ADVANCED_PROPERTIES {__experimental_features__ {disable_low_area_mode 1}} [get_bd_cells /system_wrapper_axi_smc_0]
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+xit::source_ipfile: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 9204.570 ; gain = 0.000 ; free physical = 1345 ; free virtual = 7088
+CRITICAL WARNING: [BD 41-1347] Reset pin /debug_bridge_0/s_axi_aresetn (associated clock /debug_bridge_0/s_axi_aclk) is connected to asynchronous reset source /processing_system7_0/FCLK_RESET0_N.
+This may prevent design from meeting timing. Instead it should be connected to reset source /rst_ps7_0_50M/peripheral_aresetn.
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+validate_bd_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 9204.570 ; gain = 0.000 ; free physical = 1341 ; free virtual = 7084
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+delete_bd_objs [get_bd_nets processing_system7_0_FCLK_RESET0_N]
+connect_bd_net [get_bd_pins rst_ps7_0_50M/interconnect_aresetn] [get_bd_pins debug_bridge_0/s_axi_aresetn]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {Auto}}  [get_bd_pins clk_wiz_0/resetn]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {Auto}}  [get_bd_pins rst_ps7_0_50M/ext_reset_in]
+endgroup
+regenerate_bd_layout
+validate_bd_design
+WARNING: [BD 41-2670] Found an incomplete address path from address space '/processing_system7_0/Data' to master interface '/axi_smc/M00_AXI'. Please either complete or remove this path to resolve.
+WARNING: [BD 41-2121] Port s_axi_aclk associated reset port s_axi_lite_resetn does not exist
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'PRIM_IN_FREQ' from '125.000' to '200.000' has been ignored for IP 'clk_wiz_0'
+INFO: [BD 5-943] Reserving offset range <0x4120_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M01_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x4121_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M02_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x43C0_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M03_AXI'. This will be used by smartconnect on path for routing.
+INFO: [xilinx.com:ip:smartconnect:1.0-1] system_wrapper_axi_smc_0: SmartConnect system_wrapper_axi_smc_0 is in Low-Area Mode.
+WARNING: [xilinx.com:ip:smartconnect:1.0-1] system_wrapper_axi_smc_0: IP system_wrapper_axi_smc_0 is configured in Low-area mode as all propagated traffic is low-bandwidth (AXI4LITE). SI S00_AXI has property HAS_BURST == 1. WRAP bursts are not supported in Low-area mode and will result in DECERR if received.
+WARNING: [xilinx.com:ip:smartconnect:1.0-1] system_wrapper_axi_smc_0: If WRAP transactions are required then turn off Low-area mode using ADVANCED_PROPERTIES. Execute following: set_property CONFIG.ADVANCED_PROPERTIES {__experimental_features__ {disable_low_area_mode 1}} [get_bd_cells /system_wrapper_axi_smc_0]
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+xit::source_ipfile: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 9204.570 ; gain = 0.000 ; free physical = 1287 ; free virtual = 7030
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+validate_bd_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 9204.570 ; gain = 0.000 ; free physical = 1290 ; free virtual = 7034
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.1 axi_bram_ctrl_0
+INFO: [xilinx.com:ip:axi_bram_ctrl:4.1-2] system_wrapper_axi_bram_ctrl_0_1: In IP Integrator, please note that memory depth value gets calculated based on the Data Width of the IP and Address range selected in the Address Editor.Incase a validation error occured on the range of this parameter, please check if the selected Data width and the Address Range are valid. For valid Data width and memory depth values, please refer to the AXI BRAM Controller Product Guide.
+INFO: [xilinx.com:ip:axi_bram_ctrl:4.1-1] system_wrapper_axi_bram_ctrl_0_1: In IP Integrator, The Maximum address range supported is 2G. Selecting the address range more than 2G in the address editor may resets the value of Memory depth to default value (1024). please refer to the AXI BRAM Controller Product Guide.
+endgroup
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:bram_cntlr -config {BRAM "Auto" }  [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA]
+apply_bd_automation -rule xilinx.com:bd_rule:bram_cntlr -config {BRAM "Auto" }  [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTB]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (50 MHz)} Clk_slave {Auto} Clk_xbar {/processing_system7_0/FCLK_CLK0 (50 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_bram_ctrl_0/S_AXI} ddr_seg {Auto} intc_ip {/axi_smc} master_apm {0}}  [get_bd_intf_pins axi_bram_ctrl_0/S_AXI]
+Slave segment '/axi_bram_ctrl_0/S_AXI/Mem0' is being assigned into address space '/processing_system7_0/Data' at <0x4000_0000 [ 8K ]>.
+endgroup
+regenerate_bd_layout
+delete_bd_objs [get_bd_intf_nets axi_bram_ctrl_0_BRAM_PORTA] [get_bd_intf_nets axi_bram_ctrl_0_BRAM_PORTB] [get_bd_cells axi_bram_ctrl_0_bram]
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA]
+endgroup
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTB]
+endgroup
+set_property name actv_i_ram [get_bd_intf_ports BRAM_PORTA_0]
+set_property name actv_o_ram [get_bd_intf_ports BRAM_PORTB_0]
+validate_bd_design
+WARNING: [BD 41-2121] Port s_axi_aclk associated reset port s_axi_lite_resetn does not exist
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'PRIM_IN_FREQ' from '125.000' to '200.000' has been ignored for IP 'clk_wiz_0'
+ERROR: [axi_bram_cntlr-1] Port-A interface property <CONFIG.READ_WRITE_MODE> is not defined.
+ERROR: [Common 17-39] 'send_msg_id' failed due to earlier errors.
+ERROR: [BD 41-1273] Error running post_propagate TCL procedure: ERROR: [Common 17-39] 'send_msg_id' failed due to earlier errors.
+    ::xilinx.com_ip_axi_bram_ctrl_4.1::post_propagate Line 28
+ERROR: [Common 17-39] 'validate_bd_design' failed due to earlier errors.
+startgroup
+set_property -dict [list CONFIG.SUPPORTS_NARROW_BURST.VALUE_SRC PROPAGATED] [get_bd_cells axi_bram_ctrl_0]
+set_property CONFIG.RD_CMD_OPTIMIZATION {1} [get_bd_cells axi_bram_ctrl_0]
+endgroup
+regenerate_bd_layout
+validate_bd_design
+WARNING: [BD 41-2121] Port s_axi_aclk associated reset port s_axi_lite_resetn does not exist
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'PRIM_IN_FREQ' from '125.000' to '200.000' has been ignored for IP 'clk_wiz_0'
+ERROR: [axi_bram_cntlr-1] Port-A interface property <CONFIG.READ_WRITE_MODE> is not defined.
+ERROR: [Common 17-39] 'send_msg_id' failed due to earlier errors.
+ERROR: [BD 41-1273] Error running post_propagate TCL procedure: ERROR: [Common 17-39] 'send_msg_id' failed due to earlier errors.
+    ::xilinx.com_ip_axi_bram_ctrl_4.1::post_propagate Line 28
+ERROR: [Common 17-39] 'validate_bd_design' failed due to earlier errors.
+startgroup
+set_property CONFIG.SINGLE_PORT_BRAM {1} [get_bd_cells axi_bram_ctrl_0]
+delete_bd_objs [get_bd_intf_nets axi_bram_ctrl_0_BRAM_PORTB]
+endgroup
+delete_bd_objs [get_bd_intf_ports actv_o_ram]
+validate_bd_design
+WARNING: [BD 41-2121] Port s_axi_aclk associated reset port s_axi_lite_resetn does not exist
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'PRIM_IN_FREQ' from '125.000' to '200.000' has been ignored for IP 'clk_wiz_0'
+ERROR: [axi_bram_cntlr-1] Port-A interface property <CONFIG.READ_WRITE_MODE> is not defined.
+ERROR: [Common 17-39] 'send_msg_id' failed due to earlier errors.
+ERROR: [BD 41-1273] Error running post_propagate TCL procedure: ERROR: [Common 17-39] 'send_msg_id' failed due to earlier errors.
+    ::xilinx.com_ip_axi_bram_ctrl_4.1::post_propagate Line 81
+ERROR: [Common 17-39] 'validate_bd_design' failed due to earlier errors.
+delete_bd_objs [get_bd_intf_nets axi_bram_ctrl_0_BRAM_PORTA] [get_bd_intf_ports actv_i_ram]
+apply_bd_automation -rule xilinx.com:bd_rule:bram_cntlr -config {BRAM "Auto" }  [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA]
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+delete_bd_objs [get_bd_intf_nets axi_bram_ctrl_0_BRAM_PORTA] [get_bd_cells axi_bram_ctrl_0_bram]
+INFO: [xilinx.com:ip:axi_bram_ctrl:4.1-2] system_wrapper_axi_bram_ctrl_0_1: In IP Integrator, please note that memory depth value gets calculated based on the Data Width of the IP and Address range selected in the Address Editor.Incase a validation error occured on the range of this parameter, please check if the selected Data width and the Address Range are valid. For valid Data width and memory depth values, please refer to the AXI BRAM Controller Product Guide.
+INFO: [xilinx.com:ip:axi_bram_ctrl:4.1-1] system_wrapper_axi_bram_ctrl_0_1: In IP Integrator, The Maximum address range supported is 2G. Selecting the address range more than 2G in the address editor may resets the value of Memory depth to default value (1024). please refer to the AXI BRAM Controller Product Guide.
+startgroup
+set_property CONFIG.PROTOCOL {AXI4LITE} [get_bd_cells axi_bram_ctrl_0]
+INFO: [xilinx.com:ip:axi_bram_ctrl:4.1-2] system_wrapper_axi_bram_ctrl_0_1: In IP Integrator, please note that memory depth value gets calculated based on the Data Width of the IP and Address range selected in the Address Editor.Incase a validation error occured on the range of this parameter, please check if the selected Data width and the Address Range are valid. For valid Data width and memory depth values, please refer to the AXI BRAM Controller Product Guide.
+INFO: [xilinx.com:ip:axi_bram_ctrl:4.1-1] system_wrapper_axi_bram_ctrl_0_1: In IP Integrator, The Maximum address range supported is 2G. Selecting the address range more than 2G in the address editor may resets the value of Memory depth to default value (1024). please refer to the AXI BRAM Controller Product Guide.
+endgroup
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA]
+endgroup
+validate_bd_design
+WARNING: [BD 41-2121] Port s_axi_aclk associated reset port s_axi_lite_resetn does not exist
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'PRIM_IN_FREQ' from '125.000' to '200.000' has been ignored for IP 'clk_wiz_0'
+INFO: [BD 5-943] Reserving offset range <0x4000_0000 [ 8K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x4120_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M01_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x4121_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M02_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x43C0_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M03_AXI'. This will be used by smartconnect on path for routing.
+INFO: [xilinx.com:ip:smartconnect:1.0-1] system_wrapper_axi_smc_0: SmartConnect system_wrapper_axi_smc_0 is in Low-Area Mode.
+WARNING: [xilinx.com:ip:smartconnect:1.0-1] system_wrapper_axi_smc_0: IP system_wrapper_axi_smc_0 is configured in Low-area mode as all propagated traffic is low-bandwidth (AXI4LITE). SI S00_AXI has property HAS_BURST == 1. WRAP bursts are not supported in Low-area mode and will result in DECERR if received.
+WARNING: [xilinx.com:ip:smartconnect:1.0-1] system_wrapper_axi_smc_0: If WRAP transactions are required then turn off Low-area mode using ADVANCED_PROPERTIES. Execute following: set_property CONFIG.ADVANCED_PROPERTIES {__experimental_features__ {disable_low_area_mode 1}} [get_bd_cells /system_wrapper_axi_smc_0]
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+xit::source_ipfile: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 9319.031 ; gain = 0.000 ; free physical = 1793 ; free virtual = 7551
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+validate_bd_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 9319.031 ; gain = 0.000 ; free physical = 1712 ; free virtual = 7470
+set_property name actv_i [get_bd_intf_ports BRAM_PORTA_0]
+startgroup
+set_property CONFIG.SINGLE_PORT_BRAM {0} [get_bd_cells axi_bram_ctrl_0]
+endgroup
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTB]
+endgroup
+set_property name actv_o [get_bd_intf_ports BRAM_PORTB_0]
+regenerate_bd_layout
+validate_bd_design
+WARNING: [BD 41-2121] Port s_axi_aclk associated reset port s_axi_lite_resetn does not exist
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'PRIM_IN_FREQ' from '125.000' to '200.000' has been ignored for IP 'clk_wiz_0'
+INFO: [BD 5-943] Reserving offset range <0x4000_0000 [ 8K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x4120_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M01_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x4121_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M02_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x43C0_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M03_AXI'. This will be used by smartconnect on path for routing.
+INFO: [xilinx.com:ip:smartconnect:1.0-1] system_wrapper_axi_smc_0: SmartConnect system_wrapper_axi_smc_0 is in Low-Area Mode.
+WARNING: [xilinx.com:ip:smartconnect:1.0-1] system_wrapper_axi_smc_0: IP system_wrapper_axi_smc_0 is configured in Low-area mode as all propagated traffic is low-bandwidth (AXI4LITE). SI S00_AXI has property HAS_BURST == 1. WRAP bursts are not supported in Low-area mode and will result in DECERR if received.
+WARNING: [xilinx.com:ip:smartconnect:1.0-1] system_wrapper_axi_smc_0: If WRAP transactions are required then turn off Low-area mode using ADVANCED_PROPERTIES. Execute following: set_property CONFIG.ADVANCED_PROPERTIES {__experimental_features__ {disable_low_area_mode 1}} [get_bd_cells /system_wrapper_axi_smc_0]
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+xit::source_ipfile: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 9319.031 ; gain = 0.000 ; free physical = 1785 ; free virtual = 7545
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+validate_bd_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 9321.965 ; gain = 2.934 ; free physical = 1732 ; free virtual = 7483
+regenerate_bd_layout -routing
+save_bd_design
+Wrote  : </home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/system_wrapper.bd> 
+Wrote  : </home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/ui/bd_7a133f23.ui> 
+save_bd_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 9331.969 ; gain = 10.004 ; free physical = 1646 ; free virtual = 7420
+launch_runs synth_1 -jobs 2
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Sat Dec 16 19:45:42 2023] Launched synth_1...
+Run output will be captured here: /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z010clg400-1
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 9376.824 ; gain = 0.000 ; free physical = 1549 ; free virtual = 7246
+INFO: [Netlist 29-17] Analyzing 50 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2023.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9432.668 ; gain = 0.000 ; free physical = 1494 ; free virtual = 7192
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:11 ; elapsed = 00:00:05 . Memory (MB): peak = 9587.188 ; gain = 210.363 ; free physical = 1403 ; free virtual = 7103
+report_utilization -name utilization_1
+make_wrapper -files [get_files /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/system_wrapper.bd] -top
+INFO: [BD 41-1662] The design 'system_wrapper.bd' is already validated. Therefore parameter propagation will not be re-run.
+Verilog Output written to : /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/synth/system_wrapper.v
+Verilog Output written to : /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/sim/system_wrapper.v
+Verilog Output written to : /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/hdl/system_wrapper_wrapper.v
+add_files -norecurse /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/hdl/system_wrapper_wrapper.v
+update_compile_order -fileset sources_1
+make_wrapper -files [get_files /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/system_wrapper.bd] -fileset [get_filesets sources_1] -inst_template
+INFO: [BD 41-1662] The design 'system_wrapper.bd' is already validated. Therefore parameter propagation will not be re-run.
+Verilog Output written to : /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/synth/system_wrapper.v
+Verilog Output written to : /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/sim/system_wrapper.v
+Verilog Output written to : /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/hdl/system_wrapper_wrapper.v
+open_bd_design {/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/system_wrapper.bd}
+startgroup
+set_property -dict [list \
+  CONFIG.CLKOUT1_JITTER {179.193} \
+  CONFIG.CLKOUT1_PHASE_ERROR {234.038} \
+  CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {300.000} \
+  CONFIG.MMCM_CLKFBOUT_MULT_F {40.500} \
+  CONFIG.MMCM_CLKOUT0_DIVIDE_F {3.375} \
+  CONFIG.MMCM_DIVCLK_DIVIDE {5} \
+] [get_bd_cells clk_wiz_0]
+endgroup

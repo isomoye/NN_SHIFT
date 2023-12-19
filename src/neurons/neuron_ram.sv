@@ -8,48 +8,49 @@ module neuron_ram #(
     parameter int NeuronInstance = 0,
     parameter int EnableBackPropagation = 0
 ) (
-    input logic clk_i,
-    input logic reset_i,
+    //clocks and resets
+    input  logic                               clk_i,
+    input  logic                               reset_i,
     //downstream ram signals
-    input logic [(DataWidth-1) : 0] in_actv_din_i,
-    output logic [$clog2(NumInputs)-1:0] in_actv_addr_o,
-    output logic in_actv_we_o,
-    output logic [(DataWidth-1) : 0] in_actv_dout_o,
+    input  logic [            (DataWidth-1):0] in_actv_din_i,
+    output logic [      $clog2(NumInputs)-1:0] in_actv_addr_o,
+    output logic                               in_actv_we_o,
+    output logic [          (DataWidth-1) : 0] in_actv_dout_o,
     //weigths ram signals
-    input logic [(DataWidth-1) : 0] wgt_din_i,
-    output logic [$clog2(DataWidth)-1:0] wgt_addr_o,
-    output logic wgt_we_o,
-    output logic [(DataWidth-1) : 0] wgt_dout_o,
+    input  logic [          (DataWidth-1) : 0] wgt_din_i,
+    output logic [      $clog2(DataWidth)-1:0] wgt_addr_o,
+    output logic                               wgt_we_o,
+    output logic [          (DataWidth-1) : 0] wgt_dout_o,
     //uptream ram signals
-    input logic [(DataWidth-1) : 0] out_actv_din_i,
+    input  logic [          (DataWidth-1) : 0] out_actv_din_i,
     output logic [$clog2(NeuronsPerLayer)-1:0] out_actv_addr_o,
-    output logic out_actv_we_o,
-    output logic [(DataWidth-1) : 0] out_actv_dout_o,
+    output logic                               out_actv_we_o,
+    output logic [          (DataWidth-1) : 0] out_actv_dout_o,
     //downstream mutex signals
-    input logic in_actv_grant_i,
-    output logic in_actv_req_o,
+    input  logic                               in_actv_grant_i,
+    output logic                               in_actv_req_o,
     //weight mutex signals
-    input logic wgt_grant_i,
-    output logic wgt_req_o,
+    input  logic                               wgt_grant_i,
+    output logic                               wgt_req_o,
     //upstream mutex signals
-    input logic out_actv_grant_i,
-    output logic out_actv_req_o,
+    input  logic                               out_actv_grant_i,
+    output logic                               out_actv_req_o,
     //forward propagation
-    input logic req_i,
-    input logic ack_i,
-    input logic ready_i,
-    input logic mult_done_i,
-    input logic mult_busy_i,
-    input logic mult_grant_i,
-    input logic [((DataWidth*2)-1):0] mult_result_i,
-
-    output logic mult_req_o,
-    output logic ack_o,
-    output logic ready_o,
-    output logic req_o,
-    output logic mult_start_o,
-    output logic [(DataWidth-1):0] mult_a_o,
-    output logic [(DataWidth-1):0] mult_b_o
+    input  logic                               req_i,
+    input  logic                               ack_i,
+    input  logic                               ready_i,
+    input  logic                               mult_done_i,
+    input  logic                               mult_busy_i,
+    input  logic                               mult_grant_i,
+    input  logic [        ((DataWidth*2)-1):0] mult_result_i,
+    //multiplier signals
+    output logic                               mult_req_o,
+    output logic                               ack_o,
+    output logic                               ready_o,
+    output logic                               req_o,
+    output logic                               mult_start_o,
+    output logic [            (DataWidth-1):0] mult_a_o,
+    output logic [            (DataWidth-1):0] mult_b_o
 );
 
   localparam int StartAddress = (NumInputs + 2) * NeuronInstance;
@@ -68,20 +69,19 @@ module neuron_ram #(
     ST_OUTPUT
   } st_nueron_e;
 
-  st_nueron_e state;
+  st_nueron_e                          state;
 
   //internal signals
-  logic signed [(DataWidth*2)-1 : 0] sum;
-  logic [7:0] afterActivation;
-  logic [$clog2(NumInputs)-1:0] counter;
-  logic [$clog2(DataWidth)-1:0] actv_in;
-  logic [$clog2(DataWidth)-1:0] actv_out;
-
-  logic mult_start;
-  logic mult_done;
-  logic mult_busy;
-
-  logic ack_data;
+  logic signed [  (DataWidth*2)-1 : 0] sum;
+  logic        [                  7:0] afterActivation;
+  logic        [$clog2(NumInputs)-1:0] counter;
+  logic        [$clog2(DataWidth)-1:0] actv_in;
+  logic        [$clog2(DataWidth)-1:0] actv_out;
+  //multiplier signals
+  logic                                mult_start;
+  logic                                mult_done;
+  logic                                mult_busy;
+  logic                                ack_data;
 
   always_ff @(posedge clk_i) begin
     if (reset_i) begin

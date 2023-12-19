@@ -1,0 +1,12 @@
+[DEBUG] Using xsct from : /home/idris/opt/Xilinx/Petalinux/2023.2/tools/xsct/bin/xsct
+[DEBUG] Using conf/mconf from : /home/idris/opt/Xilinx/Petalinux/2023.2/components/yocto/buildtools/sysroots/x86_64-petalinux-linux/usr/bin/mconf
+[INFO] Generating Kconfig for project
+[DEBUG] Running CMD: xsct -sdx -nodisp /home/idris/projects/FPGA_NEURAL_NETWORK/petalinux/test_bin/components/yocto/layers/meta-xilinx/meta-xilinx-core/gen-machine-conf/gen-machine-scripts/hw-description.tcl plnx_gen_hwsysconf /home/idris/projects/FPGA_NEURAL_NETWORK/petalinux/test_bin/project-spec/hw-description/system.xsa /home/idris/projects/FPGA_NEURAL_NETWORK/petalinux/test_bin/project-spec/configs/configs/Kconfig.syshw
+[DEBUG] Got $MYVIVADO: /home/idris/opt/Xilinx
+WARNING: sdtgen package cannot be loaded. System Device tree commands will not 
+ be available
+INFO: [Hsi 55-2053] elapsed time for repository (/home/idris/opt/Xilinx/Petalinux/2023.2/tools/xsct/data/embeddedsw) loading 0 seconds
+
+[INFO] Menuconfig project
+[DEBUG] Running CMD: env KCONFIG_CONFIG=/home/idris/projects/FPGA_NEURAL_NETWORK/petalinux/test_bin/project-spec/configs/config mconf -s /home/idris/projects/FPGA_NEURAL_NETWORK/petalinux/test_bin/project-spec/configs/configs/Kconfig
+[ERROR] Failed to Menuconfig project

@@ -15,8 +15,10 @@ VERILOG_SOURCES = \
 	src/neurons/neuron_comb.sv \
 	src/neurons/neuron_ram.sv \
 	src/bram/*.sv \
+	src/examples/*.sv \
+	src/utils/*.sv \
 	src/convolution/*.sv \
-	examples/*.v \
+	top/*.v \
 	tb/simple_nn_tb.v
 
 # use VHDL_SOURCES for VHDL files
@@ -34,6 +36,8 @@ else ifeq ($(MODULE), test_ram_nn)
     TOPLEVEL = ram_nn
 else ifeq ($(MODULE), test_2d_conv)
     TOPLEVEL = convo_2d
+else ifeq ($(MODULE), test_2d_conv_wrapper)
+    TOPLEVEL = convo_2d_wrapper
 else
 	TOPLEVEL = simple_nn_tb
 endif

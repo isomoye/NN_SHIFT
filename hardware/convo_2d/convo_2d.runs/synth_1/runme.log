@@ -1,0 +1,577 @@
+
+*** Running vivado
+    with args -log conv_2d_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source conv_2d_top.tcl
+
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source conv_2d_top.tcl -notrace
+create_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:32 . Memory (MB): peak = 1367.883 ; gain = 62.836 ; free physical = 186 ; free virtual = 9881
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/idris/opt/Xilinx/Vivado/2023.2/data/ip'.
+add_files: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1452.570 ; gain = 45.688 ; free physical = 223 ; free virtual = 9914
+Command: read_checkpoint -auto_incremental -incremental /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.srcs/utils_1/imports/synth_1/convo_2d_wrapper.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.srcs/utils_1/imports/synth_1/convo_2d_wrapper.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top conv_2d_top -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 40084
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 2219.402 ; gain = 414.715 ; free physical = 251 ; free virtual = 8929
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'reset_i', assumed default net type 'wire' [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:102]
+WARNING: [Synth 8-6901] identifier 'gpio_ins' is used before its declaration [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:32]
+INFO: [Synth 8-6157] synthesizing module 'conv_2d_top' [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'convo_2d_wrapper' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/convolution/convo_2d_wrapper.sv:1]
+	Parameter ConvoWidth bound to: 32'sb00000000000000000000000000000011 
+	Parameter ConvoHeight bound to: 32'sb00000000000000000000000000000011 
+	Parameter NumConvoCores bound to: 32'sb00000000000000000000000000000001 
+	Parameter DataSizeW bound to: 32'sb00000000000000000000000000011100 
+	Parameter DataSizeH bound to: 32'sb00000000000000000000000000011100 
+	Parameter DataWidth bound to: 32'sb00000000000000000000000000001000 
+	Parameter WeigthsWidth bound to: 32'sb00000000000000000000000000001000 
+INFO: [Synth 8-6157] synthesizing module 'convo_2d' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/convolution/convo_2d.sv:1]
+	Parameter ConvoWidth bound to: 32'sb00000000000000000000000000000011 
+	Parameter ConvoHeight bound to: 32'sb00000000000000000000000000000011 
+	Parameter DataSizeW bound to: 32'sb00000000000000000000000000011100 
+	Parameter DataSizeH bound to: 32'sb00000000000000000000000000011100 
+	Parameter NumInputs bound to: 32'sb00000000000000000000000000000100 
+	Parameter DataWidth bound to: 32'sb00000000000000000000000000001000 
+	Parameter Instance bound to: 32'sb00000000000000000000000000000000 
+	Parameter AddrWidth bound to: 32'sb00000000000000000000000000001010 
+	Parameter InputWgtAddrWidth bound to: 32'sb00000000000000000000000000000100 
+	Parameter WeigthsWidth bound to: 32'sb00000000000000000000000000001000 
+INFO: [Synth 8-6155] done synthesizing module 'convo_2d' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/convolution/convo_2d.sv:1]
+WARNING: [Synth 8-689] width (10) of port connection 'wgt_in_ram_addr' does not match port width (4) of module 'convo_2d' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/convolution/convo_2d_wrapper.sv:390]
+INFO: [Synth 8-6157] synthesizing module 'ram_switch' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/utils/ram_switch.sv:1]
+	Parameter NumPorts bound to: 32'sb00000000000000000000000000000001 
+	Parameter DataWidth bound to: 32'sb00000000000000000000000000001000 
+	Parameter AddrWidth bound to: 32'sb00000000000000000000000000000100 
+INFO: [Synth 8-6157] synthesizing module 'arbiter' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/arbiter.sv:5]
+	Parameter NUM_PORTS bound to: 32'sb00000000000000000000000000000001 
+INFO: [Synth 8-6155] done synthesizing module 'arbiter' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/arbiter.sv:5]
+WARNING: [Synth 8-689] width (2) of port connection 'select' does not match port width (1) of module 'arbiter' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/utils/ram_switch.sv:37]
+INFO: [Synth 8-6157] synthesizing module 'ram_mux' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/ram_mux.sv:1]
+	Parameter NUM_PORTS bound to: 32'sb00000000000000000000000000000001 
+	Parameter DataWidth bound to: 32'sb00000000000000000000000000001000 
+	Parameter AddrWidth bound to: 32'sb00000000000000000000000000000100 
+INFO: [Synth 8-6155] done synthesizing module 'ram_mux' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/ram_mux.sv:1]
+WARNING: [Synth 8-689] width (2) of port connection 'select_i' does not match port width (1) of module 'ram_mux' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/utils/ram_switch.sv:45]
+INFO: [Synth 8-6155] done synthesizing module 'ram_switch' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/utils/ram_switch.sv:1]
+WARNING: [Synth 8-689] width (10) of port connection 'input_ram_addr' does not match port width (4) of module 'ram_switch' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/convolution/convo_2d_wrapper.sv:167]
+INFO: [Synth 8-6157] synthesizing module 'bram_dp' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/bram/bram_dp.sv:1]
+	Parameter RAM_DATA_WIDTH bound to: 32'sb00000000000000000000000000001000 
+	Parameter RAM_ADDR_WIDTH bound to: 32'sb00000000000000000000000000000100 
+INFO: [Synth 8-6155] done synthesizing module 'bram_dp' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/bram/bram_dp.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'ram_switch__parameterized0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/utils/ram_switch.sv:1]
+	Parameter NumPorts bound to: 32'sb00000000000000000000000000000001 
+	Parameter DataWidth bound to: 32'sb00000000000000000000000000001000 
+	Parameter AddrWidth bound to: 32'sb00000000000000000000000000001010 
+WARNING: [Synth 8-689] width (2) of port connection 'select' does not match port width (1) of module 'arbiter' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/utils/ram_switch.sv:37]
+INFO: [Synth 8-6157] synthesizing module 'ram_mux__parameterized0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/ram_mux.sv:1]
+	Parameter NUM_PORTS bound to: 32'sb00000000000000000000000000000001 
+	Parameter DataWidth bound to: 32'sb00000000000000000000000000001000 
+	Parameter AddrWidth bound to: 32'sb00000000000000000000000000001010 
+INFO: [Synth 8-6155] done synthesizing module 'ram_mux__parameterized0' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/ram_mux.sv:1]
+WARNING: [Synth 8-689] width (2) of port connection 'select_i' does not match port width (1) of module 'ram_mux__parameterized0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/utils/ram_switch.sv:45]
+INFO: [Synth 8-6155] done synthesizing module 'ram_switch__parameterized0' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/utils/ram_switch.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'bram_dp__parameterized0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/bram/bram_dp.sv:1]
+	Parameter RAM_DATA_WIDTH bound to: 32'sb00000000000000000000000000001000 
+	Parameter RAM_ADDR_WIDTH bound to: 32'sb00000000000000000000000000001010 
+INFO: [Synth 8-6155] done synthesizing module 'bram_dp__parameterized0' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/bram/bram_dp.sv:1]
+WARNING: [Synth 8-689] width (2) of port connection 'select' does not match port width (1) of module 'arbiter' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/convolution/convo_2d_wrapper.sv:324]
+INFO: [Synth 8-6157] synthesizing module 'mult_mux' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/mult_mux.sv:3]
+	Parameter NUM_PORTS bound to: 32'sb00000000000000000000000000000001 
+	Parameter DataWidth bound to: 32'sb00000000000000000000000000001000 
+	Parameter AddrWidth bound to: 32'sb00000000000000000000000000001010 
+INFO: [Synth 8-6155] done synthesizing module 'mult_mux' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/common/mult_mux.sv:3]
+WARNING: [Synth 8-689] width (2) of port connection 'select_i' does not match port width (1) of module 'mult_mux' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/convolution/convo_2d_wrapper.sv:334]
+WARNING: [Synth 8-689] width (8) of port connection 'result_o' does not match port width (16) of module 'mult_mux' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/convolution/convo_2d_wrapper.sv:339]
+WARNING: [Synth 8-689] width (9) of port connection 'value_i' does not match port width (8) of module 'mult_mux' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/convolution/convo_2d_wrapper.sv:342]
+INFO: [Synth 8-6157] synthesizing module 'mul' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/maths/mul.sv:7]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter FBITS bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mul' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/maths/mul.sv:7]
+WARNING: [Synth 8-689] width (9) of port connection 'val' does not match port width (8) of module 'mul' [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/convolution/convo_2d_wrapper.sv:362]
+INFO: [Synth 8-6155] done synthesizing module 'convo_2d_wrapper' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/convolution/convo_2d_wrapper.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'system_wrapper_wrapper' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/hdl/system_wrapper_wrapper.v:13]
+INFO: [Synth 8-6157] synthesizing module 'system_wrapper' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/synth/system_wrapper.v:13]
+INFO: [Synth 8-6157] synthesizing module 'system_wrapper_axi_bram_ctrl_0_1' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.runs/synth_1/.Xil/Vivado-39625-idris-HP-EliteBook-840-G3/realtime/system_wrapper_axi_bram_ctrl_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_wrapper_axi_bram_ctrl_0_1' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.runs/synth_1/.Xil/Vivado-39625-idris-HP-EliteBook-840-G3/realtime/system_wrapper_axi_bram_ctrl_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_wrapper_axi_bram_ctrl_1_0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.runs/synth_1/.Xil/Vivado-39625-idris-HP-EliteBook-840-G3/realtime/system_wrapper_axi_bram_ctrl_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_wrapper_axi_bram_ctrl_1_0' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.runs/synth_1/.Xil/Vivado-39625-idris-HP-EliteBook-840-G3/realtime/system_wrapper_axi_bram_ctrl_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_wrapper_axi_smc_0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.runs/synth_1/.Xil/Vivado-39625-idris-HP-EliteBook-840-G3/realtime/system_wrapper_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_wrapper_axi_smc_0' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.runs/synth_1/.Xil/Vivado-39625-idris-HP-EliteBook-840-G3/realtime/system_wrapper_axi_smc_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'M01_AXI_awprot' of module 'system_wrapper_axi_smc_0' is unconnected for instance 'axi_smc' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/synth/system_wrapper.v:319]
+WARNING: [Synth 8-7071] port 'M01_AXI_arprot' of module 'system_wrapper_axi_smc_0' is unconnected for instance 'axi_smc' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/synth/system_wrapper.v:319]
+WARNING: [Synth 8-7071] port 'M02_AXI_awprot' of module 'system_wrapper_axi_smc_0' is unconnected for instance 'axi_smc' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/synth/system_wrapper.v:319]
+WARNING: [Synth 8-7071] port 'M02_AXI_arprot' of module 'system_wrapper_axi_smc_0' is unconnected for instance 'axi_smc' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/synth/system_wrapper.v:319]
+WARNING: [Synth 8-7023] instance 'axi_smc' of module 'system_wrapper_axi_smc_0' has 135 connections declared, but only 131 given [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/synth/system_wrapper.v:319]
+INFO: [Synth 8-6157] synthesizing module 'system_wrapper_clk_wiz_0_0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.runs/synth_1/.Xil/Vivado-39625-idris-HP-EliteBook-840-G3/realtime/system_wrapper_clk_wiz_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_wrapper_clk_wiz_0_0' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.runs/synth_1/.Xil/Vivado-39625-idris-HP-EliteBook-840-G3/realtime/system_wrapper_clk_wiz_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_wrapper_debug_bridge_0_0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.runs/synth_1/.Xil/Vivado-39625-idris-HP-EliteBook-840-G3/realtime/system_wrapper_debug_bridge_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_wrapper_debug_bridge_0_0' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.runs/synth_1/.Xil/Vivado-39625-idris-HP-EliteBook-840-G3/realtime/system_wrapper_debug_bridge_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_wrapper_axi_gpio_0_0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.runs/synth_1/.Xil/Vivado-39625-idris-HP-EliteBook-840-G3/realtime/system_wrapper_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_wrapper_axi_gpio_0_0' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.runs/synth_1/.Xil/Vivado-39625-idris-HP-EliteBook-840-G3/realtime/system_wrapper_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_wrapper_axi_gpio_0_1' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.runs/synth_1/.Xil/Vivado-39625-idris-HP-EliteBook-840-G3/realtime/system_wrapper_axi_gpio_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_wrapper_axi_gpio_0_1' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.runs/synth_1/.Xil/Vivado-39625-idris-HP-EliteBook-840-G3/realtime/system_wrapper_axi_gpio_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_wrapper_processing_system7_0_0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.runs/synth_1/.Xil/Vivado-39625-idris-HP-EliteBook-840-G3/realtime/system_wrapper_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_wrapper_processing_system7_0_0' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.runs/synth_1/.Xil/Vivado-39625-idris-HP-EliteBook-840-G3/realtime/system_wrapper_processing_system7_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'system_wrapper_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/synth/system_wrapper.v:520]
+WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'system_wrapper_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/synth/system_wrapper.v:520]
+WARNING: [Synth 8-7071] port 'MIO' of module 'system_wrapper_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/synth/system_wrapper.v:520]
+WARNING: [Synth 8-7071] port 'PS_SRSTB' of module 'system_wrapper_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/synth/system_wrapper.v:520]
+WARNING: [Synth 8-7071] port 'PS_CLK' of module 'system_wrapper_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/synth/system_wrapper.v:520]
+WARNING: [Synth 8-7071] port 'PS_PORB' of module 'system_wrapper_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/synth/system_wrapper.v:520]
+WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'system_wrapper_processing_system7_0_0' has 48 connections declared, but only 42 given [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/synth/system_wrapper.v:520]
+INFO: [Synth 8-6157] synthesizing module 'system_wrapper_rst_ps7_0_50M_0' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.runs/synth_1/.Xil/Vivado-39625-idris-HP-EliteBook-840-G3/realtime/system_wrapper_rst_ps7_0_50M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_wrapper_rst_ps7_0_50M_0' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.runs/synth_1/.Xil/Vivado-39625-idris-HP-EliteBook-840-G3/realtime/system_wrapper_rst_ps7_0_50M_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'system_wrapper_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_50M' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/synth/system_wrapper.v:563]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'system_wrapper_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_50M' [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/synth/system_wrapper.v:563]
+WARNING: [Synth 8-7023] instance 'rst_ps7_0_50M' of module 'system_wrapper_rst_ps7_0_50M_0' has 10 connections declared, but only 8 given [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/synth/system_wrapper.v:563]
+INFO: [Synth 8-6155] done synthesizing module 'system_wrapper' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/synth/system_wrapper.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'system_wrapper_wrapper' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/hdl/system_wrapper_wrapper.v:13]
+WARNING: [Synth 8-689] width (10) of port connection 'actv_i_addr' does not match port width (13) of module 'system_wrapper_wrapper' [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:119]
+WARNING: [Synth 8-689] width (8) of port connection 'actv_i_din' does not match port width (32) of module 'system_wrapper_wrapper' [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:121]
+WARNING: [Synth 8-2900] ignoring illegal expression in output port connection [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:123]
+WARNING: [Synth 8-2900] ignoring illegal expression in output port connection [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:124]
+WARNING: [Synth 8-689] width (1) of port connection 'actv_i_we' does not match port width (4) of module 'system_wrapper_wrapper' [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:125]
+WARNING: [Synth 8-689] width (10) of port connection 'actv_o_addr' does not match port width (13) of module 'system_wrapper_wrapper' [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:126]
+WARNING: [Synth 8-689] width (8) of port connection 'actv_o_din' does not match port width (32) of module 'system_wrapper_wrapper' [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:128]
+WARNING: [Synth 8-2900] ignoring illegal expression in output port connection [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:130]
+WARNING: [Synth 8-2900] ignoring illegal expression in output port connection [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:131]
+WARNING: [Synth 8-689] width (1) of port connection 'actv_o_we' does not match port width (4) of module 'system_wrapper_wrapper' [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:132]
+WARNING: [Synth 8-689] width (4) of port connection 'wgt_addr' does not match port width (13) of module 'system_wrapper_wrapper' [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:135]
+WARNING: [Synth 8-689] width (8) of port connection 'wgt_din' does not match port width (32) of module 'system_wrapper_wrapper' [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:137]
+WARNING: [Synth 8-2900] ignoring illegal expression in output port connection [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:139]
+WARNING: [Synth 8-2900] ignoring illegal expression in output port connection [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:140]
+WARNING: [Synth 8-689] width (1) of port connection 'wgt_we' does not match port width (4) of module 'system_wrapper_wrapper' [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:141]
+WARNING: [Synth 8-7071] port 'locked_0' of module 'system_wrapper_wrapper' is unconnected for instance 'system_wrapper_inst' [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:116]
+WARNING: [Synth 8-7023] instance 'system_wrapper_inst' of module 'system_wrapper_wrapper' has 26 connections declared, but only 25 given [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:116]
+INFO: [Synth 8-6155] done synthesizing module 'conv_2d_top' (0#1) [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:1]
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/convolution/convo_2d.sv:119]
+WARNING: [Synth 8-3848] Net actv_in_ram_dout in module/entity convo_2d does not have driver. [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/convolution/convo_2d.sv:29]
+WARNING: [Synth 8-3848] Net wgt_in_ram_dout in module/entity convo_2d does not have driver. [/home/idris/projects/FPGA_VISION/NN_SHIFT/src/convolution/convo_2d.sv:35]
+WARNING: [Synth 8-3848] Net reset_i in module/entity conv_2d_top does not have driver. [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:102]
+WARNING: [Synth 8-3848] Net actv_in_ram_din in module/entity conv_2d_top does not have driver. [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:38]
+WARNING: [Synth 8-3848] Net wgt_in_ram_din in module/entity conv_2d_top does not have driver. [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:44]
+WARNING: [Synth 8-3848] Net actv_out_ram_din in module/entity conv_2d_top does not have driver. [/home/idris/projects/FPGA_VISION/NN_SHIFT/top/conv_2d_top.sv:51]
+WARNING: [Synth 8-7129] Port done_i in module mult_mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port valid_i in module mult_mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port actv_in_ram_dout[7] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port actv_in_ram_dout[6] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port actv_in_ram_dout[5] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port actv_in_ram_dout[4] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port actv_in_ram_dout[3] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port actv_in_ram_dout[2] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port actv_in_ram_dout[1] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port actv_in_ram_dout[0] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wgt_in_ram_dout[7] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wgt_in_ram_dout[6] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wgt_in_ram_dout[5] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wgt_in_ram_dout[4] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wgt_in_ram_dout[3] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wgt_in_ram_dout[2] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wgt_in_ram_dout[1] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wgt_in_ram_dout[0] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port actv_out_ram_din[7] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port actv_out_ram_din[6] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port actv_out_ram_din[5] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port actv_out_ram_din[4] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port actv_out_ram_din[3] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port actv_out_ram_din[2] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port actv_out_ram_din[1] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port actv_out_ram_din[0] in module convo_2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mult_busy_i in module convo_2d is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 2307.371 ; gain = 502.684 ; free physical = 194 ; free virtual = 8874
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 2322.215 ; gain = 517.527 ; free physical = 169 ; free virtual = 8865
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 2322.215 ; gain = 517.527 ; free physical = 169 ; free virtual = 8865
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2322.215 ; gain = 0.000 ; free physical = 159 ; free virtual = 8847
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/ip/system_wrapper_processing_system7_0_0/system_wrapper_processing_system7_0_0/system_wrapper_processing_system7_0_0_in_context.xdc] for cell 'system_wrapper_inst/system_wrapper_i/processing_system7_0'
+Finished Parsing XDC File [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/ip/system_wrapper_processing_system7_0_0/system_wrapper_processing_system7_0_0/system_wrapper_processing_system7_0_0_in_context.xdc] for cell 'system_wrapper_inst/system_wrapper_i/processing_system7_0'
+Parsing XDC File [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/ip/system_wrapper_debug_bridge_0_0/system_wrapper_debug_bridge_0_0/system_wrapper_debug_bridge_0_0_in_context.xdc] for cell 'system_wrapper_inst/system_wrapper_i/debug_bridge_0'
+Finished Parsing XDC File [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/ip/system_wrapper_debug_bridge_0_0/system_wrapper_debug_bridge_0_0/system_wrapper_debug_bridge_0_0_in_context.xdc] for cell 'system_wrapper_inst/system_wrapper_i/debug_bridge_0'
+Parsing XDC File [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/ip/system_wrapper_axi_gpio_0_0/system_wrapper_axi_gpio_0_0/system_wrapper_axi_gpio_0_0_in_context.xdc] for cell 'system_wrapper_inst/system_wrapper_i/gpio_ins'
+Finished Parsing XDC File [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/ip/system_wrapper_axi_gpio_0_0/system_wrapper_axi_gpio_0_0/system_wrapper_axi_gpio_0_0_in_context.xdc] for cell 'system_wrapper_inst/system_wrapper_i/gpio_ins'
+Parsing XDC File [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/ip/system_wrapper_axi_gpio_0_1/system_wrapper_axi_gpio_0_1/system_wrapper_axi_gpio_0_1_in_context.xdc] for cell 'system_wrapper_inst/system_wrapper_i/gpio_outs'
+Finished Parsing XDC File [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/ip/system_wrapper_axi_gpio_0_1/system_wrapper_axi_gpio_0_1/system_wrapper_axi_gpio_0_1_in_context.xdc] for cell 'system_wrapper_inst/system_wrapper_i/gpio_outs'
+Parsing XDC File [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/ip/system_wrapper_axi_smc_0/system_wrapper_axi_smc_0/system_wrapper_axi_smc_0_in_context.xdc] for cell 'system_wrapper_inst/system_wrapper_i/axi_smc'
+Finished Parsing XDC File [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/ip/system_wrapper_axi_smc_0/system_wrapper_axi_smc_0/system_wrapper_axi_smc_0_in_context.xdc] for cell 'system_wrapper_inst/system_wrapper_i/axi_smc'
+Parsing XDC File [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/ip/system_wrapper_rst_ps7_0_50M_0/system_wrapper_rst_ps7_0_50M_0/system_wrapper_rst_ps7_0_50M_0_in_context.xdc] for cell 'system_wrapper_inst/system_wrapper_i/rst_ps7_0_50M'
+Finished Parsing XDC File [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/ip/system_wrapper_rst_ps7_0_50M_0/system_wrapper_rst_ps7_0_50M_0/system_wrapper_rst_ps7_0_50M_0_in_context.xdc] for cell 'system_wrapper_inst/system_wrapper_i/rst_ps7_0_50M'
+Parsing XDC File [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/ip/system_wrapper_axi_bram_ctrl_0_1/system_wrapper_axi_bram_ctrl_0_1/system_wrapper_axi_bram_ctrl_0_1_in_context.xdc] for cell 'system_wrapper_inst/system_wrapper_i/axi_bram_ctrl_0'
+Finished Parsing XDC File [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/ip/system_wrapper_axi_bram_ctrl_0_1/system_wrapper_axi_bram_ctrl_0_1/system_wrapper_axi_bram_ctrl_0_1_in_context.xdc] for cell 'system_wrapper_inst/system_wrapper_i/axi_bram_ctrl_0'
+Parsing XDC File [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/ip/system_wrapper_axi_bram_ctrl_1_0/system_wrapper_axi_bram_ctrl_1_0/system_wrapper_axi_bram_ctrl_1_0_in_context.xdc] for cell 'system_wrapper_inst/system_wrapper_i/axi_bram_ctrl_1'
+Finished Parsing XDC File [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/ip/system_wrapper_axi_bram_ctrl_1_0/system_wrapper_axi_bram_ctrl_1_0/system_wrapper_axi_bram_ctrl_1_0_in_context.xdc] for cell 'system_wrapper_inst/system_wrapper_i/axi_bram_ctrl_1'
+Parsing XDC File [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/ip/system_wrapper_clk_wiz_0_0/system_wrapper_clk_wiz_0_0/system_wrapper_clk_wiz_0_0_in_context.xdc] for cell 'system_wrapper_inst/system_wrapper_i/clk_wiz_0'
+Finished Parsing XDC File [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.gen/sources_1/bd/system_wrapper/ip/system_wrapper_clk_wiz_0_0/system_wrapper_clk_wiz_0_0/system_wrapper_clk_wiz_0_0_in_context.xdc] for cell 'system_wrapper_inst/system_wrapper_i/clk_wiz_0'
+Parsing XDC File [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2437.949 ; gain = 0.000 ; free physical = 267 ; free virtual = 8822
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2437.984 ; gain = 0.000 ; free physical = 266 ; free virtual = 8819
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 2437.984 ; gain = 633.297 ; free physical = 161 ; free virtual = 8736
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 2437.984 ; gain = 633.297 ; free physical = 161 ; free virtual = 8736
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for system_wrapper_inst/system_wrapper_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_wrapper_inst/system_wrapper_i/processing_system7_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_wrapper_inst/system_wrapper_i/debug_bridge_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_wrapper_inst/system_wrapper_i/gpio_ins. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_wrapper_inst/system_wrapper_i/gpio_outs. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_wrapper_inst/system_wrapper_i/axi_smc. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_wrapper_inst/system_wrapper_i/rst_ps7_0_50M. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_wrapper_inst/system_wrapper_i/axi_bram_ctrl_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_wrapper_inst/system_wrapper_i/axi_bram_ctrl_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_wrapper_inst/system_wrapper_i/clk_wiz_0. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 2437.984 ; gain = 633.297 ; free physical = 160 ; free virtual = 8734
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3971] The signal "bram_dp:/mem_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "bram_dp__parameterized0:/mem_reg" was recognized as a true dual port RAM template.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:32 . Memory (MB): peak = 2437.984 ; gain = 633.297 ; free physical = 186 ; free virtual = 8753
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 4     
+	   2 Input   16 Bit       Adders := 1     
+	   3 Input   10 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 10    
+	               16 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                8 Bit    Registers := 12    
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 34    
++---RAMs : 
+	               8K Bit	(1024 X 8 bit)          RAMs := 2     
+	              128 Bit	(16 X 8 bit)          RAMs := 1     
++---Muxes : 
+	  12 Input   32 Bit        Muxes := 6     
+	   2 Input   32 Bit        Muxes := 4     
+	  12 Input   16 Bit        Muxes := 1     
+	  12 Input   10 Bit        Muxes := 2     
+	   2 Input   10 Bit        Muxes := 4     
+	   2 Input    8 Bit        Muxes := 10    
+	   2 Input    4 Bit        Muxes := 2     
+	  12 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 2     
+	   3 Input    3 Bit        Muxes := 1     
+	   4 Input    3 Bit        Muxes := 1     
+	  12 Input    1 Bit        Muxes := 28    
+	   2 Input    1 Bit        Muxes := 13    
+	   4 Input    1 Bit        Muxes := 11    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP convo_2d_wrapper_inst/gen_convo_network[0].convo_2d_inst/actv_in_ram_addr1, operation Mode is: A*(B:0x1c).
+DSP Report: operator convo_2d_wrapper_inst/gen_convo_network[0].convo_2d_inst/actv_in_ram_addr1 is absorbed into DSP convo_2d_wrapper_inst/gen_convo_network[0].convo_2d_inst/actv_in_ram_addr1.
+DSP Report: Generating DSP convo_2d_wrapper_inst/gen_convo_network[0].convo_2d_inst/actv_in_ram_addr0, operation Mode is: PCIN+(A:0x0):B2+(C:0xffffffffffff).
+DSP Report: register convo_2d_wrapper_inst/gen_convo_network[0].convo_2d_inst/start_x_reg is absorbed into DSP convo_2d_wrapper_inst/gen_convo_network[0].convo_2d_inst/actv_in_ram_addr0.
+DSP Report: operator convo_2d_wrapper_inst/gen_convo_network[0].convo_2d_inst/actv_in_ram_addr0 is absorbed into DSP convo_2d_wrapper_inst/gen_convo_network[0].convo_2d_inst/actv_in_ram_addr0.
+DSP Report: Generating DSP convo_2d_wrapper_inst/gen_convo_network[0].convo_2d_inst/actv_out_ram_addr0, operation Mode is: C'+A2*(B:0x1c).
+DSP Report: register convo_2d_wrapper_inst/gen_convo_network[0].convo_2d_inst/start_y_reg is absorbed into DSP convo_2d_wrapper_inst/gen_convo_network[0].convo_2d_inst/actv_out_ram_addr0.
+DSP Report: register convo_2d_wrapper_inst/gen_convo_network[0].convo_2d_inst/start_x_reg is absorbed into DSP convo_2d_wrapper_inst/gen_convo_network[0].convo_2d_inst/actv_out_ram_addr0.
+DSP Report: operator convo_2d_wrapper_inst/gen_convo_network[0].convo_2d_inst/actv_out_ram_addr0 is absorbed into DSP convo_2d_wrapper_inst/gen_convo_network[0].convo_2d_inst/actv_out_ram_addr0.
+DSP Report: operator convo_2d_wrapper_inst/gen_convo_network[0].convo_2d_inst/actv_out_ram_addr1 is absorbed into DSP convo_2d_wrapper_inst/gen_convo_network[0].convo_2d_inst/actv_out_ram_addr0.
+INFO: [Synth 8-3971] The signal "conv_2d_top/convo_2d_wrapper_inst/wgt_bram_dp_inst/mem_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "conv_2d_top/convo_2d_wrapper_inst/actv_i_bram_dp_inst/mem_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "conv_2d_top/actv_out_bram_dp_inst/mem_reg" was recognized as a true dual port RAM template.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:38 . Memory (MB): peak = 2437.984 ; gain = 633.297 ; free physical = 164 ; free virtual = 8736
+---------------------------------------------------------------------------------
+ Sort Area is  convo_2d_wrapper_inst/gen_convo_network[0].convo_2d_inst/actv_out_ram_addr0_3 : 0 0 : 147 147 : Used 1 time 0
+ Sort Area is  convo_2d_wrapper_inst/gen_convo_network[0].convo_2d_inst/actv_in_ram_addr1_0 : 0 0 : 54 143 : Used 1 time 0
+ Sort Area is  convo_2d_wrapper_inst/gen_convo_network[0].convo_2d_inst/actv_in_ram_addr1_0 : 0 1 : 89 143 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                    | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|conv_2d_top | actv_out_bram_dp_inst/mem_reg | 1 K x 8(NO_CHANGE)     | W |   | 1 K x 8(READ_FIRST)    | W | R | Port A and B     | 1      | 0      | 
++------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+------------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping                        | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+------------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|convo_2d    | A*(B:0x1c)                         | 10     | 5      | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|conv_2d_top | PCIN+(A:0x0):B2+(C:0xffffffffffff) | 30     | 10     | 1      | -      | -1     | 0    | 1    | 0    | -    | -     | 0    | 0    | 
+|conv_2d_top | C'+A2*(B:0x1c)                     | 10     | 5      | 10     | -      | 10     | 1    | 0    | 1    | -    | -     | 0    | 0    | 
++------------+------------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:00:58 . Memory (MB): peak = 2437.984 ; gain = 633.297 ; free physical = 482 ; free virtual = 8546
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:01:00 . Memory (MB): peak = 2437.984 ; gain = 633.297 ; free physical = 498 ; free virtual = 8552
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                    | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|conv_2d_top | actv_out_bram_dp_inst/mem_reg | 1 K x 8(NO_CHANGE)     | W |   | 1 K x 8(READ_FIRST)    | W | R | Port A and B     | 1      | 0      | 
++------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance actv_out_bram_dp_inst/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:47 ; elapsed = 00:01:01 . Memory (MB): peak = 2437.984 ; gain = 633.297 ; free physical = 546 ; free virtual = 8574
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:actv_i_dout[7] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:actv_i_dout[6] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:actv_i_dout[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:actv_i_dout[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:actv_i_dout[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:actv_i_dout[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:actv_i_dout[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:actv_i_dout[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[31] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[30] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[29] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[28] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[27] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[26] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[25] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[24] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[23] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[22] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[21] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[20] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[19] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[18] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[17] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[16] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[15] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[14] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[13] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[12] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[11] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[10] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[9] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[8] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[7] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[6] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:gpio_ins_tri_i[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:wgt_dout[7] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:wgt_dout[6] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:wgt_dout[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:wgt_dout[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:wgt_dout[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:wgt_dout[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:wgt_dout[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin system_wrapper_inst/system_wrapper_i:wgt_dout[0] to constant 0
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:55 ; elapsed = 00:01:11 . Memory (MB): peak = 2437.984 ; gain = 633.297 ; free physical = 449 ; free virtual = 8566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:55 ; elapsed = 00:01:11 . Memory (MB): peak = 2437.984 ; gain = 633.297 ; free physical = 449 ; free virtual = 8564
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:55 ; elapsed = 00:01:11 . Memory (MB): peak = 2437.984 ; gain = 633.297 ; free physical = 448 ; free virtual = 8564
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:55 ; elapsed = 00:01:11 . Memory (MB): peak = 2437.984 ; gain = 633.297 ; free physical = 448 ; free virtual = 8564
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:55 ; elapsed = 00:01:11 . Memory (MB): peak = 2437.984 ; gain = 633.297 ; free physical = 448 ; free virtual = 8564
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:55 ; elapsed = 00:01:11 . Memory (MB): peak = 2437.984 ; gain = 633.297 ; free physical = 448 ; free virtual = 8564
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|conv_2d_top | (C'+A'*B)'  | 10     | 5      | 10     | -      | 10     | 1    | 0    | 0    | -    | -     | 0    | 1    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++------+--------------------------------------+----------+
+|      |BlackBox name                         |Instances |
++------+--------------------------------------+----------+
+|1     |system_wrapper_axi_bram_ctrl_0_1      |         1|
+|2     |system_wrapper_axi_bram_ctrl_1_0      |         1|
+|3     |system_wrapper_axi_smc_0              |         1|
+|4     |system_wrapper_clk_wiz_0_0            |         1|
+|5     |system_wrapper_debug_bridge_0_0       |         1|
+|6     |system_wrapper_axi_gpio_0_0           |         1|
+|7     |system_wrapper_axi_gpio_0_1           |         1|
+|8     |system_wrapper_processing_system7_0_0 |         1|
+|9     |system_wrapper_rst_ps7_0_50M_0        |         1|
++------+--------------------------------------+----------+
+
+Report Cell Usage: 
++------+------------------------------------+------+
+|      |Cell                                |Count |
++------+------------------------------------+------+
+|1     |system_wrapper_axi_bram_ctrl_0      |     1|
+|2     |system_wrapper_axi_bram_ctrl_1      |     1|
+|3     |system_wrapper_axi_gpio_0           |     2|
+|5     |system_wrapper_axi_smc              |     1|
+|6     |system_wrapper_clk_wiz_0            |     1|
+|7     |system_wrapper_debug_bridge_0       |     1|
+|8     |system_wrapper_processing_system7_0 |     1|
+|9     |system_wrapper_rst_ps7_0_50M        |     1|
+|10    |CARRY4                              |    32|
+|11    |DSP48E1                             |     1|
+|12    |LUT1                                |     4|
+|13    |LUT2                                |    62|
+|14    |LUT3                                |   139|
+|15    |LUT4                                |    40|
+|16    |LUT5                                |    53|
+|17    |LUT6                                |    42|
+|18    |MUXF7                               |     1|
+|19    |RAMB18E1                            |     1|
+|20    |FDRE                                |   211|
+|21    |FDSE                                |     1|
++------+------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:55 ; elapsed = 00:01:11 . Memory (MB): peak = 2437.984 ; gain = 633.297 ; free physical = 448 ; free virtual = 8564
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 46 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:52 ; elapsed = 00:01:07 . Memory (MB): peak = 2437.984 ; gain = 517.527 ; free physical = 445 ; free virtual = 8557
+Synthesis Optimization Complete : Time (s): cpu = 00:00:55 ; elapsed = 00:01:12 . Memory (MB): peak = 2437.984 ; gain = 633.297 ; free physical = 444 ; free virtual = 8555
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2437.984 ; gain = 0.000 ; free physical = 627 ; free virtual = 8747
+INFO: [Netlist 29-17] Analyzing 35 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 5 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2437.984 ; gain = 0.000 ; free physical = 686 ; free virtual = 8807
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: a53ad82f
+INFO: [Common 17-83] Releasing license: Synthesis
+76 Infos, 124 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:08 ; elapsed = 00:01:21 . Memory (MB): peak = 2437.984 ; gain = 962.602 ; free physical = 705 ; free virtual = 8805
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2066.083; main = 1754.873; forked = 385.146
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3413.355; main = 2437.953; forked = 975.402
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2461.961 ; gain = 0.000 ; free physical = 703 ; free virtual = 8808
+INFO: [Common 17-1381] The checkpoint '/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.runs/synth_1/conv_2d_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file conv_2d_top_utilization_synth.rpt -pb conv_2d_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Dec 17 15:50:59 2023...
