@@ -4,7 +4,6 @@ module conv_2d_top #(
     parameter int NumConvoCores = 1,
     parameter int DataSizeW     = 28,
     parameter int DataSizeH     = 28,
-    parameter int NumInputs     = 4,
     parameter int DataWidth     = 8,
     parameter int WeigthsWidth  = DataWidth,
     parameter int AddrWidth     = $clog2(DataSizeW * DataSizeH),

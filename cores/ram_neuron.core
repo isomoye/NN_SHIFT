@@ -1,0 +1,64 @@
+CAPI=2:
+name: fusesoc:nn:ram_nn:1.0.0
+description: ram based neural network
+
+filesets:
+  rtl:
+    files:
+      - ../rtl/bram/bram_dp.sv
+      - ../rtl/bram/bram_sp.sv
+      - ../rtl/reuse/arbiter.sv
+      - ../rtl/reuse/mult_mux.sv
+      - ../rtl/reuse/multiplier.sv
+      - ../rtl/reuse/qmult.sv
+      - ../rtl/reuse/ram_mux_input.sv
+      - ../rtl/reuse/ram_mux.sv
+      - ../rtl/reuse/sigmoid.sv
+      - ../rtl/reuse/simple_nn.sv
+      - ../rtl/maths/div.sv
+      - ../rtl/maths/mul.sv
+      - ../rtl/maths/lfsr.sv
+      - ../rtl/maths/divu.sv
+      - ../rtl/neurons/neuron_ram.sv
+      - ../rtl/maths/divu_int.sv
+      - ../rtl/layers/ram_nn_layer.sv
+      - ../rtl/utils/ram_switch.sv
+      - ../rtl/examples/ram_nn.sv
+    file_type: systemVerilogSource
+    depend : [vlog_tb_utils]
+
+
+  tb:
+    files:
+      - ../tb/test_ram_nn.py : {file_type : user, copyto : .}
+
+
+targets:
+  default: &default
+
+  sim:
+    flow: sim
+    flow_options:
+      tool : icarus
+      iverilog_options:
+          - -g2012 -DCOCOTB_SIM  # Use SystemVerilog-2012
+      cocotb_module : test_ram_nn
+      timescale: 1ns/1ns
+    filesets : [rtl,tb]
+    toplevel : [ram_nn]
+
+  lint:
+    default_tool : verilator
+    filesets : [rtl]
+    tools:
+      verilator :
+        mode : lint-only
+    toplevel : ram_nn
+
+  synth:
+    default_tool : vivado
+    filesets : [rtl]
+    tools:
+      vivado:
+        part : xc7a100tcsg324-1
+    toplevel : ram_nn

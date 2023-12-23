@@ -1,0 +1,59 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Tue Dec 19 08:49:18 2023
+# Process ID: 204823
+# Current directory: /home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d
+# Command line: vivado convo_2d.xpr
+# Log file: /home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/vivado.log
+# Journal file: /home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/vivado.jou
+# Running On: idris-HP-EliteBook-840-G3, OS: Linux, CPU Frequency: 2413.315 MHz, CPU Physical cores: 2, Host memory: 16640 MB
+#-----------------------------------------------------------
+start_gui
+open_project convo_2d.xpr
+INFO: [Project 1-313] Project file moved from '/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d' since last save.
+INFO: [filemgmt 56-1] Board Part Repository Path: Directory not found as '/home/opt/Xilinx/Vivado/2023.2/data/boards/board_files'; using path '/home/idris/opt/Xilinx/Vivado/2023.2/data/boards/board_files' instead.
+WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory '/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/convo_2d.ip_user_files'.
+CRITICAL WARNING: [Project 1-311] Could not find the file '/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/system_wrapper.bd', nor could it be found using path '/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/system_wrapper.bd'.
+CRITICAL WARNING: [Project 1-311] Could not find the file '/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/convo_2d.srcs/utils_1/imports/synth_1/convo_2d_wrapper.dcp', nor could it be found using path '/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d/convo_2d.srcs/utils_1/imports/synth_1/convo_2d_wrapper.dcp'.
+WARNING: [Project 1-865] Could not find the file /home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/convo_2d.srcs/utils_1/imports/synth_1/convo_2d_wrapper.dcp
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-509] GeneratedRun file for 'synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'bd_07e0_axi_jtag_0_synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'bd_07e0_bsip_0_synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'system_wrapper_processing_system7_0_0_synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'system_wrapper_debug_bridge_0_0_synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'system_wrapper_axi_gpio_0_0_synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'system_wrapper_axi_gpio_0_1_synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'system_wrapper_rst_ps7_0_50M_0_synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'system_wrapper_axi_bram_ctrl_0_1_synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'system_wrapper_axi_bram_ctrl_1_0_synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'impl_1' not found
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.1/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.1 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /home/idris/opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-151] The current board 'digilentinc.com::zybo-z7-10:1.0' is from a local repo. The vivado install has a corresponding board with version greater than or equal to the local repo board. Please use boards from vivado install to avoid any upgrade/migrate issues
+WARNING: [Project 1-533] File '/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/ip/ip_0/bd_07e0_axi_jtag_0.xci' could not be found in the subdesign '/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/system_wrapper.bd', but fileset 'bd_07e0_axi_jtag_0' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
+WARNING: [Project 1-533] File '/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/ip/ip_1/bd_07e0_bsip_0.xci' could not be found in the subdesign '/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/system_wrapper.bd', but fileset 'bd_07e0_bsip_0' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
+WARNING: [Project 1-533] File '/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/ip/system_wrapper_axi_bram_ctrl_0_1/system_wrapper_axi_bram_ctrl_0_1.xci' could not be found in the subdesign '/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/system_wrapper.bd', but fileset 'system_wrapper_axi_bram_ctrl_0_1' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
+WARNING: [Project 1-533] File '/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/ip/system_wrapper_axi_bram_ctrl_1_0/system_wrapper_axi_bram_ctrl_1_0.xci' could not be found in the subdesign '/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/system_wrapper.bd', but fileset 'system_wrapper_axi_bram_ctrl_1_0' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
+WARNING: [Project 1-533] File '/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/ip/system_wrapper_axi_gpio_0_0/system_wrapper_axi_gpio_0_0.xci' could not be found in the subdesign '/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/system_wrapper.bd', but fileset 'system_wrapper_axi_gpio_0_0' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
+WARNING: [Project 1-533] File '/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/ip/system_wrapper_axi_gpio_0_1/system_wrapper_axi_gpio_0_1.xci' could not be found in the subdesign '/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/system_wrapper.bd', but fileset 'system_wrapper_axi_gpio_0_1' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
+WARNING: [Project 1-533] File '/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/ip/system_wrapper_debug_bridge_0_0/system_wrapper_debug_bridge_0_0.xci' could not be found in the subdesign '/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/system_wrapper.bd', but fileset 'system_wrapper_debug_bridge_0_0' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
+WARNING: [Project 1-533] File '/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/ip/system_wrapper_processing_system7_0_0/system_wrapper_processing_system7_0_0.xci' could not be found in the subdesign '/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/system_wrapper.bd', but fileset 'system_wrapper_processing_system7_0_0' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
+WARNING: [Project 1-533] File '/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/ip/system_wrapper_rst_ps7_0_50M_0/system_wrapper_rst_ps7_0_50M_0.xci' could not be found in the subdesign '/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/convo_2d.srcs/sources_1/bd/system_wrapper/system_wrapper.bd', but fileset 'system_wrapper_rst_ps7_0_50M_0' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/idris/opt/Xilinx/Vivado/2023.2/data/ip'.
+open_project: Time (s): cpu = 00:01:10 ; elapsed = 00:00:55 . Memory (MB): peak = 8115.328 ; gain = 688.957 ; free physical = 230 ; free virtual = 10503
+update_compile_order -fileset sources_1

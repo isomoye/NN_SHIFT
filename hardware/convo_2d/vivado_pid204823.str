@@ -1,0 +1,185 @@
+/*
+
+AMD Vivado v2023.2 (64-bit) [Major: 2023, Minor: 2]
+SW Build: 4029153 on Fri Oct 13 20:13:54 MDT 2023
+IP Build: 4028589 on Sat Oct 14 00:45:43 MDT 2023
+IP Build: 4028589 on Sat Oct 14 00:45:43 MDT 2023
+
+Process ID (PID): 204823
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Tue Dec 19 08:50:06 EST 2023
+Time zone: 	Eastern Standard Time (America/New_York)
+
+OS: Ubuntu
+OS Version: 5.15.0-91-generic
+OS Architecture: amd64
+Available processors (cores): 4
+LSB Release Description: NAME=Ubuntu
+
+Display: 0
+Screen size: 1920x1080
+Local screen bounds: x = 72, y = 27, width = 1848, height = 1053
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+OS font scaling: 100%
+Anti-Alias Enabled: false
+
+Java version: 	17.0.7 64-bit
+JavaFX version: 17.0.1
+Java home: 	/home/idris/opt/Xilinx/Vivado/2023.2/tps/lnx64/jre17.0.7_7
+Java executable: 	/home/idris/opt/Xilinx/Vivado/2023.2/tps/lnx64/jre17.0.7_7/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Djdk.gtk.version=2, -Dsun.java2d.uiScale.enabled=false, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, -XX:+UseStringDeduplication, -XX:MaxGCPauseMillis=200, -XX:+ParallelRefProcEnabled, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=80m, -XX:MaxNewSize=80m, -Xms512m, -Xmx4072m, -Xss10m, -Xrs]
+Java initial memory (-Xms): 	512 MB
+Java maximum memory (-Xmx):	 3 GB
+
+User name: 	idris
+User home directory: /home/idris
+User working directory: /home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /home/idris/opt/Xilinx/Vivado
+HDI_APPROOT: /home/idris/opt/Xilinx/Vivado/2023.2
+RDI_DATADIR: /home/idris/opt/Xilinx/SharedData/2023.2/data:/home/idris/opt/Xilinx/Vivado/2023.2/data
+RDI_BINDIR: /home/idris/opt/Xilinx/Vivado/2023.2/bin
+
+Vivado preferences file: /home/idris/.Xilinx/Vivado/2023.2/vivado.xml
+Vivado preferences directory: /home/idris/.Xilinx/Vivado/2023.2/
+Vivado layouts directory: /home/idris/.Xilinx/Vivado/2023.2/data/layouts
+PlanAhead jar file: 	/home/idris/opt/Xilinx/Vivado/2023.2/lib/classes/planAhead.jar
+Vivado log file: 	/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/vivado.log
+Vivado journal file: 	/home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-204823-idris-HP-EliteBook-840-G3
+Non-Default Parameters:	[]
+
+Xilinx & AMD Environment Variables
+--------------------------------------------------------------------------------------------
+GNOME_SHELL_SESSION_MODE: ubuntu
+MYVIVADO: /home/idris/opt/Xilinx
+RDI_APPROOT: /home/idris/opt/Xilinx:/home/idris/opt/Xilinx/Vivado/2023.2
+RDI_BASEROOT: /home/idris/opt/Xilinx/Vivado
+RDI_BINROOT: /home/idris/opt/Xilinx/Vivado/2023.2/bin
+RDI_BUILD: yes
+RDI_DATADIR: /home/idris/opt/Xilinx/SharedData/2023.2/data:/home/idris/opt/Xilinx/Vivado/2023.2/data
+RDI_INSTALLROOT: /home/idris/opt/Xilinx
+RDI_INSTALLVER: 2023.2
+RDI_JAVA_PLATFORM: 
+RDI_JAVA_VERSION: 17.0.7_7
+RDI_LIBDIR: /home/idris/opt/Xilinx/Vivado/2023.2/lib/lnx64.o/Ubuntu/20:/home/idris/opt/Xilinx/Vivado/2023.2/lib/lnx64.o/Ubuntu:/home/idris/opt/Xilinx/Vivado/2023.2/lib/lnx64.o
+RDI_OPT_EXT: .o
+RDI_PATCHROOT: /home/idris/opt/Xilinx:
+RDI_PLATFORM: lnx64
+RDI_PREPEND_PATH: /home/idris/opt/Xilinx/Vitis/2023.2/bin:/home/idris/opt/Xilinx/Vivado/2023.2/ids_lite/ISE/bin/lin64
+RDI_PROG: /home/idris/opt/Xilinx/Vivado/2023.2/bin/unwrapped/lnx64.o/vivado
+RDI_SESSION_INFO: /home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d:idris-HP-EliteBook-840-G3_1702993753_204771
+RDI_SHARED_DATA: /home/idris/opt/Xilinx/SharedData/2023.2/data
+RDI_TPS_ROOT: /home/idris/opt/Xilinx/Vivado/2023.2/tps/lnx64
+RDI_USE_JDK17: True
+SHELL: /bin/bash
+VITIS_PATH: /home/idris/opt/Xilinx/Vitis/2023.2
+VIVADO_PATH: /home/idris/opt/Xilinx/Vivado/2023.2
+VIVADO_VERSION: 2023.2
+XILINX: /home/idris/opt/Xilinx/Vivado/2023.2/ids_lite/ISE
+XILINX_DSP: /home/idris/opt/Xilinx/Vivado/2023.2/ids_lite/ISE
+XILINX_HLS: /home/idris/opt/Xilinx/Vitis_HLS/2023.2
+XILINX_PATH: /home/idris/opt/Xilinx
+XILINX_PLANAHEAD: /home/idris/opt/Xilinx/Vivado/2023.2
+XILINX_SDK: /home/idris/opt/Xilinx/Vitis/2023.2
+XILINX_VITIS: /home/idris/opt/Xilinx/Vitis/2023.2
+XILINX_VIVADO: /home/idris/opt/Xilinx/Vivado/2023.2
+XILINX_VIVADO_HLS: /home/idris/opt/Xilinx/Vivado/2023.2
+
+
+GUI allocated memory:	512 MB
+GUI max memory:		4,072 MB
+Engine allocated memory: 1,402 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// WARNING: HEventQueue.dispatchEvent() is taking  1788 ms.
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 95 MB (+97393kb) [00:00:31]
+// [Engine Memory]: 1,357 MB (+1271585kb) [00:00:31]
+// Opening Vivado Project: convo_2d.xpr. Version: Vivado v2023.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// Tcl Message: open_project convo_2d.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,422 MB. GUI used memory: 69 MB. Current time: 12/19/23, 8:50:07 AM EST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,530 MB. GUI used memory: 67 MB. Current time: 12/19/23, 8:50:22 AM EST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,647 MB. GUI used memory: 67 MB. Current time: 12/19/23, 8:50:35 AM EST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,768 MB. GUI used memory: 67 MB. Current time: 12/19/23, 8:50:52 AM EST
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project convo_2d.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from '/home/idris/projects/FPGA_VISION/NN_SHIFT/hardware/convo_2d' since last save. INFO: [filemgmt 56-1] Board Part Repository Path: Directory not found as '/home/opt/Xilinx/Vivado/2023.2/data/boards/board_files'; using path '/home/idris/opt/Xilinx/Vivado/2023.2/data/boards/board_files' instead. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 131 MB (+32880kb) [00:01:25]
+// [Engine Memory]: 2,069 MB (+675099kb) [00:01:25]
+// WARNING: HEventQueue.dispatchEvent() is taking  3597 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/idris/opt/Xilinx/Vivado/2023.2/data/ip'. 
+// Project name: convo_2d; location: /home/idris/projects/FPGA_NEURAL_NETWORK/hardware/convo_2d; part: xc7z010clg400-1
+// Tcl Message: open_project: Time (s): cpu = 00:01:10 ; elapsed = 00:00:55 . Memory (MB): peak = 8115.328 ; gain = 688.957 ; free physical = 230 ; free virtual = 10503 
+dismissDialog("Open Project"); // bq (Open Project Progress)
+// [GUI Memory]: 141 MB (+3685kb) [00:01:27]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 151 MB (+2919kb) [00:01:33]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,188 MB. GUI used memory: 77 MB. Current time: 12/19/23, 8:51:07 AM EST
+// Elapsed time: 422 seconds
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (PAResourceAtoD.CmdMsgDialog_OK)
+dismissDialog("Critical Messages"); // a (dialog0)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, conv_2d_top (conv_2d_top.sv)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, conv_2d_top (conv_2d_top.sv)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, conv_2d_top (conv_2d_top.sv)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, conv_2d_top (conv_2d_top.sv), system_wrapper_inst : xil_defaultlib.system_wrapper_wrapper]", 4, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, conv_2d_top (conv_2d_top.sv), system_wrapper_inst : xil_defaultlib.system_wrapper_wrapper]", 4, false, false, false, false, true, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Popup Trigger
+// WARNING: HEventQueue.dispatchEvent() is taking  38434687 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,167 MB. GUI used memory: 128 MB. Current time: 12/19/23, 8:01:05 PM EST
+// WARNING: HEventQueue.dispatchEvent() is taking  1422 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,167 MB. GUI used memory: 77 MB. Current time: 12/19/23, 8:31:06 PM EST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,167 MB. GUI used memory: 58 MB. Current time: 12/19/23, 9:01:06 PM EST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,167 MB. GUI used memory: 58 MB. Current time: 12/19/23, 9:31:06 PM EST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,167 MB. GUI used memory: 58 MB. Current time: 12/19/23, 10:01:06 PM EST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,167 MB. GUI used memory: 58 MB. Current time: 12/19/23, 10:31:06 PM EST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,168 MB. GUI used memory: 58 MB. Current time: 12/19/23, 11:01:06 PM EST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,168 MB. GUI used memory: 58 MB. Current time: 12/19/23, 11:31:07 PM EST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,168 MB. GUI used memory: 58 MB. Current time: 12/20/23, 12:01:07 AM EST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,168 MB. GUI used memory: 59 MB. Current time: 12/20/23, 12:31:07 AM EST
+// WARNING: HEventQueue.dispatchEvent() is taking  65074660 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,168 MB. GUI used memory: 59 MB. Current time: 12/20/23, 6:49:10 PM EST
+// WARNING: HEventQueue.dispatchEvent() is taking  672996 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1634321 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,168 MB. GUI used memory: 75 MB. Current time: 12/20/23, 7:43:49 PM EST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,168 MB. GUI used memory: 58 MB. Current time: 12/20/23, 8:13:49 PM EST
+// WARNING: HEventQueue.dispatchEvent() is taking  2558 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,168 MB. GUI used memory: 58 MB. Current time: 12/20/23, 8:43:52 PM EST
